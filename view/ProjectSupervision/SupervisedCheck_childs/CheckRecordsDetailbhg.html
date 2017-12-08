@@ -1,0 +1,46 @@
+<!--不合格弹层-->
+<div class="p10 pr20">
+	<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div class="module-line-box clear">
+			<div class="module-group fl w50">
+				<span class="group-title tr pr20" style="width: 110px;">问题类型:</span>
+				<select data-toggle="selector" data-url="checkItems/selectItem" data-params="{}" data-nodefault="true" name="type" style="width:150px;" class="module-select group-select" data-rule="required;">
+				</select>
+			</div>
+			<div class="module-group fr w50">
+				<span class="group-title tr pr20" style="width: 110px;">问题程度:</span>
+				<select name="level" style="width:150px;" class="module-select group-select" data-rule="required;">
+					<option value="0">一般</option>
+					<option value="1">整改</option>
+					<option value="2">处罚</option>
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group  w100">
+				<span class="group-title tr pr20" style="width: 110px;">单位或分部:</span>
+				<input type="text" name="division" class="module-input group-input fl" data-rule="length[~50];">
+			</div>
+		</div>
+		<div class="module-line-box ">
+			<div class="module-group w100 clear">
+				<span class="group-title tr pr20 fl" style="width: 110px;">检查描述:</span>
+				<textarea name="description" data-rule="length[~300]" class="layui-textarea group-textarea"></textarea>
+			</div>
+		</div>
+		<div class="module-group fl w100 mt10" id="xinjian_tupian_lzh" >
+			<span class="group-title" style="width: 110px;">影像资料:</span>
+			<input data-toggle="uploader-image" type="file" name="images" data-limit="1" class="layui-upload-file">			
+		</div>
+		
+		<div class="module-group fl w100 mt10 clear" id="chakan_tupian_lzh" style="display: none;">
+			<span class="group-title" style="width: 110px;">影像资料:</span>
+			<div class="fl chakan_tupian_lzh_boxs">
+				
+			</div>
+		</div>
+		
+	</form>
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

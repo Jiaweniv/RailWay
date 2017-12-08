@@ -1,0 +1,82 @@
+<!--
+	作者：wuxupingvip@126.com
+	时间：2016-12-22
+	描述：工点表页面
+-->
+<div class="sidebar-collapse" id="workpoint_gd_edit_panel">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="workpoint_gd_step">
+				<h1>工点信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<div class="module-line-box clear p10  content">
+								<input name="workpoint_id" style="display: none;" />
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;"><i>*</i>工点编号:</span>
+									<input name="code" type="text" class="group-input module-input" data-rule="required;length[~20];">
+								</div>
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;"><i>*</i>工点名称:</span>
+									<input name="name" type="text" class="group-input module-input" data-rule="required;length[~50];">
+								</div>
+
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;"><i>*</i>专业:</span>
+									<select data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'DISCIPLINE'}" name="discipline" id="discipline" style="width:150px;" class="module-select group-select" data-rule="required" >
+									</select>
+								</div>
+								<!--新增字段-->
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;"><i>*</i>进展状态:</span>
+									<select name="progresstate" style="width:150px;" class="module-select group-select" data-rule="required;" >
+										<option value="">--请选择--</option>
+										<option value="1">未开工</option>
+										<option value="2">施工中</option>
+										<option value="3">已完成</option>
+										<option value="4">已初验</option>
+										<option value="5">已竣工</option>
+									</select>
+								</div>
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;"><i>*</i>权重:</span>
+									<input type="number" name="weight" class="group-input module-input" data-rule="required;" value="1.0" step="0.1" max="99.9" min="1.0">
+								</div>
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;"><i>*</i>风险等级:</span>
+									<!--<input type="number" name="level" class="group-input module-input" data-rule="required;" value="1">-->
+									<select name="level" class="module-select group-select" data-rule="required;" >
+										<option value="">--请选择--</option>
+										<option value="1">低度风险</option>
+										<option value="2">中度风险</option>
+										<option value="3">高度风险</option>
+										<option value="4">极高度风险</option>
+									</select>
+								</div>
+								<div class="module-group fl mt20 w100">
+									<span class="group-title" style="width: 90px;">重点工程:</span>
+									<select name="isimportant" style="width:150px;" class="module-select group-select" data-rule="required;">
+										<option value="0">否</option>
+										<option value="1">是</option>
+									</select>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<h1>施工段落</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #FFFFFF;">
+							<table id="workpoint_sgdl_table">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

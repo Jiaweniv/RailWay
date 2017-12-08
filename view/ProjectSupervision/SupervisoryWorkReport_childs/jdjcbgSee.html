@@ -1,0 +1,94 @@
+<!--
+    	时间：2017-3-13
+    	描述：监督检查报告导出详情页
+  -->
+<style type="text/css">
+	#project-edit {
+		background-color: #FFFFFF;
+		min-height: 100%;
+		height: auto;
+	}
+	
+	.module-line-box p {
+		text-indent: 2em;
+	}
+</style>
+<script id="JDJCBG_container" type="text/html">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="example-project">
+				<h1 id="xiangmuname" style="text-align: center;"><span>{{d.programinfo.checkprogramname ?d.programinfo.checkprogramname:''}}</span>监督检查报告</h1>
+				<div class="module-line-box mt25">
+					<p>按照中心<span>{{d.programinfo.planname ?d.programinfo.planname:''}}</span>，结合<span>{{d.programinfo.projectname ?d.programinfo.projectname:''}}</span>进展情况，<span>{{d.programinfo.checkstart ?d.programinfo.checkstart:''}}—{{d.programinfo.checkend ?d.programinfo.checkend:''}}</span>，中心组织检查组对<span>{{d.programinfo.projectname ?d.programinfo.projectname+"、":''}}{{d.sectionnames ?d.sectionnames:''}}</span>开展了监督检查。有关情况报告如下：</p>
+				</div>
+				<div class="module-line-box">
+					<p class="fonW">一、检查基本情况:</p>
+					<p></p>
+				</div>
+				<div class="module-line-box">
+					<p class="fonW">二、项目概况和进展情况:</p>
+				</div>
+				<div class="module-line-box">
+					<p class="fonW">三、检查内容:</p>
+					<p>此次检查内容共<span>{{d.sectionnum ?d.sectionnum:''}}</span>个标段，共计<span>{{d.workpointnum ?d.workpointnum:''}}</span>个工点，具体如下:</p>
+					<div id="check_content">
+						{{# layui.each(d.section, function(index, item){}}
+						<div class="content">
+							<p>{{index+1}}、项目标段：<span>{{item.name}}</span></p>
+							<p style="margin-left:2em">工点： {{# layui.each(item.workpoints, function(index2, item2){}}
+								<span>{{item2.name+'、'}}</span> {{# }); }}
+							</p>
+						</div>
+						{{# }); }}
+					</div>
+				</div>
+			</div>
+			<div class="module-line-box">
+				<p class="fonW">四、检查事1项</p>
+				<p>此次检查包含<span>{{d.checkitemLenght ?d.checkitemLenght:''}}</span>个类别，共计<span>{{d.checkitemChildrensLenght ?d.checkitemChildrensLenght:''}}</span>条事项，具体如下:</p>
+				<div id="check_item">
+					{{# layui.each(d.checkitem, function(index, item){}}
+					<div class="content">
+						<p>
+							<span>></span>
+							<span>{{item.name}}：</span>
+						</p>
+						{{# layui.each(item.childrens, function(index2, item2){}}
+						<p style="margin-left:2em"><span>{{index2+1}})</span> 
+							{{# layui.each(item2, function(index3, item3){}}
+								{{item3}}
+							{{# }); }}
+						</p>
+						{{# }); }}
+					</div>
+					{{# }); }}
+				</div>
+			</div>
+			<div class="module-line-box">
+				<p class="fonW">五、检查结果</p>
+				<p>根据以上检查事项，共检查出<span>{{d.checkdetailLenght ?d.checkdetailLenght:''}}</span>条不合格事项。具体如下：</p>
+				<table id="check_result"></table>
+			</div>
+			<div class="module-line-box">
+				<p>六、检查组现场处理情况：</p>
+				<p> 针对检查发现的问题，在检查结束后，检查组均及时向相关的建设、设计、施工、监理及第三方检查单位进行了意见交换，对较严重的问题，签发 <span>{{d.correctionnum ?d.correctionnum:''}}</span> 份《铁路建设工程质量安全整改通知单》，同时要求建设单位认真组织整改，并举一反三，在全线范围内组织对相关问题进行排查整改的要求。</p>
+			</div>
+			<div class="module-line-box">
+				<p>七、行政处罚建议</p>
+				<p></p>
+			</div>
+			<div class="module-line-box ">
+				<p>八、体会和建议</p>
+				<p></p>
+			</div>
+			<div style="margin: 40px 0px;text-align: right;" class="module-line-box">
+				检查组组长：<span>{{d.checkleader ?d.checkleader+"  ":''}}</span>
+				<p>{{Mydao.formatDate(d.reporttime,"YYYY年MM月DD日")}}</p>
+			</div>
+		</div>
+	</div>
+</script>
+<div class="layer_notice p20 pr30" id="JDJCBG_SHOW_LAYUI">
+
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

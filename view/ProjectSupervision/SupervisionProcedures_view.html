@@ -1,0 +1,73 @@
+<!--监督手续详情-->
+<form id="SupervisionProcedures_view">
+	<div class="sidebar-collapse" id="workpoint_gdb_show">
+		<div class="p10 pr20">
+			<div class="module-group w100 mt10">
+				<span class="group-title tr pr10" style="width: 100px;">项目:</span>
+				<input name="projectname" type="text" class="group-input module-input" readonly="readonly">
+			</div>
+			<!--<fieldset>
+				<legend>申报</legend>
+			</fieldset>-->
+			<div class="module-group pr publicpr ml20">
+				<span class="ml10 orange">申报</span>
+			</div>
+			<div class="module-line-box">
+				<div class="module-group fl w30 mt5">
+					<span class="group-title" style="width: 90px;">申报时间:</span>
+					<input name="declaretime" type="text" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon" readonly="readonly">
+				</div>
+				<div class="module-group fl w70 mt5">
+					<span class="group-title" style="width: 90px;">申报书:</span>
+					<input name="declareform" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file" readonly="readonly">
+				</div>
+				<div class="module-group fl w100 mt5">
+					<span class="group-title" style="width: 90px;">申报备注:</span>
+					<input name="declareremark" type="text" class="group-input module-input" readonly="readonly">
+				</div>
+			</div>
+			<!--<fieldset>
+				<legend>办理</legend>
+			</fieldset>-->
+			<div class="module-group pr publicpr ml20">
+				<span class="ml10 orange">办理</span>
+			</div>
+			<div class="module-line-box">
+				<div class="module-group fl w30 mt5">
+					<span class="group-title" style="width: 90px;">办理时间:</span>
+					<input name="transacttime" type="text" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon" readonly="readonly">
+				</div>
+				<div class="module-group fl w70 mt5">
+					<span class="group-title" style="width: 90px;">监督书:</span>
+					<input name="transactform" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file" readonly="readonly">
+				</div>
+				<div class="module-group fl w100 mt5">
+					<span class="group-title" style="width: 90px;">办理备注:</span>
+					<input name="transactremark" type="text" class="group-input module-input" readonly="readonly">
+				</div>
+			</div>
+			<!--<fieldset>
+				<legend>首次会议</legend>
+			</fieldset>-->
+			<div class="module-group pr publicpr ml20">
+				<span class="ml10 orange">首次会议</span>
+			</div>
+			<div class="module-line-box">
+				<div class="module-group fl w30 mt5">
+					<span class="group-title" style="width: 90px;">会议时间:</span>
+					<input name="firstmeeting" type="text" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon" readonly="readonly">
+				</div>
+				<div class="module-group fl w70 mt5">
+					<span class="group-title" style="width: 90px;">会议纪要:</span>
+					<input name="meetingsummary" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file" readonly="readonly">
+				</div>
+				<div class="module-group fl w100 mt5">
+					<span class="group-title" style="width: 90px;">会议备注:</span>
+					<input name="meetingremark" type="text" class="group-input module-input" readonly="readonly">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

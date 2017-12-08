@@ -1,0 +1,25 @@
+<!--字典管理-->
+<div id="DictionaryManagement_HLJ">
+	<div class="wrapper-content-tabs" id="center">
+		<div class="panel-body" id="c1">
+			<div class="module-line-box clear pt10" id="centralPlanning">
+				<div class="module-group fl ml10">
+					<span class="group-title" style="width: 90px;">名称:</span>
+					<input type="text" class="module-input" name="JobSettings" id="JobSettingsInput" placeholder="请输入名称">
+				</div>
+				<div class="btn-group fl ml20">
+					<button type="button" id="searchc" class="btn  btn-primary">查询</button>
+				</div>
+				<div class="btn-group fr">
+					<permission opt="centerplan_create"><button type="button" id="savec" class="btn  btn-default">新建</button></permission>
+				</div>
+			</div>
+
+			<table id="EnterpriseTable-zs">
+			</table>
+		</div>
+	</div>
+</div>
+
+<!--引入路径正确-->
+<script src="/js/controller/SystemManagement/DictionaryManaged.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

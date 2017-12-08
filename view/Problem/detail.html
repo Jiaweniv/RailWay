@@ -1,0 +1,89 @@
+<style type="text/css">
+	fieldset {
+		text-align: left;
+	}
+	
+	legend {
+		/*margin-left: 30px;*/
+	}
+</style>
+<div class="sidebar-collapse p10">
+	<div class="text-center m-t-md">
+		<fieldset class="layui-elem-field">
+			<legend class="wauto">问题对象</legend>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">项目:</span> ${projectname}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">施工标段:</span> ${sectionname}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">受检单位:</span> ${orgname}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">工点:</span> ${workname}
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="layui-elem-field">
+			<legend class="wauto">人员时间</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">检查人:</span> ${checkuser}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">检查时间:</span> ${checktime}
+				</div>
+			</div>
+			<!--<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">检查方案:</span> ${programname}
+				</div>
+			</div>-->
+		</fieldset>
+		<fieldset class="layui-elem-field">
+			<legend class="wauto">问题记录</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">问题类型:</span> ${typename}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">问题程度:</span> ${level}
+				</div>
+			</div>
+			<!--<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">单位或分部:</span> ${division}
+				</div>
+			</div>-->
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">检查内容:</span> ${content}
+				</div>
+			</div>
+		</fieldset>
+		<fieldset class="layui-elem-field">
+			<legend class="wauto">问题说明</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">问题描述:</span>
+						${description}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">问题认定依据:</span> ${foundation}
+				</div>
+			</div>
+			<!--<div class="module-line-box clear  content">
+				<div class="module-group w100 fl">
+					<span class="group-title tr pr10" style="width: 120px;">影像资料:</span>
+					$imgs{images}
+				</div>
+			</div>-->
+		</fieldset>
+	</div>
+</div>

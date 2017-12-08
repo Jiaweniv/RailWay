@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<title>登录中。。。</title>
+		<meta name="keywords" content="登录中。。。">
+		<meta name="description" content="登录中。。。">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<script src="js/plugins/jquery/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/controller/pathconfig.js" charset="utf-8"></script>
+	</head>
+	<script>
+		$(function() {
+			//获取链接参数
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+			//获取菜单编码
+			var menucode = GetQueryString("menu")?"#"+GetQueryString("menu"):"";
+			//获取用户id和token信息
+			var data = {"id":GetQueryString("userid"),"token":GetQueryString("token"),"systemid":"1"};
+			//后台验证数据，并返回权限和菜单信息
+			$.ajax({
+				type: "post",
+				url: MyDaoRequestPath + "/RailWayInvoker/user/sso.do",
+				async: false,
+				contentType: "application/json",
+				data: JSON.stringify(data),
+				processData: false,
+				dataType: 'json',
+				dataFilter: function(data, type) {
+					data = data.replace(/:(\d+),/g, ':\"$1\",')
+					return data
+				},
+				success: function(data) {
+					if(data.code == 200) {
+						sessionStorage.setItem('MYDAO_USER', JSON.stringify(data.result));
+						/*这里使用的异步请求，当请求登录成功的时候，重新定位到index界面*/
+						window.location.href = MyDaoRequestPath + '/RailWay/index.html'+menucode;
+					} else {
+						alert(data.msg);
+						window.history.go(-1);
+					}
+				}
+			});
+		});
+	</script>
+
+</html>

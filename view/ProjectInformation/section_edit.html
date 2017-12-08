@@ -1,0 +1,123 @@
+<!--
+    	作者：王启靖
+    	时间：2016-12-19
+    	描述：施工标段信息》表格》添加操作页
+   -->
+<div id="sectionUpload">
+	<form id="section-edit" data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div class="module-line-box clear mt10">
+			<div class="module-group fl w40">
+				<span class="group-title" style="width: 110px;"><i>*</i>标段编号:</span>
+				<input type="text" name="serialnum" class="group-input module-input" placeholder="请输入标段编号" data-rule="required;length[~10]">
+			</div>
+			<div class="module-group fr w60">
+				<span class="group-title" style="width: 90px;"><i>*</i>标段名称:</span>
+				<input type="text" name="name" class="group-input module-input" placeholder="请输入标段名称" data-rule="required;length[~20]">
+			</div>
+		</div>
+
+		<div class="module-line-box clear ">
+			<div class="module-group fl w40">
+				<span class="group-title" style="width: 110px;"><i>*</i>起点里程:</span>
+				<input type="text" name="startmileage" class="group-input module-input" placeholder="请输入起点里程" data-rule="required;length[~10]">
+				<!--控制只能输入数字-->
+				<!--<input type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();" name="startmileage" class="group-input module-input" placeholder="请输入起点里程" data-rule="required;length[~10]">-->			
+			</div>
+			<div class="module-line-box  fr clear w60">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;"><i>*</i>终点里程:</span>
+					<input type="text" name="endmileage" class="group-input module-input" placeholder="请输入起点里程" data-rule="required;length[~10]">
+				</div>
+				<div class="module-group fr w50">
+					<span class="group-title" style="width: 90px;"><i>*</i>里程长度:</span>
+					<input type="text" name="mileagelength" class="group-input module-input" placeholder="请输入里程长度" data-rule="required;length[~10]">
+				</div>
+			</div>
+		</div>
+
+		<div class="module-line-box clear ">
+			<div class="module-group fl w40">
+				<span class="group-title" style="width: 110px;"><i>*</i>所在省:</span>
+				<select name="province" data-rule="required;" data-toggle="selector" data-url="dictionary/region" data-next="#city" data-next-field="parentid" data-params="{'level':1}" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-line-box  fr clear w60">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;"><i>*</i>市:</span>
+					<select name="city" data-rule="required;" id="city" data-url="dictionary/region" data-params="{'level':2}" class="module-select group-select">
+					</select>
+				</div>
+				<!--新增字段-->
+				<div class="module-group fr w50 quanzhong">
+					<span class="group-title" style="width: 90px;"><i>*</i>权重:</span>
+					<input type="number" name="weight" class="group-input module-input" data-rule="required;" value="1.0"  step="0.1" max="99.9" min="1.0">
+				</div>
+			</div>
+		</div>
+		<!--新增字段：中标单位  data-url要修改-->
+		<div class="module-line-box clear mt10">
+			<div class="module-group fl w70">
+				<span class="group-title" style="width: 110px;">中标单位:</span>
+				<!--<select name="bidunit"  id="bidunit" class="module-select group-select" data>
+				</select>-->
+				<select name="bidunit" data-toggle="selector" data-url="organization/getOrgNotJDJG" data-next-field="parentid" data-params="{}"  class="module-select group-select">
+
+				</select>
+
+			</div>
+		</div>
+		<!--新增字段：合同-->
+		<div class="module-line-box clear">
+			<div class="module-group w70 fl">
+				<span class="group-title" style="width: 110px;">合同:</span>
+				<input data-toggle="uploader-file" type="file" name="contract" class="layui-upload-file">
+			</div>
+		</div>
+
+		<div class="module-line-box clear ">
+			<div class="module-group fl" style="width: auto;">
+				<span class="group-title fl" style="width: 110px;">主要工程内容:</span>
+			</div>
+			<div class="fl tl w80" style="text-align: left;">
+				<!--字数控制在300字以内-->
+				<textarea name="maincontent" data-rule="length[~300]" cols="50"  class="w100" style="border: 1px solid #CCCCCC;"></textarea>
+				<!--<script type="text/plain" id="section-edit1" name="maincontent" style="width:80%;height:240px; margin-left: 120px;">
+
+				</script>-->
+			</div>
+		</div>
+
+		<!--新增字段：监理范围-->
+		<div class="module-line-box clear hlj-xzjlfw" style="display: none;">
+			<div class="module-group fl" style="width: auto;">
+				<span class="group-title fl" style="width: 110px;">监理范围:</span>
+			</div>
+			<div class="fl tl w80" style="text-align: left;">
+				<textarea name="supscope" data-rule=";length[~300]" cols="50" class="w100" style="border: 1px solid #CCCCCC;"></textarea>
+				<!--<script type="text/plain" id="section-edit1" name="maincontent" style="width:80%;height:240px; margin-left: 120px;">
+
+				</script>-->
+			</div>
+		</div>
+
+		<!--新增字段：工程量清单（原在【项目信息-设计文件 】中的功能移植互此功能）-->
+		<div class="module-line-box clear hlj-xzgclqd" style="display: block;">
+			<div class="module-group fl" style="width: auto;">
+				<span class="group-title fl" style="width: 110px;">工程量清单:</span>
+			</div>
+			<div class="fl tl w80 panel-body">
+				<table id="designingdocuments_table">
+				</table>
+			</div>
+		</div>
+
+	</form>
+
+	<div class="module-line-box clear tc">
+		<div class="module-group " style="width: auto;margin-right: 10px;">
+			<button type="button" class="btn btn-save save">保 存</button>
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,84 @@
+<!--
+	作者：王启靖
+	时间：2016-12-26
+	描述：问题库
+-->
+<div id="problem_lzh_boxs">
+	<div class="wrapper-content-tabs" id="problem">
+		<div class="panel-body">
+			<div class="tabs-container clear">
+				<!--<ul class="nav nav-tabs clear" id="problem-tabs" style="height: 40px;">
+
+				</ul>-->
+				<!--tab页 内容区-->
+				<div class="tab-content clear" id="problem-tab-content">
+					<div class="module-line-box clear pt10">
+						<div class="module-group fl">
+							<span class="group-title" style="width: 90px;">项目名称:</span>
+							<select data-toggle="selector" data-url="project/s1006" data-params='{}' data-next="#problem_lzh_section" data-next-field="projectid" id="problem_lzh_projectid" class="module-select">
+							</select>
+						</div>
+						<div class="module-group fl">
+							<span class="group-title" style="width: 90px;">施工标段:</span>
+							<select data-toggle="selector" id="problem_lzh_section" data-url="constructionSection/s1006" data-params="{}" name="sectionid" class="module-select ">
+							</select>
+						</div>
+						<div class="module-group fl">
+							<span class="group-title" style="width: 90px;">监督机构:</span>
+							<input type="text" id="problem_lzh_super_org_name" class="group-input module-input">
+						</div>
+					</div>
+					<div class="module-line-box clear pt10">
+						<div class="module-group fl" id="checkic">
+							<span class="group-title" style="width: 90px;">检查事项:</span>
+							<select data-toggle="selector" data-url="checkItems/s1005" data-params='{}' id="problem_lzh_checkitemsid"class="module-select group-select">
+							</select>
+						</div>
+						<div class="module-group fl wauto">
+							<span class="group-title" style="width: 90px;">检查时间:</span>
+							<select style="width:150px;" id="datetype" name="datetype" class="module-select fl">
+								<option value="">--请选择--</option>
+								<option value="1">年度</option>
+								<option value="2">月度</option>
+								<option value="3">季度</option>
+							</select>
+							<select style="width:150px;" name="year" id="year" class="module-select fl ml5">
+								${years}
+							</select>
+							<select style="width:90px;" name="datevalue" id="datevalue" class="module-select fl ml5">
+
+							</select>
+
+						</div>
+						<!--<div class="module-group fl">
+							<span class="group-title" style="width: 90px;">受检单位:</span>
+							<select id="group" style="width:150px;" class="module-select group-select">
+							</select>
+						</div>
+
+						<div class="module-group fl">
+							<span class="group-title" style="width: 90px;">问题程度:</span>
+							<select id="level" style="width:150px;" class="module-select group-select">
+								<option value="">--请选择--</option>
+								<option value="0">一般</option>
+								<option value="1">整改</option>
+								<option value="2">处罚</option>
+							</select>
+						</div>-->
+						<div class="module-group fl ml20">
+							<button class="btn btn-primary" id="search">查询</button>
+						</div>
+
+					</div>
+					<div class="module-container">
+						<table id="problem-table">
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--tab页 内容区 end-->
+		</div>
+	</div>
+</div>
+<script src="js/controller/Problem/Problem.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

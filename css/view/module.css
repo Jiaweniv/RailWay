@@ -1,0 +1,437 @@
+@charset "utf-8";
+
+/*
+   module.css
+   <css组件>
+   
+   Created by LiZhaoHua on .
+   Copyright 2016 LiZhaoHua . All rights reserved.
+*/
+/*去除掉bootstrap lable加粗*/
+.btn-group label{
+	font-weight: normal!important;
+	margin: 0!important;
+	line-height: 34px;
+}
+
+/*查看时输入框变灰色 不可编辑*/
+.module-grays{
+	background-color: #D7D7D7!important;	
+}
+/*查看时输入框变灰色 不可编辑 end*/
+
+.lh34{
+	line-height: 34px;
+}
+
+/*蓝色*/
+.lzh_blue{
+	 color: #1b82ff;
+}
+
+.lh34{
+	line-height: 34px!important;
+	height: 34px!important;
+}
+/*input 输入框*/
+
+.module-input {/*行高34px*/
+	background-color: #FFF;
+	/*border: 1px solid #e5e6e7;*/
+	border: 1px solid #bfe5fd;
+	border-radius: 1px;
+	color: inherit;
+	display: inline-block;
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+	padding-left: 12px;
+	padding-right: 6px;
+	outline: none;
+	-webkit-transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+	transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+	font-size: 16px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	line-height: inherit;
+	height: inherit;
+}
+
+.module-input:focus {
+	background-color: #f1f9ff;
+	border-color: #5d9de5 #67a1e2 #67a1e2 #5d9de5;
+	box-shadow: 1px 1px 3px #d0dee6 inset;
+}
+
+
+/*原生selset*/
+
+.module-select {   /*行高34px*/
+	background-color: #FFF;
+	background-image: none;
+	/*border: 1px solid #e5e6e7;*/
+	border: 1px solid #bfe5fd;
+	border-radius: 1px;
+	color: inherit;
+	display: inline-block;
+	padding: 5px 12px;
+	-webkit-transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+	transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+	font-size: 16px;
+}
+
+
+/*输入框和标头组合*/
+
+.module-group {
+	/*总体高度是50px*/
+	display: inline-block;
+	/*border: 1px solid #e1e1e1;*/
+	/*border-radius: 5px;*/
+	/*height: 37px;*/
+	line-height: 34px;
+	position: relative;
+	font-size: 16px;
+	color: #6c6c6c;
+	/*margin: 6px 0px 7px 0;*/
+	/*z-index: 10;*/
+	padding: 0;
+}
+
+.module-group .group-title {
+	/*background-color: #e2f0ff;*/
+	display: inline-block;
+	float: left;
+	height: 100%;
+	/*padding: 0 10px;*/
+	/*border-radius: 5px 0 0 5px;*/
+	min-width: 60px;
+	text-align: center;
+}
+.module-group .group-boxs{
+	
+}
+.module-group .group-input ,.module-group .group-select,.module-group .group-boxs {
+	float: left;
+}
+.module-group .group-input {
+	line-height: 34px;
+	height: 34px;
+}
+.module-group:after {
+	content: "";
+	display: inline-block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.group-title > i{
+	color: red;
+	width: 4px;
+	height: 100%;
+	font-style: normal;
+}
+/*button 按钮*/
+
+.module-button {
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #1c84c6;
+	/*border-color: #1c84c6;*/
+	color: #FFF;
+	outline: none;
+}
+
+.module-button:hover,
+.module-button:focus,
+.module-button:active {
+	background-color: #204d74;
+	outline: none;
+}
+
+
+/*确定按钮*/
+
+.module-confirm {}
+
+.module-confirm:hover,
+.module-confirm:focus,
+.module-confirm:active {
+	background-color: #204d74;
+	outline: none;
+}
+
+
+/*取消按钮*/
+
+.module-cancel {}
+
+.module-cancel:hover,
+.module-cancel:focus,
+.module-cancel:active {
+	background-color: #204d74;
+	outline: none;
+}
+
+
+/*关闭按钮*/
+
+.module-close {}
+
+.module-close:hover,
+.module-close:focus,
+.module-close:active {
+	background-color: #204d74;
+	outline: none;
+}
+
+
+/*返回按钮*/
+
+.module-return {}
+
+.module-return:hover,
+.module-return:focus,
+.module-return:active {
+	background-color: #204d74;
+	outline: none;
+}
+
+
+
+/*行块*/
+.module-line-box{
+	margin-bottom: 10px;	
+	overflow: hidden;
+}
+
+.search-line-box{
+	margin-bottom: 10px;	
+}
+
+/*定义左侧树*/
+.module-left-box{
+	
+}
+/*新增修改树的样式*/
+.module-left-box .leftTreestyle{
+	background: url(../../img/form_line.png);
+    background-size: 100% 100%;
+    color: #FFFFFF;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #bfe5fd;
+    width: 98%;
+}
+.module-left-box .leftTreestyle .spanSize{
+	font-size: 18px;
+	color: #FFFFFF;
+}
+.ztree {
+	width: 98%;
+	border: 1px solid #bfe5fd;
+	 /*height: 34px;*/
+}
+.ztree li{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.ztree li a{
+	/*height: 34px;*/
+}
+/*定义右侧内容区*/
+.module-right-box,.module-left-box{
+	height: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+
+
+.checkbox, .radio{
+	position: relative;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    position: absolute;
+    margin-left: -16px;
+    top: 3px;
+}
+
+
+/* 浏览器缩放检测 */
+.mod-zoomdetect {
+	position: absolute;
+	z-index: 99999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    width : 100%;
+    height : 40px;
+    background : #FEFFE5;
+    line-height : 40px;
+    font-size : 16px;
+    text-align : center;
+    border-bottom : 1px solid #E7CF7B;
+    user-select : none;
+    clear:both;
+}
+.mod-zoomdetect div{ text-align:center}
+.mod-zoomdetect q {
+    font-weight: bold;
+    color: #f00;
+}
+.mod-zoomdetect .wzd-btnclose {
+    float: right;
+    font-size : 14px;
+    text-decoration : none;
+    display: inline-block;
+    line-height: 40px;
+    margin-right: 28px;
+   	color: #000;
+}
+.mod-zoomdetect .wzd-close:hover {
+    text-decoration : none;
+}
+.mod-zoomdetect .wzd-nevertip {
+    text-decoration: underline;
+    color: #2383C2;
+    font-size : 14px;
+}
+.mod-zoomdetect .wzd-nevertip:hover {
+    color: #23a3C2;
+}
+
+
+/****
+ * *
+ * 
+ *	UI设计   网站板式更改（1）
+ * 	注： 此更改将影响整站 布局样式。  
+ * 	慎重修改  by lizhaohua
+ * 
+ * *
+****/
+
+#page-wrapper{
+	background: #f8fbfd;
+}
+.cur_position{
+	color: #62b9f1;   
+    font-size: 16px!important;
+}
+.cur_position i{
+	display: inline-block;
+	background: url(../../img/icon1.png) no-repeat;
+	width: 25px;
+	height: 20px;
+	vertical-align: middle;
+}
+
+.bootstrap-table .table thead{
+	background: url(../../img/form_line.png);
+	background-size: 100% 100%;
+	color: #FFFFFF;
+}
+.bootstrap-table .table thead th{
+	/*text-align: center!important;*/
+}
+.table-striped>tbody>tr:nth-of-type(odd){
+	background: #f8fbfd!important;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+	background: #ffffff!important;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #f5f5f5!important;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border: 1px solid #bfe5fd!important;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.layui-layer.layui-layer-dialog.layui-layer-msg.layer-anim-06 .layui-layer-content{
+ 	background-color:#fff!important; 
+ 	-webkit-background-clip: content!important;
+ 	 box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+ 	 background: #f2f2f2!important;
+}
+
+		/*弹框*/
+.layui-layer{
+	border-radius:8px 8px 8px 8px!important;
+}
+.layui-layer-msg .layui-layer-content{
+  	background-color: #000!important; filter:alpha(opacity=60)!important; background-color: rgba(0,0,0,0.6)!important; 
+	border-radius:inherit!important;
+}
+.layui-layer-tips .layui-layer-content{
+	background: #26a6de!important;
+}
+.layui-layer-content,.layui-layer-btn{
+	background: #f8fbfd!important;
+}
+
+.layui-layer-loading .layui-layer-content{width:60px; height:24px; background:url('../../js/plugins/layui/css/modules/layer/default/loading-0.gif') no-repeat!important;}
+.layui-layer-loading .layui-layer-loading1{width:37px; height:37px; background:url('../../js/plugins/layui/css/modules/layer/default/loading-1.gif') no-repeat!important;}
+.layui-layer-loading .layui-layer-loading2, .layui-layer-ico16{width:32px; height:32px; background:url('../../js/plugins/layui/css/modules/layer/default/loading-2.gif') no-repeat!important;}
+
+
+.layui-layer-title{
+	background: url(../../img/popup_line.png);
+	border-radius:8px 8px 0px 0px!important;
+	background-size: 100% 100%;
+	color: #FFFFFF!important;
+	
+}
+
+.layui-table th, .layui-table td{
+	border-color: #bfe5fd!important;
+}
+.layui-input, .layui-textarea, .layui-select{
+	border-color: #bfe5fd!important;
+	
+}
+
+/****
+ * *
+ * 
+ *	UI设计   网站板式更改（1）
+ * 
+ * 	E N D
+ * 
+ * *
+****/
+
+
+
+/*验证不通过给被验证加 Class*/
+.nice-v-error {
+    border-color: #a94442!important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075)!important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075)!important;
+}

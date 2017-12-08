@@ -1,0 +1,35 @@
+<!--添加资质扫描-->
+<div class="add_Scanning">
+	<div class="module-line-box clear p10">
+		<form id="org-form3" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-group w100 mb10">
+				<span class="group-title  " style="width: 110px;">证书编号:</span>
+				<input type="text" name="code" class="group-input module-input" data-rule="length[~20];">
+			</div>
+			<div class="module-group w100 mb10">
+				<span class="group-title  " style="width: 110px;">资质类别:</span>
+				<select name="qualificationcategory" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'QCATE'}" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group w100 mb10">
+				<span class="group-title  " style="width: 110px;">资质类型:</span>
+				<select name="qualificationtype" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'QTYPE'}" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group w100 mb10">
+				<span class="group-title  " style="width: 110px;">资质来源:</span>
+				<select name="qualificationsource" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'QSOURCE'}" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group w100 mb10">
+				<span class="group-title  " style="width: 110px;">有效期:</span>
+				<input type="text" name="validity" data-format="YYYY-MM-DD" class="module-input group-input laydate-icon">
+			</div>
+		</form>
+		<div class="module-group w100">
+			<span class="group-title  " style="width: 110px;">资质扫描:</span>
+			<input id="file" data-toggle="uploader-image" type="file" name="file" data-limit="5" class="layui-upload-file">
+		</div>
+	</div>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

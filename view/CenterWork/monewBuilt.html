@@ -1,0 +1,136 @@
+<!--
+	描述：监督计划 编辑弹层
+-->
+<div class="layer_notice pt20 pr10" id="newBuild1">
+	<div class="sidebar-collapse">
+		<form id="mo-form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<!--所有的修改都要有个唯一标识，这个唯一标识问接口对接-->
+			<input type="hidden" name="id" value="" />
+			<!--名称-->
+			<div class="module-line-box clear  content">
+				<div class="module-group w70 mlbf15">
+					<span class="group-title tr pr10" style="width: 60px;"><i>*</i>名称:</span>
+					<input type="text" name="name" class="w80 module-input" id="inputname" data-rule="required;length[~50];">
+				</div>
+			</div>
+			<!--部门-->
+			<div class="module-line-box clear  content">
+				<div class="module-group w70 mlbf15">
+					<span class="group-title tr pr10" style="width: 60px;"><i>*</i>部门:</span>
+					<!--<select name="organizationid" data-toggle="selector" style="height: 35px;" data-url="centerPlan/findDepartment" data-rule="required;" data-params='{}' id="hlj-central-s1" class="w80 module-input mt5">
+					</select>-->
+					<select name="organizationid" style="height: 35px;"  data-rule="required;" data-params='{}' id="hlj-central-s1" class="w80 module-input mt5">
+					</select>
+				</div>
+			</div>
+			<!--类型-->
+			<div class="module-line-box clear  content">
+				<!--类型-->
+				<div class="module-group w70 mlbf15 hlj-central-dimension">
+					<span class="group-title tr pr10" style="width: 60px;"><i>*</i>类型:</span>
+					<select name="dimension" class="w80 module-input hlj-central-dimension " style="height: 35px;" id="central-se2" data-rule="required">
+						<option value="">--请选择--</option>
+						<option value="1">年度</option>
+						<option value="2">月度</option>
+						<option value="3">季度</option>
+						<option value="4">专项</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="module-line-box clear  content">
+				<!--周期-->
+				<div class="module-group clear w70 mlbf15">
+					<span class="group-title tr pr10" style="width: 60px;"><i>*</i>时间:</span>
+					<!--1、年度-->
+					<div id="cyear" class="fl" style="display: block">
+						<select name="year" class="module-select group-select  mr20" id="year" data-rule="required">
+							<option value="">--请选择--</option>
+							<option value="2010">2010年</option>
+							<option value="2011">2011年</option>
+							<option value="2012">2012年</option>
+							<option value="2013">2013年</option>
+							<option value="2014">2014年</option>
+							<option value="2015">2015年</option>
+							<option value="2016">2016年</option>
+							<option value="2017">2017年</option>
+							<option value="2018">2018年</option>
+							<option value="2019">2019年</option>
+							<option value="2020">2020年</option>
+						</select>
+					</div>
+					<!--2.季度-->
+					<div id="cquarter" class="fl" style="display: none">
+						<select name="quarter" class="module-select mr15 " id="quarter-m" data-rule="required">
+							<option value="">--请选择--</option>
+							<option value="1">1季度</option>
+							<option value="2">2季度</option>
+							<option value="3">3季度</option>
+							<option value="4">4季度</option>
+						</select>
+					</div>
+					<!--3.月度-->
+					<div id="cmonth" class="fl" style="display: none">
+						<select name="month" class="module-select  mr15" id="month-m" data-rule="required">
+							<option value="">--请选择--</option>
+							<option value="1">1月</option>
+							<option value="2">2月</option>
+							<option value="3">3月</option>
+							<option value="4">4月</option>
+							<option value="5">5月</option>
+							<option value="6">6月</option>
+							<option value="7">7月</option>
+							<option value="8">8月</option>
+							<option value="9">9月</option>
+							<option value="10">10月</option>
+							<option value="11">11月</option>
+							<option value="12">12月</option>
+						</select>
+					</div>
+					<!--4.专项-->
+					<div id="cspecial" style="display: none">
+						<input type="text" name="starttime" data-toggle="range-start" data-format="YYYY-MM-DD" class="fl  lh34 module-input w40 laydate-icon" id="specialstarttime" data-rule="required">
+						<i class="fl wauto">--</i>
+						<input type="text" name="endtime" data-toggle="range-end" data-format="YYYY-MM-DD" class="fl lh34  module-input w40 laydate-icon" id="specialendtime" data-rule="required">
+					</div>
+				</div>
+			</div>
+			<!--第四附件-->
+			<div class="module-line-box clear  content">
+				<div class="module-group w70 mlbf15">
+					<span class="group-title tr pr10" style="width: 60px;">附件:</span>
+					<input data-toggle="uploader-file" type="file" name="attachment" class="layui-upload-file">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var select1 = $('#central-se2');
+	select1.change(function(){
+		var val = select1.val();
+		var year = $('#newBuild1 #cyear');
+		var month = $('#newBuild1 #cmonth');
+		var quarter = $('#newBuild1 #cquarter');
+		var special = $('#newBuild1 #cspecial');
+		var arr = [];
+		arr.push(year, month, quarter, special)
+		for(var i = 0; i < arr.length; i++) {
+			arr[i].hide();
+		}
+		if(val == 1) {
+			year.show();
+		} else if(val == 2) {
+			year.show();
+			month.show();
+		} else if(val == 3) {
+			year.show();
+			quarter.show();
+		} else {
+			special.show();
+		}
+	})
+</script>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

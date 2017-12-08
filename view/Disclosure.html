@@ -1,0 +1,26 @@
+<!--信息公开-->
+<div class="wrapper-content-tabs" id="Disclosure_lzh">
+	<div class="panel-body" id="disclosure">
+		
+		<div class="module-line-box clear ">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 50px;">标题:</span> <input type="text" id="title" name="title" class="group-input module-input">
+			</div>
+			<div class="module-group fl">
+				<span class="group-title" style="width: 50px;">类型:</span>
+				<select name="type" id="type" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'INFORMATION'}" data-value="" class="module-select group-select">
+				</select>
+		
+			</div>
+			<div class="btn-group fl ml20">
+				<button type="button" id="search" class="btn  btn-primary">查询</button>
+			</div>
+			<div class="btn-group fr mr20">
+				<permission opt="disclosure_create"><button type="button" id="save" class="btn  btn-default">新建</button></permission>
+			</div>
+		</div>
+		
+		<table id="disclosure-table"></table>
+	</div>
+</div>
+<script src="js/controller/disclosure/disclosure.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

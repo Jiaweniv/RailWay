@@ -1,0 +1,78 @@
+<!--设计文件-->
+<div class="wrapper-content-tabs" id="designingdocuments">
+	<div class="panel-body" id="designingdocuments_out">
+		<div class="module-line-box clear pt10">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">项目:</span>
+				<select data-toggle="selector" data-url="project/s1006" data-params="{}" data-nodefault="true" data-next="#designingdocuments_select_section" data-next-field="projectid" name="projectid" class="module-select ">
+				</select>
+			</div>
+
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">标段:</span>
+				<select id="designingdocuments_select_section" data-url="constructionSection/s1006" data-params="{}" name="sectionid" style="width:150px;" class="module-select ">
+				</select>
+			</div>
+
+			<!--上传按钮-->
+			<div class="btn-group fr mr20">
+				<button type="button" class="btn btn  btn-primary" id="designingdocuments_file_btn" style="display: none;">文件上传</button>
+			</div>
+		</div>
+
+		<div class="module-left-box fl" style="width: 350px;height: 90%;" id="designingdocuments_folder_tree_panel">
+			<!--导航-->
+			<div class="clear leftTreestyle">
+				<div class="fl">
+					<span class="fl pl5">文件夹管理</span>
+				</div>
+
+				<div class="fr pr10">
+					<permission opt="designfolder_create">
+						<a href="javascript:;" id="designingdocuments_folder_add" class="ml10 fl fontF" title="添加"><i class="fa fa-plus-square-o"></i></a>
+					</permission>
+					<permission opt="designfolder_edit">
+						<a href="javascript:;" id="designingdocuments_folder_edit" class="ml10 fl fontF" title="编辑"><i class="fa fa-pencil-square-o"></i></a>
+					</permission>
+					<permission opt="designfolder_del">
+						<a href="javascript:;" id="designingdocuments_folder_del" class="ml10 fl fontF" title="删除"><i class="fa fa-trash"></i></a>
+					</permission>
+
+				</div>
+			</div>
+			<ul id="designingdocuments_folder_tree" class="ztree"></ul>
+		</div>
+		<div class="module-right-box fr" id="module-table-rome">
+			<table id="designingdocuments_table_lzh"></table>
+		</div>
+	</div>
+
+	<!--菜单管理添加-->
+	<div id="designingdocuments_create" style="display:none">
+		<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box">
+				<div class="mt10 mb10">
+					<span class="group-title tr ml40" style="width: 110px;">文件类型:</span>
+					<select name="type" style="width:60%;" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'DESIGN'}" class="module-select">
+					</select>
+				</div>
+				<div class="mt10">
+					<span class="group-title tr" style="width: 110px; margin-left: 25px;">文件夹名称:</span>
+					<input name="name" type="text" placeholder="请输入文件夹名称" class="module-input" style="width:60%; height: 35px; line-height: 35px;" data-rule="length[~20]">
+				</div>
+			</div>
+		</form>
+	</div>
+	<!--菜单管理编辑-->
+	<div id="designingdocuments_edit" style="display:none">
+		<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box">
+				<div class="module-group mt10">
+					<span class="group-title" style="width: 110px;">文件夹名称:</span>
+					<input name="name" type="text" placeholder="请输入文件夹名称" class="group-input module-input" data-rule="length[~20]">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="js/controller/ProjectInfomation/DesigningDocuments.js?rev=@@hash" charset="utf-8"></script>

@@ -1,0 +1,247 @@
+<!--
+	作者：侯丽娇
+	时间：2016-12-27
+	描述：行政处罚弹出层
+-->
+
+<!--弹窗类-->
+<div class="layer_notice" id="Penalties-newbuilt">
+	<div class="module-line-box clear p10">
+		<form id="Penalties-form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<!--<input type="hidden" name="id" value=""/>-->
+			<!--标题-->
+			<div class="mt10" style="background-color: #F2F2F2;">
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 90px;">标题:</span>
+						<input type="text" name="title" id="title" class="group-input module-input " data-rule="required;length[~50];">
+					</div>
+					<div class="module-group w50 fr">
+						<span class="group-title tr pr10" style="width: 90px;">来源:</span>
+						<select name="source"  class="module-select group-select">
+							<option value="1" selected="true">投诉举报</option>
+							<option value="2">事故调查</option>
+							<option value="3">监督检查</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!--处罚对象-->
+			<div class="mt10 p10" style="background-color: #F2F2F2;">
+				<span class="group-title tr pr10">处罚对象</span>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 90px;">监督局:</span>
+						<select data-toggle="selector" data-url="organization/findOrgByType" data-params="{'type':'JDJG'}" id="supervisionid" name="supervisionid" style="width:150px;" class="module-select group-select">
+						</select>
+					</div>
+
+					<div class="module-group w50 fr">
+						<span class="group-title tr pr10" style="width: 90px;">项目:</span>
+						<select data-toggle="selector" data-url="project/s1006" data-params="{}" id="projectid" name="projectid" style="width:150px;" class="module-select group-select" data-next="#programid,#section,#unitengineering" data-next-field="projectid" data-rule="required">
+						</select>
+					</div>
+				</div>
+				<!--标段 工点-->
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 90px;">标段:</span>
+						<select id="section" data-url="constructionSection/s1006" data-params="{}" name="section" style="width:150px;" class="module-select group-select" data-rule="required">
+						</select>
+					</div>
+
+					<div class="module-group w50 fr">
+						<span class="group-title tr pr10" style="width: 90px;">工点:</span>
+						<select id="unitengineering" data-url="workPoint/selectList" data-params="{}" name="unitengineering" data-rule="required" style="width:150px;" class="module-select group-select">
+						</select>
+					</div>
+				</div>
+
+				<!--单位类型 被处罚单位-->
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 90px;">单位类型:</span>
+						<select data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'ORG','notin':'JDJG'}" name="unittype" id="unittype" style="width:150px;" class="module-select group-select">
+						</select>
+					</div>
+
+					<div class="module-group w50 fr">
+						<span class="group-title tr pr10" style="width: 95px;">被处罚单位:</span>
+						<!--这里的id="groupname"是新增加的-->
+						<select  id="punishedunits" name="punishedunits" style="width:150px;" class="module-select group-select">
+							<option value="">--请选择--</option>
+						</select>
+					</div>
+				</div>
+				<!--处罚日期 处罚文号-->
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 90px;">处罚日期:</span>
+						<input type="text" name="penaltytime" id="penaltytime" data-format="YYYY-MM-DD" data-max='now' class="module-input group-input fl laydate-icon">
+					</div>
+
+					<div class="module-group w50 fr">
+						<span class="group-title tr pr10" style="width: 90px;">处罚文号:</span>
+						<input type="text" name="penaltynumber" id="penaltynumber" class="module-input group-input fl" data-rule="length[~30]">
+					</div>
+				</div>
+				<!--处罚日期 处罚文号-->
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 90px;">问题类型:</span>
+						<select data-toggle="selector" data-url="checkItems/s1008" data-params='{}' name="type" id="type" class="module-select group-select">
+						</select>
+					</div>
+
+					<div class="module-group w50 fr">
+						<span class="group-title tr pr10" style="width: 90px;">是否公开:</span>
+						<select name="ispublish" id="ispublish" class="module-select group-select">
+							<option value="0" selected="true">否</option>
+							<option value="1">是</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!--条款依据-->
+			<div class="p10 mt10" style="background-color: #F2F2F2;">
+				<span class="group-title tr pr10">条款依据</span>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w100">
+						<span class="group-title tr pr10" style="width: 90px;">违反条款:</span>
+						<input type="text" name="violationterms" id="violationterms" class="group-input module-input" data-rule="length[~100]">
+					</div>
+				</div>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w100">
+						<span class="group-title tr pr10" style="width: 90px;">违法事实:</span>
+						<input type="text" name="violationfact" id="violationfact" class="group-input module-input" data-rule="length[~100]">
+					</div>
+				</div>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w100">
+						<span class="group-title tr pr10" style="width: 90px;">所属类别:</span>
+						<input type="text" name="violationtype" id="violationtype" class="group-input module-input" data-rule="length[~20]">
+					</div>
+				</div>
+			</div>
+			<!--单位处罚-->
+			<div class="p10 mt10" style="background-color: #F2F2F2;">
+				<span class="group-title tr pr10">单位处罚</span>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w100">
+						<span class="group-title tr pr10" style="width: 90px;">处罚条款:</span>
+						<input type="text" name="penaltyterms" id="penaltyterms" class="group-input module-input" data-rule="length[~100]">
+					</div>
+				</div>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w100">
+						<span class="group-title tr pr10" style="width: 90px;">处罚决定:</span>
+						<input type="text" name="penaltydecision" id="penaltydecision" class="group-input module-input" data-rule="length[~100]">
+					</div>
+				</div>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w100">
+						<span class="group-title tr pr10" style="width: 140px;">处罚金额（元）:</span>
+						<input type="text" name="penaltymoney" id="penaltymoney" class="group-input module-input" data-rule="length[~10]">
+					</div>
+				</div>
+			</div>
+			<!--个人处罚-->
+			<div class="p10 mt10" style="background-color: #F2F2F2;">
+				<span class="group-title tr pr10">个人处罚</span>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #F2F2F2;">
+							<table id="hljpersonal_table">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--处罚相关文书-->
+			<div class="p10 mt10" style="background-color: #F2F2F2;">
+				<span class="group-title tr pr10">处罚相关文书</span>
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 120px;">处罚决定时间:</span>
+						<input type="text" name="penaltydecisiontime" id="penaltydecisiontime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 120px;">处罚决定书:</span>
+						<input data-toggle="uploader-file" type="file" name="penaltydecisionfile" id="penaltydecisionfile" class="layui-upload-file">
+					</div>
+				</div>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 120px;">行政复议时间:</span>
+						<input type="text" id="reconsiderationtime" name="reconsiderationtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 120px;">复议裁定书:</span>
+						<input data-toggle="uploader-file" type="file" id="reconsiderationfile" name="reconsiderationfile" class="layui-upload-file">
+					</div>
+				</div>
+
+				<div class="module-line-box clear p10">
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 120px;">行政诉讼时间:</span>
+						<input type="text" id="litigationtime" name="litigationtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title tr pr10" style="width: 120px;">诉讼裁定书:</span>
+						<input id="litigationfile" data-toggle="uploader-file" type="file" name="litigationfile" class="layui-upload-file">
+					</div>
+				</div>
+				<div  style="height:300px; width: 100%;">
+					
+				</div>
+			</div>
+		</form>
+	</div>
+	<div id="hljpersonal_table_layer" style="display: none;">
+		<form id="hljpersonal_from2" data-validator-option="{msgClass: 'n-bottom myClass'}" class="p10 pr15">
+			<div class="module-line-box">
+				<div class="module-group w100">
+					<span class="group-title tr " style="width: 130px;">职务：</span>
+					<!--<input type="text" id="hljpersonal_from_post" name="post" id="post" class="group-input module-input" >-->
+					<select data-toggle="selector" data-url="dictionary/s1002 " data-params="{type:'PJOB'}" name="post" id="post" style="width:150px;" class="module-select group-select" data-rule="length[~20]">
+					</select>
+					<input type="text" id="postname" name="postname" class="group-input module-input" style="display: none;">
+				</div>
+			</div>
+			
+			<div class="module-line-box">
+				<div class="module-group w100">
+					<span class="group-title tr " style="width: 130px;">人员：</span>
+					<select  name="personid" id="personid" style="width:150px;" class="module-select group-select">
+						<option value="">--请选择--</option>
+					</select>
+					<input type="hidden"  name="personname" >
+				</div>
+			</div>
+			
+			<div class="module-line-box">
+				<div class="module-group w100">
+					<span class="group-title tr " style="width: 130px;">处罚决定：</span>
+					<input type="text" id="hljpersonal_from_decision" name="decision" id="decision" class="group-input module-input" data-rule="length[~20]">
+				</div>
+			</div>
+			<div class="module-line-box">
+				<div class="module-group w100">
+					<span class="group-title tr " style="width: 130px;">处罚金额（元）：</span>
+					<input type="text" id="hljpersonal_from_money" name="money" id="money" class="group-input module-input" data-rule="length[~10]">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="/js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

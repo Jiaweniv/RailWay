@@ -1,0 +1,24 @@
+<!--合格弹层-->
+<div class=" p10 pr20">
+	<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div class="module-line-box ">
+			<div class="module-group w100 clear">
+				<span class="group-title tr pr10" style="width: 110px;">单位或分部:</span>
+				<input type="text" name="division" class="module-input group-input " data-rule="length[~50];">
+			</div>
+		</div>
+		<div class="module-line-box ">
+			<div class="module-group  w100 clear">
+				<span class="group-title tr pr10" style="width: 110px;">检查描述:</span>
+				<textarea name="description" data-rule="length[~300]" class="layui-textarea group-textarea"></textarea>
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group  w100 ">
+				<span class="group-title tr pr10" style="width: 110px;">影像资料:</span>
+				<input data-toggle="uploader-image" type="file" name="images" data-limit="1" class="layui-upload-file">
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

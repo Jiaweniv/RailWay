@@ -1,0 +1,198 @@
+<!--
+    	作者：王启靖
+    	时间：2016-12-16
+    	描述：项目编辑页
+  -->
+<style type="text/css">
+	#project-edit {
+		background-color: #FFFFFF;
+		min-height: 100%;
+		height: auto;
+	}
+</style>
+<script id="project_layui" type="text/html">
+	<div class="sidebar-collapse">
+		<div id="example-project">
+			<h2 id="xiangmuname" style="text-align: center;font-size: 22px;" class="mb10">{{ d.p.name }}</h2>
+			<div class="module-line-box">
+				<blockquote class="layui-elem-quote">一、综述</blockquote>
+			</div>
+			<div class="module-line-box">
+				<p class="fonW">㈠建设目的和意义</p>
+			</div>
+			<div class="module-line-box txi2">
+				<p id="xiangmusketch">{{d.lo?d.lo.buildsignificance:''}}</p>
+			</div>
+			<div class="module-line-box">
+				<p class="fonW">㈡建设工期</p>
+				<p class="txi1">可研批复总工期<span id="zonggongqi">{{ d.p.schedule }}</span>年</p>
+				<p class="txi1">工程于<span id="planstarttime">{{ Mydao.formatDate(d.p.planstarttime, "YYYY-MM-DD") }}</span>开工，计划于<span id="planendtime">{{ Mydao.formatDate(d.p.planendtime, "YYYY-MM-DD") }}</span>竣工。</p>
+			</div>
+			<div class="module-line-box">
+				<p class="fonW">㈢工程投资</p>
+				<p class="txi1">总投资：{{ d.p.investment }}万元</p>
+			</div>
+			<div class="module-line-box"></div>
+			<div class="module-line-box">
+				<blockquote class="layui-elem-quote">二、工程概况</blockquote>
+				<p>㈠线路概况</p>
+
+				<div class="module-line-box">
+					<p class="txi1">线路走向:{{ d.lo ?d.lo.linedirection:''}}<span></p>
+					<p class="txi1">正线长度:{{ d.lo ? d.lo.linelength +'km' : ''}}</span></p>
+					<p class="txi1">设计范围:{{ d.lo ?d.lo.designscope:''}}</p>
+				</div>
+				<!--<p class="">㈡主要自然特征和地质概况</p>
+					<div class="module-line-box">
+
+					</div>-->
+				<p class="">㈡主要技术标准</p>
+				<p class="txi1">铁路等级：{{ d.p ?d.p.typename:''}}</p>
+				<!--<p class="txi1">正线数目：</p>-->
+				<p class="txi1">设计速度：<span>{{ d.ts ?d.ts.designspeed:''}}</span>km/h</p>
+				<p class="txi1">最小曲线半径：
+					<sapn>{{ d.ts ?d.ts.mincurveradius:''}}</sapn>m</p>
+				<p class="txi1">限制坡度：<span>{{ d.ts ?d.ts.mincurveradius:''}}</span></p>
+				<p class="txi1">正线线间距：<span>{{ d.ts ?d.ts.linespacing:''}}</span>m</p>
+				<!--<p class="txi1">梁型：</p>-->
+				<p class="txi1">轨道类型：{{ d.lo ?d.lo.trackstructure:''}}</p>
+				<p class="txi1">到发线有效长度：<span>{{ d.ts ?d.ts.tostartlength:''}}</span>m</p>
+				<!--<p class="txi1">牵引种类：</p>
+					<p class="txi1">机车类型：</p>-->
+				<p class="txi1">列车运行控制方式：<span>{{ d.ts ?d.ts.trainoperationcontrol:''}}</span></p>
+				<p class="txi1">调度指挥方式：<span>{{ d.ts ?d.ts.schedulingcommand:''}}</span></p>
+			</div>
+			<div class="module-line-box">
+				<p>㈢主要工程数量</p>
+				<hr class="layui-bg-gray">
+				<p class="txi1">路基工程 </p>
+				<div class="module-line-box clear  content mb5">
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr txi1 ml20">区间-填方（立方米）:{{ d.cq ?d.cq.intervalfill:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr ">区间-挖方（立方米）:{{ d.cq ?d.cq.intervalexcavation:''}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear  content mb5">
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr ml20">站场-填方（立方米）:{{ d.cq ?d.cq.stationfill:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr ">站场-挖方（立方米）:{{ d.cq ?d.cq.stationexcavation:''}}</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">桥梁</p>
+				<div class="module-line-box clear  content">
+					<div class="fl txi1" style="width: 34%; text-align: left;">
+						<span class="ml20">特大桥:{{ d.cq ?d.cq.extralargebridge:''}}（延米）{{ d.cq ?d.cq.extralargebridgeplace:''}}（座）</span>
+					</div>
+					<div class="fl" style="width: 32%; text-align: left;">
+						<span class="fl">大桥:{{ d.cq ?d.cq.largebridge:''}}（延米）{{ d.cq ?d.cq.largebridgeplace:''}}（座）</span>
+					</div>
+					<div class="fl" style="width: 34%; text-align: left">
+						<span class="">中桥:{{ d.cq ?d.cq.mediumbridge:''}}（延米）{{ d.cq ?d.cq.mediumbridgeplace:''}}（座）</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">隧道</p>
+				<div class="fl txi1" style="width: 100%; text-align: left">
+					<span class="ml20">隧道:{{ d.cq ?d.cq.tunnel:''}}（延米）{{ d.cq ?d.cq.tunnelplace:''}}（座）</span>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">轨道</p>
+				<div class="module-line-box clear  content">
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr ml20">正线（公里）:{{ d.cq ?d.cq.positiveline:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr ">站线（公里）:{{ d.cq ?d.cq.stationline:''}}</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">通信信号</p>
+				<div class="module-line-box clear  content">
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ml20">通信干线（公里）:{{ d.cq ?d.cq.communicationtrunk:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">通信站（站）:{{ d.cq ?d.cq.communicationstation:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">自闭线路（公里）:{{ d.cq ?d.cq.selfclosingline:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">电气集中（站）:{{ d.cq ?d.cq.electricalconcentration:''}}</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">电力及牵引供电</p>
+				<div class="module-line-box clear  content">
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ml20">电力线路（公里）:{{ d.cq ?d.cq.powerline:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">接触网（条公里）:{{ d.cq ?d.cq.catenary:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">牵引变电所（个）:{{ d.cq ?d.cq.tractionsubstation:''}}</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">大临工程</p>
+				<div class="module-line-box clear  content">
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ml20">制梁场（座）:{{ d.cq ?d.cq.makebeamfield:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">轨道板场（座）:{{ d.cq ?d.cq.trackplatefield:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">钢梁拼装场（个）:{{ d.cq ?d.cq.steelbeamassemblyfield:''}}</span>
+					</div>
+					<div class="fl txi1" style="width: 25%;">
+						<span class="group-title tr ">铺轨基地（个）:{{ d.cq ?d.cq.layingbase:''}}</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+				<p class="txi1">站房</p>
+				<div class="module-line-box clear  content">
+					<div class="fl txi1" style="width: 50%;">
+						<span class="group-title tr ml20">站房（平米/座）:{{ d.cq ?d.cq.station:''}}</span>
+					</div>
+				</div>
+				<hr class="layui-bg-gray">
+			</div>
+			<div class="module-line-box"></div>
+			<div class="module-line-box">
+				<p>㈣工程重难点</p>
+				<p class="txi1">{{ d.lo ?d.lo.heavydifficult:''}}</p>
+			</div>
+			<blockquote class="layui-elem-quote">三、建设概况</blockquote>
+			<div class="module-line-box ">
+				<p>㈠各参建单位情况</p>
+				<p class="txi1">1.建设单位：<span>
+						{{#  layui.each(d.ppul, function(index, item){}}						 
+						    <span>{{ item.name }}</span> {{# }); }}
+					</span>
+				</p>
+				<p class="txi1">2.施工标段：<span></span></p>
+				<div class="panel-body" style="background: #FFFFFF;">
+					<table id="sgbd" style="text-align: center;">
+
+					</table>
+				</div>
+				<p class="txi1">3.监理标段：</p>
+				<div class="panel-body" style="background: #FFFFFF;">
+					<table id="jlbd">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<div class="layer_notice p20 pt10 pr30" id="project_show_layui">
+
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

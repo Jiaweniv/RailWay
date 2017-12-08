@@ -1,0 +1,61 @@
+<div class="wrapper-content-tabs" id="check-items-nav">
+	<div class="panel-body">
+		<div class="panel-body-line">
+			<div class="module-left-box fl" style="width: 30%;">
+				<!--导航-->
+				<div class="leftTreestyle clear fontF" style="margin-top: 24px;">
+					<!--<span class="fl mr10">抽查事项</span>-->
+					<ul class="fl pl5">
+						<li class="active">
+							<a href="javascript:;" class="fontF">抽查事项</a>
+						</li>
+					</ul>
+					<div class="fr pr10 fontF">
+						<permission opt="checkitems_create">
+							<a href="javascript:;" id="checkitems_add" class="ml10 fl fontF" title="添加"><i class="fa fa-plus-square-o"></i></a>
+						</permission>
+						<permission opt="checkitems_edit">
+							<a href="javascript:;" id="checkitems_edit" class="ml10 fl fontF" title="编辑"><i class="fa fa-pencil-square-o"></i></a>
+						</permission>
+						<permission opt="checkitems_del">
+							<a href="javascript:;" id="checkitems_del" class="ml10 fl fontF" title="删除"><i class="fa fa-trash"></i></a>
+						</permission>
+					</div>
+
+				</div>
+				<ul id="checkitems" class="ztree"></ul>
+			</div>
+			<!--<div class="module-right-box fl" style="width: 70%; margin-top: 36px;">-->
+			<div class="module-right-box fl" style="width: 70%;">
+				<div class=" module-line-box clear ">
+					<span class="fl mr10 "><strong id="right_lab">抽查清单</strong></span>
+					<table id="checkinfo-table"></table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--检查事项编辑-->
+	<div id="checkitems-add" style="display:none ">
+		<form id="items-form-add" data-validator-option="{msgClass: 'n-bottom myClass'} ">
+			<div class="module-line-box">
+				<div class="module-group mt10">
+					<span class="group-title" id="items-level" style="width: 110px; "></span>
+					<input name="name" type="text" placeholder="请输入名称 " class="group-input module-input " data-rule="required;length[~20] ">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div id="checkitems-edit" style="display:none">
+		<form id="items-form-edit" data-validator-option="{msgClass: 'n-bottom myClass'} ">
+			<div class="module-line-box">
+				<div class="module-group mt10">
+					<span class="group-title" id="items-level" style="width: 110px; "></span>
+					<input id="items-form-edit-name" name="name" type="text" placeholder="请输入名称 " class="group-input module-input" data-rule="required;length[~20]">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script src="js/controller/SupervisedExtractionLibrary/SpotChecks.js?rev=@@hash" type="text/javascript " charset="utf-8 "></script>

@@ -1,0 +1,55 @@
+<!--角色权限-->
+<div class="wrapper-content-tabs" id="rolepermissions">
+	<div id="rolepermissions_hlj">
+		<div class="panel-body">
+			<div class="module-line-box clear pt10">
+				<div class="module-group fl">
+					<span class="group-title" style="width: 90px;">角色名称:</span> 
+					<input name="name" type="text" class="module-input">
+				</div>
+				<div class="btn-group fl ml20">
+					<button id="rolepermissions_search" type="button" class="btn  btn-primary">查询</button>
+				</div>
+				<div class="btn-group fr">
+					<permission opt="role_add"><button id="rolepermissions_create" type="button" class="btn  btn-default">新建</button></permission>
+				</div>
+			</div>
+			<table id="rolepermissions_table">
+			</table>
+		</div>
+	</div>
+
+	<!--角色信息编辑页面-->
+	<div class="layer_notice p10" id="rolepermissions_edit" style="display: none;">
+		<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box clear w50 fl">
+				<div class="module-group">
+					<span class="group-title" style="width: 90px;">角色名称:</span>
+					<input name="name" type="text" class="group-input module-input" placeholder="请输入角色名称" data-rule="required;length[~8];">
+				</div>
+				<!--<div class="module-group mt10">
+					<span class="group-title" style="width: 90px;">角色编号:</span> 
+					<input name="code" type="text" class="group-input module-input" placeholder="请输入角色编号">
+				</div>-->
+				<div class="module-group mt10">
+					<span class="group-title" style="width: 90px;">排序:</span>
+					<input name="sort" type="text" class="group-input module-input" placeholder="请输入排序">
+				</div>
+			</div>
+		</form>
+		<div class="module-line-box clear w50 fr">
+			<div class="module-group ">
+				<span class="group-title" style="width: 90px;">功能权限:</span>
+			</div>
+			<!--功能权限 树-->
+			<div class="ml10 pr15" >
+				<!--<div class="sidebar-collapse">-->
+					<!--导航-->
+					<ul id="rolepermissions_tree" class="ztree"></ul>
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/controller/SystemManagement/RolePermissions.js?rev=@@hash" charset="utf-8"></script>

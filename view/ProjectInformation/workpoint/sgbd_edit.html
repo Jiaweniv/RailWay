@@ -1,0 +1,64 @@
+<!--检查专家编辑页面-->
+<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+	<div class="sidebar-collapse">
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">段落编号:</span>
+				<input name="code" type="text" class="group-input module-input" placeholder="请输入段落编号"
+					data-rule="required;length[~15]">
+			</div>
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">施工段落:</span>
+				<input name="name" type="text" class="group-input module-input" placeholder="请输入施工段落"
+					data-rule="required;length[~15]">
+			</div>
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">起讫里程:</span>
+				<input name="startmileage" type="text" class="group-input module-input" placeholder="请输入起讫里程"
+					data-rule="required;length[~35];digits">
+			</div>
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">中心里程:</span>
+				<input name="centermileage" type="text" class="group-input module-input" placeholder="请输入中心里程"
+					data-rule="length[~35];digits">
+			</div>
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">设计工程:</span>
+				<input name="design" type="text" class="group-input module-input" placeholder="请输入设计工程"
+					data-rule="length[~15]">
+			</div>
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">计量单位:</span>
+				<input name="measurement" type="text" class="group-input module-input" placeholder="请输入计量单位">
+			</div>
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 90px;">结构物:</span>
+				<input name="length" type="text" class="group-input module-input" placeholder="请输入结构物"
+					data-rule="length[~300];">
+			</div>
+			<div class="module-group fl mt10 w30">
+				<span class="group-title" style="width: 90px;">进展状态:</span>
+				<select  name="progresstate" style="width:150px;" class="module-select group-select" data-rule="required;">
+					<option value="0">--请选择--</option>
+					<option value="1">未开工</option>
+					<option value="2">施工中</option>
+					<option value="3">已完成</option>
+					<option value="4">已初验</option>
+					<option value="5">已竣工</option>
+				</select>
+			</div>
+			<div class="module-group fl w30 mt10">
+				<span class="group-title" style="width: 90px;">重点工程:</span>
+				<!--<input type="radio" name="isemphasis" id="" value="1"/><span>是</span>
+				<input type="radio" name="isemphasis" id="" value="2"/><span>否</span>-->
+				<select name="isemphasis" class="module-select group-select"
+					data-rule="required;">
+					<!--<option value="0">--请选择--</option>-->
+					<option value="1">是</option>
+					<option value="2">否</option>
+				</select>
+			</div>
+			
+		</div>
+	</div>
+</form>

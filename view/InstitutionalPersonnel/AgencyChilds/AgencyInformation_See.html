@@ -1,0 +1,141 @@
+<!--
+	作者：李朝华
+	时间：2017-03-01
+	描述：机构信息弹出层
+-->
+<!--弹窗类-->
+
+<script type="text/html" id="AgencyInformation_layui">
+<div class="layer_notice p10 pr15">
+		<div class="sidebar-collapse">
+			<fieldset class="layui-elem-field layui-redefine-fieldset">
+				<legend>基本信息</legend>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 fl" style="width: 90px;">企业名称：</span>
+						<span class="fl">{{d.info.name?d.info.name:''}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10" style="width: 90px;">母公司：</span>
+						<span class="fl">{{d.info.parentcompany?d.info.parentcompany:'无'}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 fl" style="width: 90px;">企业简称：</span>
+						<span class="fl">{{d.info.abbreviation?d.info.abbreviation:''}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10" style="width: 90px;">注册地址：</span>
+						<span class="fl">{{Data.ShengZhiXiaShi(d.info.registerprovince)}}{{Data.Shi(d.info.registercity)}}{{d.info.registeraddress}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w40 fl">
+						<span class="group-title  pr10 fl" style="width: 90px;">企业类型：</span>
+						<span class="fl">{{Data.QYLX(d.info.grouptype)}}</span>
+					</div>
+					<div class="module-group w30 fl">
+						<span class="group-title  pr10" style="width: 90px;">监督标签：</span>
+						<span class="fl" id="orgtype"></span>
+					</div>
+					<div class="module-group w30 fl">
+						<span class="group-title  pr10 " style="width: 90px;">监管辖区：</span>
+						<span class="fl" id="supervisedarea" style="width: 46%;"></span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group fl w50">
+						<span class="group-title  pr10 fl">联系人：</span>
+						<span class="fl">{{d.info.contacts}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10">联系电话：</span>
+						<span class="fl">{{d.info.tel}}</span>
+					</div>
+					
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10">电子邮箱：</span>
+						<span class="fl">{{d.info.email}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10">传真：</span>
+						<span class="fl">{{d.info.fax}}</span>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="layui-elem-field layui-redefine-fieldset">
+				<legend>营业执照</legend>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 fl tr" style="width: 120px;">执照类型：</span>
+						<span class="fl">{{d.traffic?Data.zhizhaoleixing(d.traffic.traffictype):''}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 tr" style="width: 160px;">统一社会信用代码：</span>
+						<span class="fl">{{d.traffic?d.traffic.creditcode:''}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 fl tr" style="width: 120px;">住所：</span>
+						<span class="fl">{{d.traffic?d.traffic.address:''}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 tr" style="width: 160px;">注册资本：</span>
+						<span class="fl">{{d.traffic?(d.traffic.registeredcapital?d.traffic.registeredcapital:''):''}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 fl tr" style="width: 120px;">法定代表人：</span>
+						<span class="fl">{{d.traffic?d.traffic.legalperson:''}}</span>
+					</div>
+					<div class="module-group w50 fl">
+						<span class="group-title  pr10 tr" style="width: 160px;">法人身份证号码：</span>
+						<span class="fl">{{d.traffic?d.traffic.legalidentity:''}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w100 fl">
+						<span class="group-title  pr10 fl tr" style="width: 120px;">经营范围：</span>
+						<span class="fl">{{d.traffic?d.traffic.trafficscope:''}}</span>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w100 fl">
+						<span class="group-title  pr10 fl tr" style="width: 160px;">法人身份证扫描件：</span>
+						<div class="fl" id="identityfront"></div>
+					</div>
+				</div>
+				<div class="module-line-box clear pl15 pr15">
+					<div class="module-group w100 fl">
+						<span class="group-title  pr10 fl tr" style="width: 160px;">营业执照扫描件：</span>
+						<div class="fl" id="licensefront"></div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="layui-elem-field layui-redefine-fieldset">
+				<legend>企业资质</legend>
+				<table id="qiyezizhi">
+					
+				</table>
+			</fieldset>
+			<fieldset class="layui-elem-field layui-redefine-fieldset">
+				<legend id="jdxmtitle">监督项目</legend>
+				<legend id="cjxmtitle" style="display: none;">参建项目</legend>
+				<table id="jianduxiangmu"></table>
+			</fieldset>
+			<fieldset class="layui-elem-field layui-redefine-fieldset" id="Org_penalty_record_boxs" style="display: none;">
+				<legend >被处罚记录</legend>
+				<table id="Org_penalty_record"></table>
+			</fieldset>
+		</div>
+	</div>
+</script>
+
+<div id="AgencyInformation_See">
+
+</div>

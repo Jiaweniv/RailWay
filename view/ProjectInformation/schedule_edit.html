@@ -1,0 +1,70 @@
+<!--
+    	作者：王启靖
+    	时间：2016-12-19
+    	描述：新建施工进度
+   -->
+<div class="p10 pr15" id="schedule_out">
+	<form id="schedule-edit" data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div class="module-line-box clear ">
+			<div class="module-group fl w50">
+				<span class="group-title" style="width: 90px;">项目:</span>
+				<select data-toggle="selector" id="projectid" data-url="project/s1006" data-params="{}" name="projectid" data-next="#sectionid" data-next-field="projectid"  class="module-select group-select wauto" data-rule="required;">
+				</select>
+			</div>
+
+			<div class="module-group fl w50">
+				<span class="group-title" style="width: 90px;">标段:</span>
+				<select id="sectionid" data-url="constructionSection/s1006" data-params="{}" name="sectionid"  class="module-select group-select wauto" data-rule="required;">
+					<option value="">--请选择--</option>
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear ">
+			<div class="module-group fl w50">
+				<span class="group-title" style="width: 90px;">年度:</span>
+				<select  name="year" id="year" class="module-select wauto" data-rule="required;">
+					${years}
+				</select>
+			</div>
+			<div class="module-group fl w50">
+				<span class="group-title" style="width: 90px;">月份:</span>
+				<select  name="quarter" id="quarter" class="module-select wauto" data-rule="required;">
+					<option value="">--请选择--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="module-line-box clear ">
+			<div class="module-group  w50 fl" style="padding-left: 25px;">
+				<span class="group-title pr10">上月开累投资完成比:</span>
+				<input type="text" readonly="readonly" id="beforeinvestment" class="module-input module-grays" style="width: 120px;"  disabled="disabled">
+				<span>%</span>
+			</div>
+			<div class="module-group  w50 fl" style="padding-left: 25px;">
+				<span class="group-title pr10">本月开累投资完成比:</span>
+				<input type="text" name="investment" class="module-input" style="width: 120px;"  data-rule="required;range[0~100, true]">
+				<span>%</span>
+			</div>
+		</div>
+		<div class="module-line-box clear w100 mt10" >
+			<!--<div class="module-group  fl" style="width:auto;">-->
+				<span class="group-title fl" style="width: 130px;padding-left: 25px;" >标段形象进度:</span>
+			<!--</div>-->
+			<div class="p20 mt10" style="text-align: left;">
+				<textarea name="imageprogress"  class="layui-textarea" data-rule="length[~500]"></textarea>
+			</div>
+		</div>
+	</form>
+</div>       

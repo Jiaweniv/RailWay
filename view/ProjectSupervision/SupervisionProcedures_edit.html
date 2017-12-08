@@ -1,0 +1,76 @@
+<!--监督手续编辑-->
+<form id="SupervisionProcedures_edit" class="p10 pr20" data-validator-option="{msgClass: 'n-bottom myClass'}">
+	<div class="sidebar-collapse" id="workpoint_gdb_show">
+		<div class="module-line-box clear">
+			<div class="module-group w100 ">
+				<span class="group-title tr pr10" style="width: 90px;"><i>*</i>项目:</span>
+				<select data-toggle="selector" data-rule="required;" data-url="project/s1006" data-params='{}' name="projectid" class="module-select group-select">
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group pr publicpr ml20">
+				<span class="ml10 orange">申报</span>
+			</div>
+		</div>
+
+		<div class="module-line-box">
+			<div class="module-group fl  mt5" style="width: auto;">
+				<span class="group-title" style="width: 90px;"><i>*</i>申报时间:</span>
+				<input name="declaretime" type="text" data-rule="required;" data-format="YYYY-MM-DD" class="module-input  fl lh34 laydate-icon">
+			</div>
+			<div class="module-group fl w70 mt5">
+				<span class="group-title" style="width: 90px;">申报书:</span>
+				<input name="declareform" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file">
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group fl w100 mt5">
+				<span class="group-title" style="width: 90px;"><i>*</i>申报备注:</span>
+				<textarea name="declareremark" data-rule="required;length[~500]" name="sectionnames" style="max-height: 290px;" class="layui-textarea group-textarea fl "  />
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group pr publicpr ml20">
+				<span class="ml10 orange">办理</span>
+			</div>
+		</div>
+		<div class="module-line-box">
+			<div class="module-group fl  mt5" style="width: auto;">
+				<span class="group-title" style="width: 90px;"><i>*</i>办理时间:</span>
+				<input name="transacttime" type="text" data-rule="required;" data-format="YYYY-MM-DD" class="module-input  fl lh34 laydate-icon">
+			</div>
+			<div class="module-group fl w70 mt5">
+				<span class="group-title" style="width: 90px;">监督书:</span>
+				<input name="transactform" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file">
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group fl w100 mt5">
+				<span class="group-title" style="width: 90px;"><i>*</i>办理备注:</span>
+				<textarea name="transactremark" data-rule="required;length[~500]" name="sectionnames" style="max-height: 290px;" class="layui-textarea group-textarea fl "  />
+			</div>
+		</div>
+		<div class="module-group pr publicpr ml20">
+			<span class="ml10 orange">首次会议</span>
+		</div>
+		<div class="module-line-box">
+			<div class="module-group fl  mt5" style="width: auto;">
+				<span class="group-title" style="width: 90px;"><i>*</i>会议时间:</span>
+				<input name="firstmeeting" type="text" data-rule="required;" data-format="YYYY-MM-DD" class="module-input  fl lh34 laydate-icon">
+			</div>
+			<div class="module-group fl w70 mt5">
+				<span class="group-title" style="width: 90px;">会议纪要:</span>
+				<input name="meetingsummary" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file">
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group fl w100 mt5">
+				<span class="group-title" style="width: 90px;"><i>*</i>会议备注:</span>
+				<textarea name="meetingremark" data-rule="required;length[~500]" name="sectionnames" style="max-height: 290px;" class="layui-textarea group-textarea fl "  />
+			</div>
+		</div>
+	</div>
+</form>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

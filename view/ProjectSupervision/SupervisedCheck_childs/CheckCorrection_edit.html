@@ -1,0 +1,72 @@
+<!--编辑和新建弹层-->
+<div id="CheckCorrectionEditOut">
+	<form id="checkCorrection_form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div id="checkCorrection-layer" class="p10 pr20">
+			<input type="hidden" name="id" />
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">项目:</span>
+					<select data-toggle="selector" data-url="project/s1006" data-params='{status:1}' id="projectid" name="projectid" data-next="#programid,#sectionid,#workpointid" data-next-field="projectid" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">方案:</span>
+					<select id="programid" data-url="checkProgram/selectList" data-params='{}' name="checkprogramid" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">标段:</span>
+					<select id="sectionid" data-url="constructionSection/s1001" data-params="{}" name="sectionid" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">受检单位:</span>
+					<select id="group" name="group" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">整改标题:</span>
+					<input type="text" name="title" style="width:250px;" class="module-input group-input fl" data-rule="required;length[~50]">
+				</div>
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 110px;">通知单编号:</span>
+					<input type="text" name="number" style="width:250px;" class="module-input group-input fl" data-rule="length[~20]">
+				</div>
+			</div>
+			<fieldset id="">
+				<legend>不合格记录:</legend>
+				<table id="correctionDetail">
+				</table>
+			</fieldset>
+			<fieldset id="">
+				<legend>附件:</legend>
+				<div class="module-line-box clear">
+					<div class="module-group fl w50 mt10">
+						<span class="group-title" style="width: 90px;">整改通知单:</span>
+						<input data-toggle="uploader-file" type="file" name="noticefile" class="layui-upload-file">
+					</div>
+					<div class="module-group fr w50">
+						<span class="group-title tr pr20" style="width: 90px;">下发时间:</span>
+						<input type="text" name="noticetime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+					</div>
+				</div>
+				<!--<div class="module-line-box clear">
+				<div class="module-group fl w50 mt10">
+					<span class="group-title" style="width: 90px;">检查报告:</span>
+					<input data-toggle="uploader-file" type="file" name="reportid" class="layui-upload-file">
+				</div>
+				<div class="module-group fr w50">
+					<span class="group-title tr pr20" style="width: 90px;">审核时间:</span>
+					<input type="text" name="reporttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+				</div>
+			</div>	-->
+			</fieldset>
+
+		</div>
+	</form>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,100 @@
+<!--人员信息-->
+<div id="Personnel_lzh">
+
+	<div class="wrapper-content-tabs" id="Personnel">
+		<!--tab-->
+		<div class="panel-body">
+			<div class="tabs-container">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#tab-1person" data-tid='t1' data-url="view/InstitutionalPersonnel/PersonneChilds/gczx.html" aria-expanded="true">工程质量监督中心</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#tab-2person" data-tid='t2' data-url="view/InstitutionalPersonnel/PersonneChilds/xqjdjg.html" aria-expanded="false">辖区监督机构</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#tab-3person" data-tid='t3' data-url="view/InstitutionalPersonnel/PersonneChilds/xqjcjg.html" aria-expanded="false">辖区检测机构</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#tab-4person" data-tid='t4' data-url="view/InstitutionalPersonnel/PersonneChilds/tzjdjg.html" aria-expanded="false">铁总监督机构</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#tab-5person" data-tid='t5' data-url="view/InstitutionalPersonnel/PersonneChilds/jddx.html" aria-expanded="false">监督对象</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#tab-6person" data-tid='t6' data-url="view/InstitutionalPersonnel/PersonneChilds/zzqy.html" aria-expanded="false">驻在企业</a>
+					</li>
+				</ul>
+				<!--tab页 内容区-->
+				<div class="tab-content">
+					<div id="tab-1person" class="tab-pane active">
+
+					</div>
+					<div id="tab-2person" class="tab-pane">
+
+					</div>
+					<div id="tab-3person" class="tab-pane">
+
+					</div>
+					<div id="tab-4person" class="tab-pane">
+
+					</div>
+					<div id="tab-5person" class="tab-pane">
+
+					</div>
+					<div id="tab-6person" class="tab-pane">
+
+					</div>
+				</div>
+				<!--tab页 内容区 end-->
+			</div>
+			<!--tabend-->
+		</div>
+		<!--生成用户 弹层-->
+		<div id="GenerateUserLayer" style="display: none;">
+			<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+				<div class="module-line-box p10 pr20">
+					<div class="module-group w100">
+						<p class="tr w100">默认密码：111111</p>
+						<span class="group-title tr pr15" style="width: 90px;"><i>*</i>用户名:</span>
+						<input type="text" class="group-input module-input" id="username" name="name" placeholder="请输入用户名" data-rule="required;length[~20];">
+					</div>
+					<div class="module-group w100 mt10">
+						<span class="group-title tr pr15" style="width: 90px;"><i>*</i>角色:</span>
+						<select id="roleSel" class="module-select group-select" data-toggle="selector" data-url="role/findAll" data-params="{}" data-rule="required;">
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!--新建/编辑 人员 弹层-->
+		<div id="PersonnelLayer" class="p10 pr20" style="display: none;">
+			<form id="lzhPersonnelLayer_form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+				<div class="module-line-box">
+					<div class="module-group w100  pt20">
+						<span class="group-title tr pr15" style="width: 100px;"><i>*</i>部门名称:</span>
+						<input type="text" class="group-input module-input" name="name" data-rule="required;length[~10];" placeholder="请输入部门名称" id="bumename">
+					</div>
+					<div class="module-group w100  pt20" id="menulevel" style="display: none;">
+						<span class="group-title" style="width: 100px;"><i>*</i>菜单级别:</span>
+						<select name="menulevel" class="module-select group-select" data-rule="required;">
+						</select>
+					</div>
+					<div class="module-group w100  pt20" id="bumennameOut">
+						<span class="group-title tr pr15" style="width: 100px;"><i>*</i>部门职能:</span>
+						<textarea name="departmentexplain" id="departmentexplain" class="layui-textarea group-textarea" data-rule="required;"></textarea>
+					</div>
+					<div class="module-group w100  pt20" id="bumenjcOut">
+						<span class="group-title tr pr15" style="width: 100px;"><i>*</i>部门简称:</span>
+						<input type="text" class="group-input module-input" name="abbreviation" data-rule="required;length[~10];" placeholder="请输入部门名称" id="abbreviation">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="/js/controller/InstitutionalPersonnel/PersonneChilds/gongyong.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/controller/InstitutionalPersonnel/PersonnelInformation.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+</div>

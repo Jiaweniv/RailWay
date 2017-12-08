@@ -1,0 +1,75 @@
+<!--菜单管理-->
+<div class="wrapper-content-tabs" id="menumanagement">
+	<div class="panel-body">
+		<div class="module-left-box fl" style="width: 350px;">
+			<!--导航-->
+			<div class=" leftTreestyle clear">
+				<div class="fl">
+					<span class="fl pl5">菜单管理</span>
+				</div>
+				<div class="fr class pr10">
+					<permission opt="menu_add">
+						<a href="javascript:;" id="menumanagement_menu_add" class="ml10 fl fontF" title="添加"><i class="fa fa-plus-square-o"></i></a>
+					</permission>
+					<permission opt="menu_edit">
+						<a href="javascript:;" id="menumanagement_menu_edit" class="ml10 fl fontF" title="编辑"><i class="fa fa-pencil-square-o"></i></a>
+					</permission>
+					<permission opt="menu_del">
+						<a href="javascript:;" id="menumanagement_menu_del" class="ml10 fl fontF" title="删除"><i class="fa fa-trash"></i></a>
+					</permission>
+
+				</div>
+			</div>
+			<ul id="menumanagement_tree" class="ztree"></ul>
+		</div>
+		<div class="module-right-box fr " style="margin-bottom: 0px;">
+			<table id="menumanagement_table"></table>
+		</div>
+	</div>
+
+	<!--菜单管理 页面层-->
+	<div id="menumanagement_menu" style="display:none">
+		<div class="module-line-box">
+			<div class="module-group mt10 mb10">
+				<span class="group-title" style="width: 110px;">菜单级别:</span>
+				<select id="menumanagement_parentmenu" name="parentid" style="width:150px;" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">菜单名称:</span> <input name="name" type="text" placeholder="请输入菜单名称" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">菜单编码:</span> <input name="code" type="text" placeholder="请输入菜单编码" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">URL:</span> <input name="url" type="text" placeholder="请输入URL" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">icon:</span> <input name="icon" type="text" placeholder="请输入URL" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">排序:</span> <input name="sort" type="text" placeholder="请输入排序" class="group-input module-input">
+			</div>
+		</div>
+	</div>
+
+	<!--添加功能 页面层-->
+	<div id="menumanagement_add_function" style="display: none;">
+		<div class="module-line-box">
+			<div class="module-group mt10 mb10">
+				<span class="group-title" style="width: 110px;">功能名称:</span> <input name="name" type="text" placeholder="请输入功能名称" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">功能编码:</span> <input name="code" type="text" placeholder="请输入功能编码" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">URL:</span> <input name="url" type="text" placeholder="请输入URL" class="group-input module-input">
+			</div>
+			<div class="module-group mb10">
+				<span class="group-title" style="width: 110px;">排序:</span> <input name="sort" type="text" placeholder="请输入排序" class="group-input module-input">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/controller/SystemManagement/MenuManagement.js?rev=@@hash" charset="utf-8"></script>

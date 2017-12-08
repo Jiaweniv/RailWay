@@ -1,0 +1,65 @@
+<!--添加 / 编辑 资质证书-->
+<div id="certificateLayer" >
+	<div class="p15 pr20">
+		<form id="certificateLayer_form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">证书编号:</span>
+					<input type="text" class="group-input module-input" name="identity" 
+						data-rule="length[~20];">
+				</div>
+			</div>
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">证书名称:</span>
+					<input type="text" class="group-input module-input" name="name" 
+						data-rule="length[~30];">
+				</div>
+			</div>
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">类型:</span>
+					<select id="" name="type" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'CERTIFICATETYPE'}" class="module-select group-select">
+					</select>
+				</div>
+			</div>
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">有效期:</span>
+					<input name="expiry" type="text"  class="module-input  group-input  laydate-icon" data-rule="required;" >
+				</div>
+			</div>
+			
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">证书状态:</span>
+					<select id="" name="status" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'ZSZT'}" class="module-select group-select">
+					</select>
+				</div>
+			</div>
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">注册专业:</span>
+					<input type="text" class="group-input module-input" name="specialty" >
+				</div>
+			</div>
+			<div class="module-line-box mb10">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">注册单位:</span>
+					<input type="text" class="group-input module-input" name="company" 
+						data-rule="length[~30];">
+				</div>
+			</div>
+			
+			<div class="module-line-box">
+				<div class="module-group w100">
+					<span class="group-title tr pr15" style="width: 120px;">主书扫描:</span>
+					<div class="btn-group fl">
+						<input id="" data-toggle="uploader-image" type="file" class="layui-upload-file" name="file">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

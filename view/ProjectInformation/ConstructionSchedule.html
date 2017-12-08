@@ -1,0 +1,53 @@
+<!--设计文件-->
+<div class="wrapper-content-tabs" id="schedule">
+	<div class="panel-body">
+		<div class="module-line-box clear pt10">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">项目:</span>
+				<select data-toggle="selector" id="projectid" data-url="project/s1006" data-params="{}"  name="projectid" data-next="#sectionid" data-next-field="projectid" style="width:150px;" class="module-select group-select">
+				</select>
+			</div>
+
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">标段:</span>
+				<select id="sectionid" data-url="constructionSection/s1006" data-params="{}" name="sectionid" style="width:150px;" class="module-select group-select">
+					<option value="">--请选择--</option>
+				</select>
+			</div>
+		<!--</div>
+		<div class="module-line-box clear pt10">-->
+			<!--<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">年度:</span>
+				<select  style="width:150px;" name="year" id="year" class="module-select">
+					<option value=''>--请选择--</option>
+							${years}
+				</select>
+			</div>
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">月份:</span>
+				<select  style="width:150px;" name="quarter" id="quarter" class="module-select">
+					<option value="">--请选择--</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+			</div>-->
+			<div class="btn-group fl ml20">
+				<button type="button" id="search" class="btn  btn-primary">查询</button>
+			</div>
+			<div class="btn-group fl ml20">
+				<permission opt="constructionschedule_create"></permission><button type="button" id="save" class="btn  btn-default">新建</button></permission>
+			</div>
+		</div>
+		<table id="schedule-table"></table>
+</div>
+<script src="js/controller/ProjectInfomation/ConstructionSchedule.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

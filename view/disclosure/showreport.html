@@ -1,0 +1,81 @@
+<style type="text/css">
+	fieldset {
+		text-align: left;
+	}
+	
+	legend {
+		/*margin-left: 30px;*/
+	}
+</style>
+<div class="sidebar-collapse p10">
+	<div class="text-center m-t-md">
+		<fieldset>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">标题:</span> ${title}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">类型:</span> ${reporttype}
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>举报人</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">举报人姓名:</span> ${reportuser}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">举报时间:</span> $date{reporttime}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">举报人所在单位:</span> ${reportorg}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">来源:</span> ${source}
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>举报对象</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl">
+					<span class="group-title tr pr10" style="width: 120px;">举报对象:</span> ${objecttype}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					${reportobject}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">标段:</span> ${section}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">分类:</span> ${itemname}
+				</div>
+			</div>
+
+			<div class="module-line-box clear  content">
+				<!--<div class="module-group  fl" style="width: auto;">-->
+					<span class="group-title tr pr10 fl" style="width: 120px;">举报内容:</span>
+				<!--</div>-->
+				<div class="tl " >
+					<!--<textarea cols="60" name="heavydifficult">${content}</textarea>-->
+					<script type="text/plain" name='content' id="myEditor" style="width:80%;height:300px; margin-left: 130px;">
+
+					</script>
+				</div>
+			</div>
+			<div class="module-line-box clear" style="width: 100%;">
+				<div class="module-group w100 fl">
+					<span class="group-title tr pr10" style="width: 120px;">附件:</span>
+
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</div>

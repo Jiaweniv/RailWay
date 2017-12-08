@@ -1,0 +1,57 @@
+<!--监督检查-->
+<div class="wrapper-content-tabs" id="SupervisedCheck">
+	<div class="panel-body">
+		<div class="module-line-box clear pt10 search" id="searchor">
+			<div class="module-group fl projetc_li_val_xuanzhong">
+				<span class="group-title" style="width: 90px;">项目名称:</span>
+				<select data-toggle="selector" data-url="project/s1006" data-next="#programid,#sectionid,#workpointid" data-next-field="projectid" data-params='{}' data-nodefault="true" id="projectid"  class="module-select">
+				</select>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="1" checked="checked">监督中项目</label>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="2">历史项目</label>
+			</div>
+		</div>
+		<!--tab-->
+		<div class="tabs-container">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a data-toggle="tab" href="#tab-SupervisedCheck1" data-url="view/ProjectSupervision/SupervisedCheck_childs/CheckProgram.html" aria-expanded="true">检查方案</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-SupervisedCheck2" data-url="view/ProjectSupervision/SupervisedCheck_childs/CheckRecords.html" aria-expanded="false">检查记录</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-SupervisedCheck3" data-url="view/ProjectSupervision/SupervisedCheck_childs/Correspondence.html" aria-expanded="false">往来函件</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-SupervisedCheck4" data-url="view/ProjectSupervision/SupervisedCheck_childs/CheckCorrection.html" aria-expanded="false">整改通知</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-SupervisedCheck5" data-url="view/ProjectSupervision/SupervisedCheck_childs/CheckReply.html" aria-expanded="false">整改回复</a>
+				</li>
+			</ul>
+			<!--tab页 内容区-->
+			<div class="tab-content">
+				<div id="tab-SupervisedCheck1" class="tab-pane active">
+					
+				</div>
+				<div id="tab-SupervisedCheck2" class="tab-pane ">
+					
+				</div>
+				<div id="tab-SupervisedCheck3" class="tab-pane">
+				</div>
+				<div id="tab-SupervisedCheck4" class="tab-pane">
+				</div>
+				<div id="tab-SupervisedCheck5" class="tab-pane">
+				</div>
+				<!--tab页 内容区 end-->
+			</div>
+			<!--tabend-->
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/ProjectSupervision/SupervisedCheck/SupervisedCheck.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

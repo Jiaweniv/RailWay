@@ -1,0 +1,90 @@
+<div class="sidebar-collapse" id="checkinfo_out">
+	<div class="text-center m-t-md p10 pr15">
+		<!--<div class="module-line-box clear">
+			<span class="fl mr10 ml20" ><strong id="edit_lab">抽查事项</strong></span>
+		</div>-->
+		<form id="checkinfo-form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<!--<div class="module-line-box clear  content">
+				<div class="module-group fl "  style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>抽查类型:</span>
+					<select name="type" data-rule="required;" class="module-select group-select">
+						<option value="0">必查</option>
+						<option value="1">抽查</option>
+					</select>
+				</div>
+			</div>-->
+			<div class="module-line-box clear  content">
+				<div class="module-group  " style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>抽查对象:</span>
+					<input type="text" name="checkobject" class="group-input module-input" data-rule="required;">
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  " style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">对象说明:</span>
+					<input type="text" name="objectremark" class="group-input module-input" data-rule="length[~100]">
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group fl " style="width: auto;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>抽查依据:</span>
+
+				</div>
+				<div class="fl tl">
+					<!--<textarea cols="65" name="foundation" data-rule="required;length[~500]"></textarea>-->
+					<script type="text/plain" id="myEditor1" style="margin-bottom:10px; width:100%;height:200px;" name='foundation'>
+					</script>
+
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group fl " style="width: auto;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>法文依据:</span>
+
+				</div>
+				<div class="fl tl">
+					<!--<textarea cols="65" name="foundation" data-rule="required;length[~500]"></textarea>-->
+					<script type="text/plain" id="myEditor5" style="margin-bottom:10px; width:100%;height:200px;" name='lawfoundation'>
+					</script>
+
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group fl " style="width: auto;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>法条依据:</span>
+
+				</div>
+				<div class="fl tl">
+					<!--<textarea cols="65" name="foundation" data-rule="required;length[~500]"></textarea>-->
+					<script type="text/plain" id="myEditor4" style="margin-bottom:10px; width:100%;height:200px;" name='originallaw'>
+					</script>
+
+				</div>
+			</div>
+			<div class="module-line-box clear w100 content">
+				<div class="module-group fl " style="width: auto;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>抽查内容:</span>
+
+				</div>
+				<div class="fl tl ">
+					<!--<textarea cols="65" name="content" data-rule="required;length[~500]"></textarea>-->
+					<script type="text/plain" id="myEditor2" style="margin-bottom:10px; width:100%;height:200px;" name='content'>
+					</script>
+
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group fl " style="width: auto;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>抽查方式:</span>
+
+				</div>
+				<div class="fl tl">
+					<!--<textarea cols="65" name="mode" data-rule="required;length[~200]"></textarea>-->
+					<script type="text/plain" id="myEditor3" style="margin-bottom:10px; width:100%;height:200px;" name='mode'>
+					</script>
+
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

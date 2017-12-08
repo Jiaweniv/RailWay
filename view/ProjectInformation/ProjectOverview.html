@@ -1,0 +1,73 @@
+<!--工程概况-->
+<style type="text/css">
+	legend {
+		text-align: left;
+	}
+</style>
+<div class="wrapper-content-tabs" id="project-overview">
+	<div class="panel-body">
+		<!--tab-->
+		<div class="module-line-box clear pt10 search" id="searchor">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">项目名称:</span>
+				<select data-toggle="selector" data-url="project/s1006" data-params='{}' data-nodefault="true" id="projectid"  class="module-select">
+				</select>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="1" checked="checked">监督中项目</label>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="2">历史项目</label>
+			</div>
+		</div>
+		<div class="tabs-container">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a data-toggle="tab" href="#tab-1pfqk" data-url="view/ProjectInformation/overview/pfqk.html" aria-expanded="true">批复情况</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-2xlgk" data-url="view/ProjectInformation/overview/xlgk.html" aria-expanded="false">线路概况</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-3zyjsbz" data-url="view/ProjectInformation/overview/zyjsbz.html" aria-expanded="false">主要技术标准</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-4zygcnrhsl" data-url="view/ProjectInformation/overview/zygcnrhsl.html" aria-expanded="false">主要工程内容和数量</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-5cjdw" data-url="view/ProjectInformation/overview/cjdw.html" aria-expanded="false">参建单位</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-5zpmt" data-url="view/ProjectInformation/overview/zpmt.html" aria-expanded="false">总平面图</a>
+				</li>
+			</ul>
+			<!--tab页 内容区-->
+			<div class="tab-content">
+				<div id="tab-1pfqk" class="tab-pane active" data-loadurl="replySituation/s1001">
+
+				</div>
+				<div id="tab-2xlgk" class="tab-pane " data-loadurl="lineOverview/s1001">
+
+				</div>
+				<div id="tab-3zyjsbz" class="tab-pane" data-loadurl="technicalStandard/s1001">
+
+				</div>
+				<div id="tab-4zygcnrhsl" class="tab-pane" data-loadurl="contentQuantity/s1001">
+
+				</div>
+				<div id="tab-5cjdw" class="tab-pane" data-loadurl="lineOverview/s1001">
+
+				</div>
+				<div id="tab-5zpmt" class="tab-pane" data-loadurl="project/s1004">
+
+				</div>
+			</div>
+		</div>
+		<!--tab页 内容区 end-->
+		<!--tabend-->
+		<!--
+    	footer button
+    -->
+	</div>
+</div>
+<script src="js/controller/ProjectInfomation/ProjectOverview.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,43 @@
+<!--铺轨进度编辑-->
+<form id="workpoint_pgjd_edit" data-validator-option="{msgClass: 'n-bottom myClass'}">
+	<div class="sidebar-collapse">
+		<div class="p10 pr20">
+			<div class="module-line-box">
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 170px;">区段:</span>
+					<input name="segment" type="text" class="group-input module-input"
+						data-rule="required;length[~50]">
+				</div>
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 170px;">位置或进程起点:</span>
+					<input name="startpoint" type="text" class="group-input module-input"
+						data-rule="required;length[~50]">
+				</div>
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 170px;">位置或进程终点:</span>
+					<input name="endpoint" type="text" class="group-input module-input"
+						data-rule="required;length[~50]">
+				</div>
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 170px;">左右线别最早开始:</span>
+					<input name="earlieststart" type="text" class="group-input module-input"
+						data-rule="length[~50]">
+				</div>
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 170px;">铺轨长度（km）:</span>
+					<input name="tracklength" type="text" class="group-input module-input"
+						data-rule="length[~50]">
+				</div>
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 170px;">铺轨持续时间（d）:</span>
+					<input name="frameduration" type="text" class="group-input module-input"
+						data-rule="length[~10]">
+				</div>
+				<div class="module-group fl w100 mt10">
+					<span class="group-title tr pr10" style="width: 250px;">铺轨时间（年-月-日）最尽结束:</span>
+					<input type="text" name="bestend" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

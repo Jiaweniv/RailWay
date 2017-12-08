@@ -1,0 +1,53 @@
+<!--投诉举报-->
+<div id="ComplaintReport_lzh">
+	<div class="wrapper-content-tabs" id="ComplaintReport">
+		<div class="panel-body">
+			<div class="module-line-box clear pt10">
+
+				<div class="module-group fl">
+					<span class="group-title" style="width: 90px;">标题:</span> 
+					<input type="text" class=" module-input" name="title" placeholder="请输入标题">
+				</div>
+				<div class="module-group fl">
+					<span class="group-title tr pr10" style="width: 90px;">举报时间:</span> 
+					<input type="text" id="starttime" name="starttime" data-format="YYYY-MM-DD" class="module-input lh34 fl laydate-icon">
+				</div>
+				<div class="module-group fl">
+					<span class="group-title tr pr10" style="width: 30px;">至:</span> <input type="text" id="endtime" name="endtime" data-format="YYYY-MM-DD" class="module-input lh34 fl laydate-icon">
+				</div>
+				<div class="btn-group fl ml20">
+					<button type="button" id="JobInquireBtn" class="btn  btn-primary">查询</button>
+				</div>
+				<div class="fr">
+					<div class="btn-group  ml30">
+						<permission opt="complaintreport_create"><button type="button" class="btn  btn-primary" id="JobNewBtn">新建</button></permission>
+					</div>
+				</div>
+			</div>
+			<!--tab-->
+			<div class="tabs-container">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#tab-toushujubao" data-url="view/LawOperations/ComplaintReport_tsjb.html" aria-expanded="true">投诉举报</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#tab-wentifankui" data-url="view/LawOperations/ComplaintReport_wtfk.html" aria-expanded="false">问题反映</a>
+					</li>
+				</ul>
+				<!--tab页 内容区-->
+				<div class="tab-content">
+					<div id="tab-toushujubao" class="tab-pane active">
+
+					</div>
+					<div id="tab-wentifankui" class="tab-pane ">
+
+					</div>
+
+					<!--tab页 内容区 end-->
+				</div>
+				<!--tabend-->
+			</div>
+		</div>
+	</div>
+	<script src="/js/controller/LawOperations/ComplaintReport.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</div>

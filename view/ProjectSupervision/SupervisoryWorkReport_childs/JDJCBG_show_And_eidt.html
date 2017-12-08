@@ -1,0 +1,93 @@
+<!--
+	李朝华 
+	2017-03-19
+	监督检查报告 编辑和方案名称 查看
+	
+	编辑时 编辑 显示
+	查看时 查看 显示  根据data-name  回填
+-->
+<!--查看-->
+<div class="JDJCBG_show" style="display: none;">
+	<div class="module-line-box clear  mt20">
+		<div class="module-group fl w40">
+			<span class="group-title tr pr10" style="width: 90px;">项目:</span>
+			<span data-name="projectname">
+				
+			</span>
+		</div>
+	</div>
+	<div class="module-line-box  clear">
+		<div class="module-group ">
+			<span class="group-title tr pr10 " style="width: 90px;">检查方案:</span>
+			<span data-name="checkprogramname">
+				
+			</span>
+		</div>
+	</div>
+	<div class="module-line-box clear  ">
+		<div class="module-group ">
+			<span class="group-title tr pr10" style="width: 90px;">报告时间:</span>
+			<span data-name="reporttime" class="layUI-data" data-format="YYYY-MM-DD">
+				
+			</span>
+		</div>
+	</div>
+	<div class="module-line-box  clear">
+		<div class="module-group ">
+			<span class="group-title tr pr10 " style="width: 90px;">上报人:</span>
+			<span id="people">
+				
+			</span>
+		</div>
+	</div>
+	<div class="module-line-box">
+		<div class="module-group w80">
+			<span class="group-title tr pr10" style="width: 90px;">附件:</span>
+			<span data-name='appendix' class="layUI-upload">
+				
+			</span>
+		</div>
+	</div>
+</div>
+<!--编辑-->
+<div class="JDJCBG_edit" id="JDJCBG_edit">
+	<!--监督工作报告弹出层-->
+	<div class="module-line-box clear  mt20">
+		<div class="module-group fl w40">
+			<span class="group-title" style="width: 90px;"><i>*</i>项目:</span>
+			<select data-toggle="selector" data-url="project/s1006" data-params='{}' name="projectid" id="projectid" style="width:150px;" class="module-select group-select w70">
+			</select>
+		</div>
+	</div>
+	<!--新增字段检查方案-->
+	<div class="module-line-box  clear" id="JianChaFangAn">
+		<div class="module-group ">
+			<span class="group-title tr  fl" style="width: 90px;"><i>*</i>检查方案:</span>
+			<select class="module-select group-select" name="checkprogramid" data-toggle="selector" data-url="checkProgram/selectList" data-params='{}'></select>
+		</div>
+	</div>
+
+	<div class="module-line-box clear  ">
+		<div class="module-group ">
+			<span class="group-title tr pr10" style="width: 90px;"><i>*</i>报告时间:</span>
+			<input type="text" id="reporttime" name="reporttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+		</div>
+	</div>
+
+	<!--增加字段：上报人-->
+	<div class="module-line-box  clear" id="ShangBaoRen" >
+		<div class="module-group ">
+			<span class="group-title tr pr10 fl" style="width: 90px;"><i>*</i>上报人:</span>
+			<input type="text" class="module-input group-input bgE" name="" disabled="disabled" readonly="readonly">
+		</div>
+	</div>
+
+	<div class="module-line-box" style="margin-bottom: 0px;">
+		<div class="module-group w80">
+			<span class="group-title tr pr10" style="width: 90px;">附件:</span>
+			<input data-toggle="uploader-file" type="file" class="layui-upload-file" name="appendix">
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

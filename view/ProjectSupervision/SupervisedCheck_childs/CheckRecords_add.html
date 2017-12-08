@@ -1,0 +1,69 @@
+<!--编辑和新建弹层-->
+<div id="InspectionRecordsAdd_out">
+	<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div id="InspectionRecords-layer" class="p10 pr20">
+			<div class="module-line-box clear">
+				<input id="check_record_id" name="id" type="text" style="display: none;">
+				<div class="module-group fr w50">
+					<span class="group-title tr pr20" style="width: 90px;">方案:</span>
+					<select data-url="checkProgram/selectList" data-params='{}' id="programid" name="checkprogramid" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">项目:</span>
+					<select data-toggle="selector" data-url="project/s1006" data-params='{status:1}' id="projectid" name="projectid" data-next="#programid" data-next-field="projectid" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">标段:</span>
+					<select id="sectionid" data-url="constructionSection/s1006" data-params="{}" name="sectionid" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+				<div class="module-group fr w50">
+					<span class="group-title tr pr20" style="width: 90px;">工点:</span>
+					<select id="workpointid" data-url="workPoint/selectList" data-params="{}" name="workpointid"  style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 90px;">受检单位:</span>
+					<select id="group" name="group" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+				</div>
+				<div class="module-group fr w50">
+					<span class="group-title tr pr20" style="width: 90px;">检查时间:</span>
+					<input id="checktime" type="text" name="checktime" data-format="YYYY-MM-DD" data-rule="required" class="module-input group-input fl laydate-icon">
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">检查人:</span>
+
+					<!--
+                    	作者：wuxupingvip@126.com
+                    	时间：2017-08-08
+                    	描述：将检查人由单人改为多人
+                    -->
+					<!--
+					<select id="checkuser" name="checkuser" data-rule="required" style="width:150px;" class="module-select group-select">
+					</select>
+					-->
+					<textarea id="check_record_check_user_textarea" data-rule="required;" name="usernames" style="max-height: 290px;" class="layui-textarea group-textarea fl " readonly="readonly"></textarea>
+					<input id="check_record_check_user_input" name="checkuser" type="text" style="display: none;">
+				</div>
+				<div class="module-group fl ml20" style="width: auto;">
+					<button id="check_record_check_user_btn" type="button" class="btn  btn-primary " style="display: block;">选择</button>
+				</div>
+			</div>
+			<fieldset id="">
+				<legend class="fl wauto">结果记录</legend><button id="check_record_result_btn" type="button" class="btn  btn-primary fr" disabled="disabled" >新增</button>
+				<table id="checkInfoList">
+				</table>
+			</fieldset>
+		</div>
+	</form>
+</div>

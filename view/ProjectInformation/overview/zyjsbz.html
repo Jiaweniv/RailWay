@@ -1,0 +1,57 @@
+<div class="sidebar-collapse" id="zyjsbz_hlj">
+	<div class="text-center m-t-md">
+		<form id="zyjsbz-form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 180px;"><i>*</i>设计速度(公里/小时):</span>
+					<input type="text" name="designspeed" class="group-input module-input"
+						data-rule="required;length[~10]">
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;"><i>*</i>正线间距(米):</span>
+					<input type="text" name="linespacing" class="group-input module-input"
+						data-rule="required;length[~10]">
+				</div>
+			</div>
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 180px;"><i>*</i>最小曲线半径(米):</span>
+					<input type="text" name="mincurveradius" class="group-input module-input"
+						data-rule="required;length[~10]">
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;"><i>*</i>最大坡度(‰):</span>
+					<input type="text" name="maxslope" class="group-input module-input"
+						data-rule="required;length[~10]">
+				</div>
+			</div>
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 180px;"><i>*</i>到发线长度:</span>
+					<input type="text" name="tostartlength" class="group-input module-input"
+						data-rule="required;length[~10]">
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;"><i>*</i>调度指挥方式:</span>
+					<input type="text" name="schedulingcommand" class="group-input module-input"
+						data-rule="required;length[~20]">
+				</div>
+			</div>
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 180px;"><i>*</i>列车运行控制方式:</span>
+					<input type="text" name="trainoperationcontrol" class="group-input module-input"
+						data-rule="required;length[~20]">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="module-line-box clear pt10 tc" id="footer">
+		<div class="btn-group">
+			<permission opt="technicalstandard_edit"><button type="button" id="zyjsbzsave" class="btn btn-save">保存</button></permission>
+		</div>
+		<div class="btn-group ml20" style="display: none;">
+			<button type="button" id="export" class="btn  btn-default"  style="display: none;">导出</button>
+		</div>
+	</div>
+</div>

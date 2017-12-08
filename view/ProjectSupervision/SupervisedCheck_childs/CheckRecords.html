@@ -1,0 +1,41 @@
+<!--检查记录 TAB-->
+<div id="checkrecordOut">
+	<div class="module-line-box " id="checkrecord_top">
+		<div class="module-line-box mt10 clear">
+			<div class="module-group fl ">
+				<span class="group-title tr pr20" style="width: 90px;">方案:</span>
+				<select data-toggle="selector"  data-url="checkProgram/selectList" data-params='{}' id="programid" name="checkprogramid" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">施工标段:</span>
+				<select id="sectionid" data-toggle="selector" data-url="constructionSection/s1006" data-params="{}" name="sectionid" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group fl">
+				<span class="group-title " style="width: 90px;">工点:</span>
+				<select class="module-select group-select" data-toggle="selector" id="workpointid" data-url="workPoint/selectList" data-params="{}" name="workpointid">
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">检查时间:</span>
+				<input type="text" name="starttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+			</div>
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">———</span>
+				<input type="text" name="endtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+			</div>
+			<div class="btn-group fl ml30">
+				<button type="button" id="searchCheckRecord" class="btn  btn-primary">查询</button>
+			</div>
+			<div class="btn-group fr">
+				<permission opt="checkrecord_create"><button type="button" id="addCheckRecord" class="btn  btn-default">新建</button></permission>
+			</div>
+		</div>
+	</div>
+	<table id="check_record">
+	</table>
+</div>
+<script src="/js/controller/ProjectSupervision/SupervisedCheck/jcjl/checkrecord_list.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

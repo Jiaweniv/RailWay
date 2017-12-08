@@ -1,0 +1,225 @@
+<!--机构信息-->
+<div id="agency_information_lzh">
+	<style type="text/css">
+		#agency_information_lzh #agency_information #searchor {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 15px;
+		}
+		
+		#agency_information_lzh #agency_information #Statistics {
+			background: #FFDF25;
+			box-shadow: 4px 5px 4px rgba(28, 132, 198, 0.23)
+		}
+		
+		#agency_information #Statistics .items {
+			float: left;
+			padding: 10px 0 10px 0px;
+			margin: 0px 10px 0px 10px;
+		}
+		
+		#agency_information_lzh #agency_information #Statistics .items.first {
+			border-right: 1px solid #FFFFFF;
+			padding-right: 20px;
+		}
+	</style>
+	<div class="wrapper-content-tabs" id="agency_information">
+		<!--tab-->
+		<div class="tabs-container">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a data-toggle="tab" href="#tab-jgzl" aria-expanded="true">机构总览</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-gczljdzx" aria-expanded="false">工程质量监督中心</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-xqjdjg" aria-expanded="false">辖区监督机构</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-xqjcjg" aria-expanded="false">辖区检测机构</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-tzjdjg" aria-expanded="false">铁总监督机构</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-jddx" aria-expanded="false">监督对象</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-zzqy" aria-expanded="false">驻在企业</a>
+				</li>
+			</ul>
+			<div class="lzh-btn-right">
+				<div class="btn-group ">
+					<!--<input data-toggle="uploader-file" type="file" lay-title="导入" name="licenseback"  class="layui-upload-file">-->
+
+					<!--<button type="button" data-type="1" class="btn btn-rounded import_btn">导入</button>-->
+				</div>
+				<div class="btn-group">
+					<button type="button" id="new" class="btn  btn-primary">新建</button>
+				</div>
+			</div>
+			<!--tab页 内容区-->
+			<div class="tab-content">
+				<div id="tab-jgzl" class="tab-pane active">
+					<div class="panel-body">
+						<div class="module-line-box clear" id="searchor">
+							<div class="module-group fl">
+								<span class="group-title" style="width: 90px;">企业类型:</span>
+								<select id="JGZLgroup" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'ORG'}" class="module-select ">
+								</select>
+							</div>
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">监督对象:</span>
+								<select id="JGZLsupervise" class="module-select ">
+									<option value="1">参建单位</option>
+									<option value="2">驻在企业</option>
+								</select>
+							</div>
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">企业名称:</span>
+								<input type="text" id="JGZLname" class=" module-input">
+							</div>
+
+							<div class="btn-group fl ml20">
+								<button type="button" id="JGZLSearch" class="btn  btn-primary">查询</button>
+							</div>
+						</div>
+						<div class="module-line-box clear " id="Statistics">
+							<div class="items first">
+								<span>单位总数：<strong id="DW_zongshu">0</strong>个</span>
+							</div>
+							<div class="items">
+								<span>施工单位：<strong id="SG_danwei">0</strong>个</span>
+							</div>
+							<div class="items">
+								<span>监理单位：<strong id="JL_danwei">0</strong>个</span>
+							</div>
+							<div class="items">
+								<span>设计单位：<strong id="SJ_danwei">0</strong>个</span>
+							</div>
+						</div>
+						<table id="JGZL_org"></table>
+					</div>
+				</div>
+				<div id="tab-gczljdzx" class="tab-pane ">
+					<div class="panel-body">
+						<table id="leftorg"></table>
+					</div>
+				</div>
+				<div id="tab-xqjdjg" class="tab-pane ">
+					<div class="panel-body">
+						<div class="module-line-box clear">
+							<div class="module-group fl">
+								<span class="group-title" style="width: 90px;">机构名称:</span>
+								<input type="text" id="orgName2" class=" module-input">
+							</div>
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">注册地:</span>
+								<select name="registerprovince" data-toggle="selector" data-url="dictionary/region" data-next-field="parentid" data-params="{'level':1}" class="module-select ">
+								</select>
+							</div>
+
+							<div class="btn-group fl ml20">
+								<button type="button" id="XQJDSearch" class="btn  btn-primary">查询</button>
+							</div>
+						</div>
+						<table id="XQJDTable"></table>
+					</div>
+				</div>
+				<div id="tab-xqjcjg" class="tab-pane ">
+					<div class="panel-body">
+						<div class="module-line-box clear">
+							<div class="module-group fl">
+								<span class="group-title" style="width: 90px;">机构名称:</span>
+								<input type="text" id="orgName2" class=" module-input">
+							</div>
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">注册地:</span>
+								<select name="registerprovince" data-toggle="selector" data-url="dictionary/region" data-next-field="parentid" data-params="{'level':1}" class="module-select ">
+								</select>
+							</div>
+
+							<div class="btn-group fl ml20">
+								<button type="button" id="XQJCSearch" class="btn  btn-primary">查询</button>
+							</div>
+						</div>
+						<table id="XQJCTable"></table>
+					</div>
+				</div>
+				<div id="tab-tzjdjg" class="tab-pane ">
+					<div class="panel-body">
+						<div class="module-line-box clear">
+							<div class="module-group fl">
+								<span class="group-title" style="width: 90px;">机构名称:</span>
+								<input type="text" id="orgName2" class=" module-input">
+							</div>
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">注册地:</span>
+								<select name="registerprovince" data-toggle="selector" data-url="dictionary/region" data-next-field="parentid" data-params="{'level':1}" class="module-select ">
+								</select>
+							</div>
+
+							<div class="btn-group fl ml20">
+								<button type="button" id="TZJDSearch" class="btn  btn-primary">查询</button>
+							</div>
+						</div>
+						<table id="TZJDTable"></table>
+					</div>
+				</div>
+				<div id="tab-jddx" class="tab-pane ">
+					<div class="panel-body">
+						<div class="module-line-box clear">
+							<div class="module-group fl">
+								<span class="group-title" style="width: 90px;">机构名称:</span>
+								<input type="text" id="orgName2" class=" module-input">
+							</div>
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">注册地:</span>
+								<select name="registerprovince" data-toggle="selector" data-url="dictionary/region" data-next-field="parentid" data-params="{'level':1}" class="module-select ">
+								</select>
+							</div>
+
+							<div class="btn-group fl ml20">
+								<button type="button" id="JDDXSearch" class="btn  btn-primary">查询</button>
+							</div>
+						</div>
+						<table id="JDDXTable"></table>
+					</div>
+				</div>
+				<div id="tab-zzqy" class="tab-pane">
+					<div class="panel-body">
+						<div class="module-line-box clear">
+							<div class="module-group fl">
+								<span class="group-title" style="width: 90px;">机构名称:</span>
+								<input type="text" id="orgName3" class=" module-input">
+							</div>
+							<!--<div class="module-group fl">
+							<span class="group-title" style="width: 90px;">机构类型:</span>
+							<select id="orgType3" data-toggle="selector" data-url="dictionary/s1001" data-params="{}" class="module-select ">
+							</select>
+						</div>-->
+							<div class="module-group  fl">
+								<span class="group-title tr pr10" style="width: 90px;">注册地:</span>
+								<select name="registerprovince" data-toggle="selector" data-url="dictionary/region" data-next-field="parentid" data-params="{'level':1}" class="module-select ">
+								</select>
+							</div>
+							<!--<div class="module-group  fl " style="width: 180px;">
+							<select name="registercity" id="city5" data-url="dictionary/region" data-params="{'level':2}" class="module-select ">
+							</select>
+						</div>-->
+							<div class="btn-group fl ml20">
+								<button type="button" id="ZZQYSearch" class="btn  btn-primary">查询</button>
+							</div>
+						</div>
+						<table id="ZZQYTable"></table>
+					</div>
+				</div>
+			</div>
+			<!--tab页 内容区 end-->
+		</div>
+		<!--tabend-->
+	</div>
+	<script src="/js/controller/InstitutionalPersonnel/PersonneChilds/gongyong.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="js/controller/InstitutionalPersonnel/AgencyInformation.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</div>

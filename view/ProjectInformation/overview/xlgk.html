@@ -1,0 +1,196 @@
+<div class="sidebar-collapse" id="xlgk_hlj">
+	<div class="text-center m-t-md">
+		<form id="xlgk-form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 45%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>线路走向:</span>
+					<input type="text" name="linedirection" class="group-input module-input" data-rule="required;length[~50]">
+				</div>
+				<div class="module-group  fl" style="width: 55%;">
+					<span class="group-title tr pr10" style="width: 150px;"><i>*</i>正线长度（公里）:</span>
+					<input type="text" name="linelength" class="group-input module-input" data-rule="required;length[~10]">
+				</div>
+			</div>
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 45%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>桥隧数量:</span>
+					<input type="text" name="bridgenum" class="group-input module-input" data-rule="required;length[~10]" id="bridgenum"  readonly="readonly"  disabled="disabled" style="background-color: #D7D7D7;">
+				</div>
+				<div class="module-group  fl" style="width: 55%;">
+					<span class="group-title tr pr10" style="width: 150px;"><i>*</i>桥隧比例:</span>
+					<input type="text" name="bridgeproportion" class="group-input module-input" data-rule="required;length[~10]" id="bridgeproportion" readonly="readonly"  disabled="disabled" style="background-color: #D7D7D7;">
+				</div>
+			</div>
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 45%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>轨道结构形式:</span>
+					<input type="text" name="trackstructure" class="group-input module-input" data-rule="required;length[~10]">
+				</div>
+				<div class="module-group  fl" style="width: 55%;">
+					<span class="group-title tr pr10" style="width: 150px;"><i>*</i>车站设置:</span>
+					<input type="text" name="stationsettings" class="group-input module-input" data-rule="required;length[~10]">
+				</div>
+			</div>
+			<div class="module-line-box clear p10 content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>修建意义:</span>
+					<div class="fl">
+						<textarea cols="100" readonly="readonly" name="buildsignificance" data-rule="required;length[~1000]" style="width: 953px;margin-bottom: 22px;"></textarea>
+						<div class="buildsignificance_lizhahua" style="display: none;">
+						
+						</div>
+					</div>
+					<div class="btn-group fl ml10">
+						<button type="button" class="btn  btn-primary btn-fuwenben1">编辑</button>
+					</div>
+				</div>
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>设计范围:</span>
+					<div class="fl">
+						<textarea cols="100" readonly="readonly"  name="designscope" data-rule="required;length[~1000]" style="width: 953px;margin-bottom: 22px;"></textarea>
+						<div class="designscope_lizhahua" style="display: none;">
+						
+						</div>
+					</div>
+					
+					<div class="btn-group fl ml10">
+						<button type="button" class="btn  btn-primary btn-fuwenben2">编辑</button>
+					</div>
+				</div>
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;"><i>*</i>重难点工程:</span>
+					<div class="fl">
+						<textarea cols="100" readonly="readonly" name="heavydifficult" data-rule="required;length[~1000]" style="width: 953px;margin-bottom: 22px;"></textarea>
+						<div class="heavydifficult_lizhahua" style="display: none;">
+						
+						</div>
+					</div>
+					<div class="btn-group fl ml10">
+						<button type="button" class="btn  btn-primary btn-fuwenben3">编辑</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="fuwenben_boxs1 p10" style="display: none;">
+			<script type="text/plain" id="myEditor1" style="width:100%;height:320px;">
+
+			</script>
+		</div>
+		<div class="fuwenben_boxs2 p10" style="display: none;">
+			<script type="text/plain" id="myEditor2" style="width:100%;height:320px;">
+
+			</script>
+		</div>
+		<div class="fuwenben_boxs3 p10" style="display: none;">
+			<script type="text/plain" id="myEditor3" style="width:100%;height:320px;">
+
+			</script>
+		</div>
+	</div>
+	<div class="module-line-box clear pt10 tc" id="footer">
+		<div class="btn-group">
+			<permission opt="lineoverview_edit"><button type="button" id="xlgksave" class="btn btn-save">保存</button></permission>
+		</div>
+		<div class="btn-group ml20" style="display: none;">
+			<button type="button" id="export" class="btn  btn-default" style="display: none;">导出</button>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$('.btn-fuwenben1').click(function() {
+			var group_title = $(this).parent().parent().find('span').text().replace(/[\ |\*|\:|\?]/g, ""),
+				_thisparent = $(this).parent().prev().find('textarea'),
+				_content = _thisparent.val(),
+				_thisparent_next = _thisparent.next();
+			layer.open({
+				type: 1,
+				content: $('.fuwenben_boxs1'),
+				title: "编辑" + group_title,
+				area: ["70%", "90%"],
+				moveOut: true,
+				btnAlign: 'c', //按钮居中
+				btn: ['保存'],
+				success: function(layero, index) {
+					var editer = UE.getEditor('myEditor1');
+					editer.ready(function() {
+						 UE.getEditor('myEditor1').setContent(_thisparent_next.html());
+					});
+				},
+				cancel: function(layero, index) {
+					UE.getEditor('myEditor1').destroy();
+				},
+				yes: function(index, layero) {
+					_thisparent.val(UE.getEditor('myEditor1').getContentTxt());
+					_thisparent_next.html(UE.getEditor('myEditor1').getContent());
+					UE.getEditor('myEditor1').destroy();
+					layer.close(index);
+				}
+
+			});
+		});
+		$('.btn-fuwenben2').click(function() {
+			var group_title = $(this).parent().parent().find('span').text().replace(/[\ |\*|\:|\?]/g, ""),
+				_thisparent = $(this).parent().prev().find('textarea'),
+				_content = $(this).parent().prev().find('textarea').val(),
+				_thisparent_next = _thisparent.next();
+			layer.open({
+				type: 1,
+				content: $('.fuwenben_boxs2'),
+				title: "编辑" + group_title,
+				area: ["70%", "90%"],
+				moveOut: true,
+				btnAlign: 'c', //按钮居中
+				btn: ['保存'],
+				success: function(layero, index) {
+					var editer = UE.getEditor('myEditor2');
+					editer.ready(function() {
+						 UE.getEditor('myEditor2').setContent(_thisparent_next.html());
+					});
+				},
+				cancel: function(layero, index) {
+					UE.getEditor('myEditor2').destroy();
+				},
+				yes: function(index, layero) {
+					_thisparent.val(UE.getEditor('myEditor2').getContentTxt());
+					_thisparent_next.html(UE.getEditor('myEditor2').getContent());
+					UE.getEditor('myEditor2').destroy();
+					layer.close(index);
+				}
+
+			});
+		});
+		$('.btn-fuwenben3').click(function() {
+			var group_title = $(this).parent().parent().find('span').text().replace(/[\ |\*|\:|\?]/g, ""),
+				_thisparent = $(this).parent().prev().find('textarea'),
+				_content = $(this).parent().prev().find('textarea').val(),
+				_thisparent_next = _thisparent.next();
+			layer.open({
+				type: 1,
+				content: $('.fuwenben_boxs3'),
+				title: "编辑" + group_title,
+				area: ["70%", "90%"],
+				moveOut: true,
+				btnAlign: 'c', //按钮居中
+				btn: ['保存'],
+				success: function(layero, index) {
+					var editer = UE.getEditor('myEditor3');
+					editer.ready(function() {
+						 UE.getEditor('myEditor3').setContent(_thisparent_next.html());
+						
+					});
+				},
+				cancel: function(layero, index) {
+					UE.getEditor('myEditor3').destroy();
+				},
+				yes: function(index, layero) {
+					_thisparent.val(UE.getEditor('myEditor3').getContentTxt());
+					_thisparent_next.html(UE.getEditor('myEditor3').getContent());
+					UE.getEditor('myEditor3').destroy();
+					layer.close(index);
+				}
+
+			});
+		});
+	})
+</script>

@@ -1,0 +1,62 @@
+<!--检查专家编辑页面-->
+<script id="workpoint_layui" type="text/html">
+<div class="sidebar-collapse" id="workpoint_gdb_show">
+	<!--<div class="p10 pr20">
+		<fieldset>
+			<legend>工点详情</legend>
+		</fieldset>
+		<div class="module-line-box">
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 90px;">工点名称:</span>
+				<input name="name" type="text" class="group-input module-input" disabled="disabled">
+			</div>
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 90px;">工点编号:</span>
+				<input name="code" type="text" class="group-input module-input" disabled="disabled">
+			</div>
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 90px;">专业:</span>
+				<input name="disciplinename" type="text" class="group-input module-input" disabled="disabled">
+			</div>
+		</div>
+		<fieldset>
+			<legend class="mt15">施工段落</legend>
+		</fieldset>
+		<table id="workpoint_gdb_show_table">
+		</table>
+	</div>-->
+	<h1 style="font-size: 18px;color: #3399FF; font-weight: bold;" class="mb20">>>工点详情</h1>
+	<div class="module-line-box clear mt10">
+		<div class="module-group fl w40">
+			<span class="group-title" style="width: 110px;">工点编号:</span>{{ d.code }}
+		</div>
+		<div class="module-group fr w60">
+			<span class="group-title" style="width: 90px;">工点名称:</span>{{ d.name }}
+		</div>
+		<!--<div class="module-group fr w60">
+			<span class="group-title" style="width: 90px;">重点工程:</span>{{ d.isimportant==0?d.isimportant="否":d.isimportant="是"}}
+		</div>-->
+	</div>
+	<div class="module-line-box clear mt10">
+		<div class="module-group fl w40">
+			<span class="group-title" style="width: 110px;">专业:</span>{{ d.disciplinename }}
+		</div>
+		<div class="module-group fl w30">
+			<span class="group-title" style="width: 90px;">进展状态:</span>{{ Data.JZZTList(d.progresstate)}}
+		</div>
+		<div class="module-group fl w30">
+			<span class="group-title" style="width: 90px;">权重:</span>{{ d.weight }}
+		</div>
+		<div class="module-group fl w30">
+			<span class="group-title" style="width: 90px;">风险等级:</span>{{ d.level }}
+		</div>
+	</div>	
+	<h1 style="font-size: 18px;color: #3399FF; font-weight: bold;" class="mb20">>>施工段落</h1>
+	<table id="workpoint_gdb_show_table">
+	</table>
+</div>
+</script>
+
+<div class="layer_notice p20 pr30"  id="workpoint_show_layui">
+	
+</div>

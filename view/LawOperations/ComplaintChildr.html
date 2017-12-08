@@ -1,0 +1,123 @@
+<!--添加 / 编辑 弹层页-->
+<div class="sidebar-collapse" id="ComplaintChildr">
+	<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div class="p10 pr15">
+			<fieldset class="mb15 p10">
+				<div class="module-line-box w100 clear mb15">
+					<div class="module-group fl w100 ">
+						<span class="group-title tr pr10" style="width: 90px;">标题:</span>
+						<input name="title" id="title" type="text" class="group-input module-input" data-rule="required;length[~200]">
+					</div>
+
+				</div>
+				<div class="module-line-box w100 clear mb15">
+					<div class="module-group fl w50 ">
+						<span class="group-title tr pr10" style="width: 90px;">类型:</span>
+						<select name="reporttype" id="reporttype" class="module-select group-select w100" data-rule="required;">
+							<option value="0" selected="true">投诉举报</option>
+							<option value="1">问题反映</option>
+						</select>
+					</div>
+					<div class="module-group fl w50" id="toacceptOut">
+						<span class="group-title tr pr10" style="width: 90px;">处理方式:</span>
+						<select name="toaccept" id="toaccept" class="module-select group-select w100" data-rule="required;">
+							<option value="0" selected="true">已受理</option>
+							<option value="1">未受理</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="mb15">
+				<legend>举报人</legend>
+				<div class="module-line-box w100 clear ">
+					<div class="module-group fl w50 ">
+						<span class="group-title tr pr10" style="width: 140px;">举报人姓名:</span>
+						<input name="reportuser" id="reportuser" type="text" class="group-input module-input" data-rule="length[~10]">
+					</div>
+					<div class="module-group fr w50 ">
+						<span class="group-title tr pr10" style="width: 90px;">举报时间:</span>
+						<input type="text" id="reporttime" name="reporttime" data-max='now' data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+					</div>
+				</div>
+				<div class="module-line-box w100 clear ">
+					<div class="module-group fl w50 ">
+						<span class="group-title tr pr10" style="width:140px;">举报人所在单位:</span>
+						<input name="reportorg" id="reportorg" type="text" class="group-input module-input" data-rule="length[~30]">
+					</div>
+					<div class="module-group fr w50 ">
+						<span class="group-title tr pr10" style="width: 90px;">来源:</span>
+						<select name="source" id="source" class="module-select group-select">
+							<option value="1" selected="true">网络</option>
+							<option value="2">电话</option>
+							<option value="3">信件</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="mb15">
+				<legend>举报对象</legend>
+				<div class="module-line-box w100 clear ">
+					<div class="module-group fl w50 ">
+						<span class="group-title tr pr10" style="width:120px;">举报对象:</span>
+						<select name="objecttype" id="objecttype" class="module-select group-select">
+							<option value="1" selected="true">企业</option>
+							<option value="2">项目</option>
+							<option value="3">人员</option>
+						</select>
+					</div>
+					<div class="module-group fl w40 " id="divGroup">
+						<select data-toggle="selector" data-url="organization/findgroup" data-params='{}' name="divGroupSel" id="divGroupSel" style="width:150px;" class="module-select group-select">
+						</select>
+					</div>
+					<div class="module-group fl w40 " id="divProject" style="display: none;width: 184px;">
+						<select data-toggle="selector" data-url="project/s1006" data-params='{}' name="divProjectSel" id="divProjectSel" style="width:150px;" class="module-select group-select">
+						</select>
+					</div>
+					<div class="module-group fl w40 " id="divPerson" style="display: none;width: 184px;">
+						<select data-toggle="selector" data-url="person/findPerByclientid" data-params='{}' name="divPersonSel" id="divPersonSel" style="width:150px;" class="module-select group-select">
+						</select>
+					</div>
+
+				</div>
+				<div class="module-line-box w100 clear ">
+					<div class="module-group fl w35 ">
+						<span class="group-title tr pr10" style="width:120px;">标段:</span>
+						<input name="section" id="section" type="text" class="group-input module-input" data-rule="length[~30]">
+					</div>
+					<div class="module-group fl w30 ">
+						<span class="group-title tr pr10" style="width: 90px;">分类:</span>
+						<select data-toggle="selector" data-url="checkItems/s1008" data-params='{}' name="type" id="type" class="module-select group-select">
+						</select>
+					</div>
+					<div class="module-group fl w35">
+						<span class="group-title tr pr10" style="width: 90px;">结果:</span>
+						<select name="results" id="results" class="module-select group-select w100" data-rule="required;">
+							<option value="0" selected="true">属实</option>
+							<option value="1">部分属实</option>
+							<option value="2">不属实</option>
+						</select>
+					</div>
+				</div>
+				<div class="module-line-box w100 clear ">
+					<!--<div class="module-group fl " style="width: auto;">-->
+						<span class="group-title tr fl" style="width:120px;">举报内容:</span>
+
+					<!--</div>-->
+					<div class="" style="text-align: left;">
+						<!--<textarea name="content" id="content" data-rule="length[~500]" style="width: 645px;" class="layui-textarea" placeholder="请输入内容"></textarea>-->
+						<script type="text/plain" name='content' id="myEditor" style="width:90%;height:300px; margin-left: 130px;">
+						</script>
+					</div>
+				</div>
+				<div class="module-line-box w100 clear ">
+					<div class="module-group fl w100 ">
+						<span class="group-title tr pr10" style="width:120px;">附件:</span>
+						<input data-toggle="uploader-file" type="file" name="file" class="layui-upload-file" id="file">
+						<script src="js/controller/util/uploader.js" type="text/javascript" charset="utf-8"></script>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+</div>
+<script src="js/controller/LawOperations/ComplaintChildr.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

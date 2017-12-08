@@ -1,0 +1,108 @@
+<style type="text/css">
+	#project-edit {
+		background-color: #FFFFFF;
+		min-height: 100%;
+		height: auto;
+	}
+</style>
+<script id="section_layui" type="text/html">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<!--<div id="example-project"></div>-->
+			<div class="module-line-box clear mt10">
+				<div class="module-group fl w40">
+					<span class="group-title" style="width: 110px;"><i>*</i>标段编号:</span>{{ d.serialnum }}
+				</div>
+				<div class="module-group fr w60">
+					<span class="group-title" style="width: 90px;"><i>*</i>标段名称:</span>{{ d.name }}
+				</div>
+			</div>
+			<div class="module-line-box clear ">
+				<div class="module-group fl w40">
+					<span class="group-title" style="width: 110px;"><i>*</i>起点里程:</span>{{ d.startmileage }}
+				</div>
+				<div class="module-line-box  fr clear w60">
+					<div class="module-group fl w50">
+						<span class="group-title" style="width: 90px;"><i>*</i>终点里程:</span>{{ d.endmileage }}
+					</div>
+					<div class="module-group fr w50">
+						<span class="group-title" style="width: 90px;"><i>*</i>里程长度:</span>{{ d.mileagelength ? d.mileagelength :''}}
+					</div>
+				</div>
+			</div>
+
+			<div class="module-line-box clear ">
+				<div class="module-group fl w40">
+					<span class="group-title" style="width: 110px;"><i>*</i>所在省:</span><span id="province"></span>
+				</div>
+				<div class="module-line-box  fr clear w60">
+					<div class="module-group fl w50">
+						<span class="group-title" style="width: 90px;"><i>*</i>市:</span><span id="city"></span>
+					</div>
+					<div class="module-group fr w50 quanzhong">
+						<span class="group-title" style="width: 90px;"><i>*</i>权重:</span>{{ d.weight }}
+					</div>
+				</div>
+			</div>
+			<!--新增字段：中标单位  data-url要修改-->
+			<div class="module-line-box clear mt10" id="Bid_winning_unit">
+				<div class="module-group fl w70">
+					<span class="group-title" style="width: 110px;" id="zbdw">中标单位:</span>
+					{{d.bidunit? Data.SGBD(d.bidunit):'' }}
+				</div>
+			</div>
+			<div class="module-line-box clear ">
+				<div class="module-group fl" style="width: auto;">
+					<span class="group-title fl" style="width: 110px;">主要工程内容:</span>{{ d.maincontent ? d.maincontent :'' }}
+				</div>
+			</div>
+			<!--新增字段：合同-->
+			<div class="module-line-box clear" id="section_edit_show_hetong">
+				<div class="module-group w70 fl">
+					<span class="group-title" style="width: 110px;">合同:</span>
+					<span class="showa"></span>
+				</div>
+			</div>
+			<!--主要人员   这块要在人员详情中展示   不能删除哦-->
+			<div class="module-line-box clear hlj-xzgclqd" id="Key_personnel_boxs" style="display: none;">
+				<div class="module-group fl" style="width: auto;">
+					<span class="group-title fl" style="width: 110px;">主要人员:</span>
+				</div>
+				<div class="fl tl w80 panel-body">
+					<table id="Key_personnel_table">
+					</table>
+				</div>
+			</div>
+			
+			<div class="module-line-box clear hlj-xzgclqd" style="display: block;" id="section_edit_show_gongchengliangqingdan">
+				<div class="module-group fl" style="width: auto;">
+					<span class="group-title fl" style="width: 110px;">工程量清单:</span>
+				</div>
+				<div class="fl tl w80 panel-body">
+					<table id="designingdocuments_table">
+					</table>
+				</div>
+			</div>
+				
+			<!--工点   这块要在人员详情中展示   不能删除哦-->
+			<div class="module-line-box clear hlj-xzgclqd" id="work_points_boxs" >
+				<div class="module-group fl" style="width: auto;">
+					<span class="group-title fl" style="width: 110px;">工点:</span>
+				</div>
+				<div class="fl tl w80 panel-body">
+					<table id="work_points_table">
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	</div>
+
+</script>
+<div class="layer_notice p20 pr30" id="section_show_layui">
+
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

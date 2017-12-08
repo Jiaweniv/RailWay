@@ -1,0 +1,86 @@
+<!--工点信息-->
+<style type="text/css">
+	legend {
+		text-align: left;
+	}
+</style>
+<div class="wrapper-content-tabs" id="workpointinfo-overview">
+
+	<div class="panel-body">
+		<div class="module-line-box clear pt10">
+			<div class="module-group fl" style="width: auto;">
+				<span class="group-title" style="width: 90px;">项目:</span>
+				<select data-toggle="selector" id="workpoint_select_projectid" data-url="project/s1006" data-params="{}" data-nodefault="true" data-next="#workpoint_select_section" data-next-field="projectid" name="projectid" style="width:auto;" class="module-select">
+				</select>
+			</div>
+
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">标段:</span>
+				<select id="workpoint_select_section" data-url="constructionSection/s1006" data-params="{}" name="sectionid" class="module-select ">
+					<option value="">--请选择--</option>
+				</select>
+			</div>
+		</div>
+		<div class="tabs-container">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a data-toggle="tab" href="#tab-1gdb" data-url="view/ProjectInformation/workpoint/gdb.html" aria-expanded="true">工点表</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-2cz" data-url="view/ProjectInformation/workpoint/cz.html" aria-expanded="false">车站</a>
+					<!--<a data-toggle="tab" href="#tab-2cz" data-url="view/ProjectInformation/workpoint/dlgc.html" aria-expanded="false">大临工程</a>-->
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-3fhgc" data-url="view/ProjectInformation/workpoint/fhgc.html" aria-expanded="false">防护工程</a>
+					<!--<a data-toggle="tab" href="#tab-3fhgc" data-url="view/ProjectInformation/workpoint/gdgc.html" aria-expanded="false">过渡工程</a>-->
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-4dlgc" data-url="view/ProjectInformation/workpoint/dlgc.html" aria-expanded="false">大临工程</a>
+					<!--<a data-toggle="tab" href="#tab-4dlgc" data-url="view/ProjectInformation/workpoint/jljd.html" aria-expanded="false">架梁进度</a>-->
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-5gdgc" data-url="view/ProjectInformation/workpoint/gdgc.html" aria-expanded="false">过渡工程</a>
+					<!--<a data-toggle="tab" href="#tab-5gdgc" data-url="view/ProjectInformation/workpoint/pgjd.html" aria-expanded="false">铺轨进度</a>-->
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-6jljd" data-url="view/ProjectInformation/workpoint/jljd.html" aria-expanded="false">架梁进度</a>
+					<!--<a data-toggle="tab" href="#tab-6jljd" data-url="view/ProjectInformation/workpoint/cz.html" aria-expanded="false">车站</a>-->
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-7pgjd" data-url="view/ProjectInformation/workpoint/pgjd.html" aria-expanded="false">铺轨进度</a>
+					<!--<a data-toggle="tab" href="#tab-7pgjd" data-url="view/ProjectInformation/workpoint/fhgc.html" aria-expanded="false">防护工程</a>-->
+				</li>
+			</ul>
+			<!--tab页 内容区-->
+			<div class="tab-content">
+				<div id="tab-1gdb" class="tab-pane active" data-loadurl="replySituation/s1001">
+					
+				</div>
+				<div id="tab-2cz" class="tab-pane" data-loadurl="lineOverview/s1001">
+
+				</div>
+				<div id="tab-3fhgc" class="tab-pane" data-loadurl="technicalStandard/s1001">
+
+				</div>
+				<div id="tab-4dlgc" class="tab-pane" data-loadurl="contentQuantity/s1001">
+
+				</div>
+				<div id="tab-5gdgc" class="tab-pane" data-loadurl="lineOverview/s1001">
+
+				</div>
+				<div id="tab-6jljd" class="tab-pane" data-loadurl="project/s1004">
+
+				</div>
+				<div id="tab-7pgjd" class="tab-pane" data-loadurl="project/s1004">
+
+				</div>
+			</div>
+		</div>
+		<!--tab页 内容区 end-->
+		<!--tabend-->
+		<!--
+    	footer button
+    -->
+	</div>
+</div>
+<script src="js/controller/ProjectInfomation/WorkPointInformation.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

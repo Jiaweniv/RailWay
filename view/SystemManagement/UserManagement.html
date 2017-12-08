@@ -1,0 +1,54 @@
+<!--用户管理-->
+<div class="wrapper-content-tabs" id="usermanagement">
+	<div class="panel-body">
+		<div class="module-line-box clear pt10">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">姓名:</span> 
+				<input name="name" type="text" class=" module-input">
+			</div>
+			<div class="module-group fl ml10">
+				<span class="group-title" style="width: 90px;">用户名:</span> 
+				<input name="loginname" type="text" class=" module-input">
+			</div>
+			<div class="btn-group fl ml20">
+				<button id="usermanagement_search" type="button" class="btn  btn-primary">查询</button>
+			</div>
+		</div>
+		<table id="usermanagement_table">
+		</table>
+	</div>
+	
+	<div id="usermanagement_repwd" class="p10 pr15" style="display: none;">
+		<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box">
+				<div class="module-group">
+					<span class="group-title" style="width: 110px;">密码:</span> 
+					<input name="password" type="text" placeholder="请输入密码" class="group-input module-input"
+						data-rule="密码:required;">
+				</div>
+			</div>
+			<div class="module-line-box">
+				<div class="module-group">
+					<span class="group-title" style="width: 110px;">确认密码:</span> 
+					<input name="repassword" type="text" placeholder="请确认密码" class="group-input module-input"
+						data-rule="确认密码:required;match(password);">
+				</div>
+			</div>
+		</form>
+	</div>
+	<!--生成用户 弹层-->
+	<div id="GenerateUserLayer" class="p10 pr20" style="display: none;">
+		<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+			<div class="module-line-box">
+				<div class="module-group w100 mt10">
+					<span class="group-title tr pr15" style="width: 90px;"><i>*</i>角色:</span>
+					<select id="roleSel" class="module-select " data-toggle="selector" data-url="role/findAll" data-params="{}"
+						data-rule="required;">
+					</select>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/controller/SystemManagement/UserManagerment.js?rev=@@hash" charset="utf-8"></script>

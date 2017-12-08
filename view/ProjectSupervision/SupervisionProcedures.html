@@ -1,0 +1,27 @@
+<!--监督手续-->
+<div class="wrapper-content-tabs" id="SupervisionProcedures">
+	<div class="panel-body">
+		<!--tab-->
+		<div class="module-line-box clear pt10 search">
+			<div class="module-group fl wauto">
+				<span class="group-title" style="width: 90px;">项目名称:</span>
+				<select data-toggle="selector" id="xiangmumingcheng" data-url="project/s1006" data-params='{}'  name="projectid"  class="module-select wauto">
+				</select>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="1" >监督中项目</label>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="2">历史项目</label>
+			</div>
+			<div class="btn-group fr ml20">
+				<permission opt="supervisionprocedures_create"><button type="button" name="create" class="btn btn-primary btn-default">新建</button></permission>
+			</div>
+		</div>
+		<table id="SupervisionProcedures_table">
+		</table>
+	</div>
+
+</div>
+
+<script src="js/controller/ProjectSupervision/SupervisionProcedures/SupervisionProcedures.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

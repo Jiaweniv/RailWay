@@ -1,0 +1,130 @@
+<!--人员中心详情页-->
+<!--2017/3/6-->
+<script type="text/html" id="PersonSee_lyui">
+	<div class="p10 pr15">
+		<fieldset>
+			<legend>基本信息>></legend>
+			<div class="module-line-box clear ">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">姓名:</span>
+					<span class="fl" id="name">{{d.name}}</span>
+				</div>
+
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">性别:</span>
+					<span class="fl" id="gender">{{d.gender==1?d.gender="男":d.gender="女"}}</span>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">身份证号码:</span>
+					<span class="fl" id="idcard">{{d.idcard}}</span>
+				</div>
+
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">出生日期:</span>
+					<span class="fl" id="birthday">{{Mydao.formatDate(d.birthday,"YYYY-MM-DD")}}</span>
+				</div>
+			</div>
+			
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">办公电话:</span>
+					<span class="fl" id="officephone">{{d.officephone}}</span>
+				</div>
+
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">手机号码:</span>
+					<span class="fl" id="phone">{{d.phone}}</span>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">职称:</span>
+					<span class="fl" id="jobtitle">{{Data.Zhicheng(d.jobtitle)==null?d.jobtitle="无":Data.Zhicheng(d.jobtitle)}}</span>
+				</div>
+
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">职务:</span>
+					<span class="fl" id="post">{{Data.Zhiwu(d.post)==null?d.post="无":Data.Zhiwu(d.post)}}</span>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">学历:</span>
+					<span class="fl" id="education">{{Mydao.getedu(d.education)}}</span>
+				</div>
+
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">所属部门:</span>
+					<span class="fl" id="organizationname"></span>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">人员分类:</span>
+					<span class="fl" id="type">{{Data.XueLi(d.type)==null?d.type="无":Data.XueLi(d.type)}}</span>
+				</div>
+				<div class="module-group fl w50">
+					<!--查看的时候接口中无证件号字段-->
+					<span class="group-title" style="width: 90px;">执法证件号:</span>
+					<span class="fl" id="lawlicense">{{d.lawlicense}}</span>
+				</div>
+
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">检查人员:</span>
+					<!--查看的时候接口中无检查人员字段-->
+					<span class="fl" id="checkflag">{{d.checkflag==0?d.checkflag="否":d.checkflag="是"}}</span>
+				</div>
+			</div>
+
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">执法证扫描:</span>
+					<span class="fl dil" id="lawlicensefile"></span>
+				</div>
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">身份证扫描:</span>
+					<span class="fl dil" id="idcardfile"></span>
+				</div>
+
+				
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">职称资格证:</span>
+					<span class="fl dil" id="jobtitlefile"></span>
+				</div>
+
+				<div class="module-group fl w50">
+					<span class="group-title" style="width: 90px;">任职文件:</span>
+					<span class="fl dil" id="officefile"></span>
+				</div>
+			</div>
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend>资格证书>></legend>
+			<table id="PersonSee_Qualificationtable">
+			</table>
+		</fieldset>
+		 <!--style="display: none;"-->
+		<fieldset id="canyuxiangmu_boxs">
+			<legend>参与项目>></legend>
+			<table id="canyuxiangmu">
+			</table>
+		</fieldset>
+		 <!--style="display: none;"-->
+		<fieldset id="beichufajilu_boxs">
+			<legend>被处罚记录>></legend>
+			<table id="beichufajilu">
+			</table>
+		</fieldset>
+	</div>
+</script>
+<div class="layer_notice p20 pr30" id="PersonSee_show_layui">
+
+</div>

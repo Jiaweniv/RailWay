@@ -1,0 +1,67 @@
+<!--检查专家编辑页面-->
+<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+	<div class="sidebar-collapse">
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w50 mt10">
+				<span class="group-title" style="width: 90px;">姓名:</span>
+				<input name="name" type="text" class="group-input module-input" placeholder="请输入角色名称"
+					data-rule="required;length[~15]">
+			</div>
+			<div class="module-group fl w50 mt10">
+				<span class="group-title" style="width: 90px;">性别:</span>
+				<select name="gender" style="width:150px;" class="module-select group-select">					
+					<option value="1">男</option>
+					<option value="2">女</option>
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w50 mt10">
+				<span class="group-title" style="width: 90px;">单位:</span>
+				<input name="group" type="text" class="group-input module-input" placeholder="请输入单位名称"
+					data-rule="length[~50]">
+			</div>
+			<div class="module-group fl w50 mt10">
+				<span class="group-title" style="width: 90px;">专业:</span>
+				<select data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'DISCIPLINE'}" data-nodefault="true" name="discipline" style="width:150px;" class="module-select group-select"
+					data-rule="required;">
+
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w50 mt10">
+				<span class="group-title" style="width: 90px;">职务:</span>
+				<select name="post" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PJOB','parentid':-1}" data-nodefault="true" style="width:150px;" class="module-select group-select">
+
+				</select>
+			</div>
+			<div class="module-group fl w50 mt10">
+				<span class="group-title" style="width: 90px;">职称:</span>
+				<select data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PJOBTITLE'}" data-nodefault="true" name="jobtitle" style="width:150px;" class="module-select group-select">
+				</select>
+			</div>
+		</div>
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 90px;">身份证号:</span>
+				<input name="idnumber" type="text" class="group-input module-input" placeholder="请输入身份证号"
+					data-rule="length[~18];length[15~];" >
+			</div>
+		</div>
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 120px;">职称扫描件:</span>
+				<input data-toggle="uploader-image" type="file" name="jobtitlefile" class="layui-upload-file">
+			</div>
+		</div>
+		<div class="module-line-box clear w100">
+			<div class="module-group fl w100 mt10">
+				<span class="group-title" style="width: 120px;">身份证扫描件:</span>
+				<input data-toggle="uploader-image" type="file" name="idnumberfile" class="layui-upload-file">
+			</div>
+		</div>
+	</div>
+</form>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,53 @@
+<style>
+	#checkProgram_show table td {
+		border: 1px solid #BEBEC5;
+	}
+</style>
+<!--方案查看-->
+<div id="checkProgram_show" class="p10 pr20">
+	<div class="module-line-box clear">
+		<div class="module-group  w100" style="padding-left: 45%;">
+			<span style="font-weight: bold;font-size: large;" name="programname"></span>
+		</div>
+	</div>
+	<div class="module-line-box clear">
+		<div class="module-group  w100">
+			<span class="group-title tr pr20" style="width: 90px;">检查项目:</span>
+			<span name="projectname"></span>
+		</div>
+	</div>
+	<div class="module-line-box clear">
+		<div class="module-group  w100">
+			<span class="group-title tr pr20" style="width: 90px;">检查时间:</span>
+			<span name="checktime"></span>
+		</div>
+		
+	</div>
+	<div class="module-line-box clear">
+		<div class="module-group  w100">
+			<span class="group-title tr pr20" style="width: 90px;">检查人:</span>
+			<span name="checkusers"></span>
+		</div>
+	</div>
+	<div class="module-line-box clear">
+		<div class="module-group  w100">
+			<span class="group-title tr pr20" style="width: 90px;">监督计划:</span>
+			<span name="superviseplan"></span>
+		</div>
+	</div>
+	<div class="module-line-box clear">
+		<div class="module-group  w100">
+			<span class="group-title tr pr20" style="width: 90px;">附件:</span>
+			<a name="affixname" class="m-module-a" target="_blank"></a>
+		</div>
+	</div>
+	<fieldset>
+			<legend style="margin-bottom:10px">标段及工点</legend>
+			<table id="checkprogram_show_sections"></table>
+	</fieldset>
+	
+	<fieldset>
+			<legend style="margin-bottom:10px">检查事项和检查清单</legend>
+			<table id="checkprogram_show_items"></table>
+	</fieldset>
+</div>

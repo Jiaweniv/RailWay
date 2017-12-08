@@ -1,0 +1,27 @@
+<!--
+	作者：wuxupingvip@126.com
+	时间：2017-03-08
+	描述：检查方案简单修改编辑
+-->
+<div class="p10  pr15 mt15" id="checkprogramEdit">
+	<form id="checkprogram_simple_edit" data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div class="sidebar-collapse">
+			<div class="module-line-box  clear">
+				<div class="module-group w100 ">
+					<span class="group-title" style="width: 90px;"><i>*</i>方案名称:</span>
+					<input id="checkprogram_name" data-rule="required;" name="name" type="text" class="group-input module-input">
+				</div>
+			</div>
+			<div class="module-line-box  clear">
+				<div class="module-group fl" style="width: 220px;">
+					<span class="group-title" style="width: 90px;"><i>*</i>检查时间:</span>
+					<input type="text" id="checkprogram_checkstart" data-rule="required;date;" data-toggle="range-start" name="checkstart" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon ">
+				</div>
+				<div class="module-group fl" style="width: 165px;">
+					<span class="group-title " style="width: 30px; min-width:30px">—</span>
+					<input type="text" id="checkprogram_checkend" data-rule="required;date;match(gt, checkstart, date)" data-msg="结束时间请大于开始时间!" data-toggle="range-end" name="checkend" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon ">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

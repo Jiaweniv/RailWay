@@ -1,0 +1,130 @@
+<!--监督工作报告弹出层-->
+<div id="SupervisedCheck_layer">
+	<div class="module-line-box clear  mt20">
+		<div class="module-group fl">
+			<span class="group-title tr" style="width: 95px;"><i>*</i>项目：</span>
+			<select data-toggle="selector" data-url="project/s1006" data-params='{}' name="projectid" id="projectid" class="module-select group-select w100">
+			</select>
+		</div>
+		<div id="radio_two">
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="1" checked="checked">监督中项目</label>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="2">历史项目</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="module-line-box  clear" id="BaoGaoLeiXing">
+		<div class="module-group fl">
+			<span class="group-title tr " style="width: 95px;"><i>*</i>报告类型：</span>
+			<select class="module-select group-select" name="type" id="type">
+				<option selected="selected" value="1">项目总体报告</option>
+				<option value="2">年度报告</option>
+				<option value="3">季度报告</option>
+			</select>
+		</div>
+		<!--年度报告-->
+		<div class="module-group fl clear" style="display: none;" id="divyear">
+			<span class="group-title tr pr10" style="width:80px;"><i>*</i>年度：</span>
+			<select name="year" class="module-select "id="year">
+				${years}
+			</select>
+		</div>
+		<!--季度报告-->
+		<div class="module-group fl" style="display: none;" id="divquarter">
+			<span class="group-title tr pr10" style="width: 80px;"><i>*</i>季度：</span>
+			<select class="module-select " id="quarter" name="quarter" style="width: 120px;height: 100%;">
+				<option value="1">第一季度</option>
+				<option value="2">第二季度</option>
+				<option value="3">第三季度</option>
+				<option value="4">第四季度</option>
+			</select>
+		</div>
+		<!--月度报告-->
+		<div class="module-group fl" style="display: none;" id="divyue">
+			<span class="group-title tr pr10" style="width: 80px;"><i>*</i>月度：</span>
+			<select class="module-select" id="month" name="month" style="width: 80px;height: 100%;">
+				<option value="1">一月</option>
+				<option value="2">二月</option>
+				<option value="3">三月</option>
+				<option value="4">四月</option>
+				<option value="5">五月</option>
+				<option value="6">六月</option>
+				<option value="7">七月</option>
+				<option value="8">八月</option>
+				<option value="9">九月</option>
+				<option value="10">十月</option>
+				<option value="11">十一月</option>
+				<option value="12">十二月</option>
+			</select>
+		</div>
+	</div>
+	<!--新增字段检查方案-->
+	<div class="module-line-box  clear" id="JianChaFangAn" style="display: none;">
+		<div class="module-group">
+			<span class="group-title tr  fl" style="width: 95px;"><i>*</i>检查方案：</span>
+			<select class="module-select group-select w100" name="checkprogramid" data-toggle="selector" data-url="checkProgram/selectList" data-params='{}'></select>
+		</div>
+	</div>
+
+	<div class="module-line-box clear  ">
+		<div class="module-group ">
+			<span class="group-title tr" style="width: 95px;"><i>*</i>报告时间：</span>
+			<input type="text" id="reporttime" name="reporttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon w100">
+		</div>
+	</div>
+
+	<!--增加字段：上报人-->
+	<div class="module-line-box  clear" id="ShangBaoRen" style="display: none;">
+		<div class="module-group ">
+			<span class="group-title tr pr10 fl" style="width: 95px;"><i>*</i>上报人：</span>
+			<input type="text" class="module-input group-input bgE w100" name="" disabled="disabled" readonly="readonly">
+		</div>
+	</div>
+
+	<div class="module-line-box" style="margin-bottom: 0px;">
+		<div class="module-group w80">
+			<span class="group-title tr pr10" style="width: 95px;">附件：</span>
+			<input data-toggle="uploader-file" type="file" class="layui-upload-file" id="files" name="files">
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+<script>
+	//工点表
+	+ function($) {
+		'use strict';
+		(function() {
+			//初始化下来框
+			$('#SupervisedCheck_layer [name="status"]').on('change', function() {
+				var _projectselect = $('#SupervisedCheck_layer #projectid'),
+					_params = _projectselect.data('params').toObj ? _projectselect.data('params').toObj() : {};
+				_params.status = $(this).val();
+				_projectselect.data('params', JSON.stringify(_params).replace(/"/g, "'")).attr('data-params', JSON.stringify(_params).replace(/"/g, "'"));
+				Mydao.initselect($("#SupervisedCheck_layer"));
+			});
+			var _show = function() {
+				$('#SupervisedCheck_layer #divyear').css('display', 'none');
+				$('#SupervisedCheck_layer #divyue').css('display', 'none');
+				$('#SupervisedCheck_layer #divquarter').css('display', 'none');
+			}
+			$('#SupervisedCheck_layer [name="type"]').on('change', function() {
+				_show();
+				var str = $(this).val();
+				if(str == 2) {
+					$('#SupervisedCheck_layer #divyear').css('display', '');
+				} else if(str == 3) {
+					$('#SupervisedCheck_layer #divyear').css('display', '');
+					$('#SupervisedCheck_layer #divquarter').css('display', '');
+				} else if(str == 4) {
+					$('#SupervisedCheck_layer #divyear').css('display', '');
+					$('#SupervisedCheck_layer #divyue').css('display', '');
+				}
+			});
+		})();
+	}(jQuery);
+</script>

@@ -1,0 +1,138 @@
+<!--
+	监督月报导出
+	2017/3/16	
+-->
+<script id="JDYB_template" type="text/html">
+	<div class="sidebar-collapse">
+		<div class="ibox-content  panel-body">
+			<div id="example-project ">
+				<h1 id="xiangmuname" class="tc"><span>{{d.supervisionmonthly.title ?d.supervisionmonthly.title:''}}</span></h1>
+				<p class="tc">{{Mydao.formatDate(d.supervisionmonthly.createtime ?d.supervisionmonthly.createtime:'无',"YYYY年MM月")}}</p>
+				<div class="module-line-box pl5 pr5">
+					<p class="fonW">一、本月质量安全监管工作</p>
+					<p class="txi2">1、监督手续。</p>
+					<p class="txi2">本月办理<span>{{d.procedurenum ?d.procedurenum:''}}</span>个铁路建设项目工程监督手续,其中国家审批题录建设项目0,总公司管理铁路建设项目0,地方管理铁路建设项目0个,铁路专用线建设项目0个。</p>
+					<table id="jdsx" data-toggle="table">
+					</table>
+				</div>
+				<div class="module-line-box pl6 pr5">
+					<p class="txi2">2、监督检查。</p>
+					<p class="txi2">本月共展开了质量安全监督检查<span>{{d.checknum ?d.checknum:''}}</span>次,检查了<span>{{d.projectnum ?d.projectnum:''}}</span>个项目,检查了工点<span>{{d.workpointnum ?d.workpointnum:''}}</span>个，发现质量安全问题:<span>{{d.problemnum ?d.problemnum:''}}</span>个。共下发《铁路建设工程质量安全整改通知单》<span>{{d.correctionnum ?d.correctionnum:''}}</span>份, 其中按问题分类划分:
+						{{# layui.each(d.itemnum_FL, function(index, item){}} 
+								<span>{{item}}</span>
+						{{# }); }}; 
+		按问题专业划分: {{# layui.each(d.disciplinenum_ZY, function(index, item){}} 
+								<span>{{item}}</span> 
+						{{# }); }};
+					</p>
+					<div class="">
+						<table id="jdjc" data-toggle="table">
+
+						</table>
+					</div>
+				</div>
+				<div class="module-line-box pl5 pr5">
+					<p class="txi2">3、投诉举报。</p>
+					<p class="txi2">本月共受理投诉举报<span>{{d.complaint_lenght ?d.complaint_lenght:''}}</span>件(其中国家铁路局转送处理<span>0</span>件),上月度结转本月0件,已结案0件,尚未结案的投诉举报0件;</p>
+					<div>
+						<table id="tsjb"></table>
+					</div>
+					<p class="txi2">(注：上月结转的投诉举报情况，请在表格中一并列出)</p>
+				</div>
+				<div class="module-line-box pl5 pr5">
+					<p class="txi2">4、质量安全事故。</p>
+					<p class="txi2">本月辖区内发生生产安全事故0 起，死亡0人，伤0人。今年累计发生生产安全事故0 起，死亡0 人，伤0人。质量事故…</p>
+					<div>
+						<table id="zlaqsg" data-toggle="table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>事故名称</th>
+									<th>事故发生时间</th>
+									<th>事故情况</th>
+									<th>死亡人数</th>
+									<th>经济损失</th>
+									<th>事故等级</th>
+									<th>调查单位</th>
+									<th>调查结果</th>
+									<th>责任单位</th>
+									<th>处理情况</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div class="module-line-box pl5 pr5">
+					<p class="txi2">5、质量检测。</p>
+					<p class="txi2">本月组织或委托实体质量检测0次。其中原材料检测0次</p>
+					<div>
+						<table id="zljc" data-toggle="table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>检测项目及工程名称</th>
+									<th>检测内容</th>
+									<th>委托检测机构名称</th>
+									<th>检测结果</th>
+									<th>费用（万元）</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div class="module-line-box pl5 pr5">
+					<p class="txi2">6、验收备案。</p>
+					<p class="txi2">本月接受竣工验收备案项目0个,其中国家审批铁路建设项目0个,总公司管理铁路建设项目0个,地方管理铁路建设项目0个,铁路专用线建设项目0个</p>
+					<div>
+						<table id="ysba" data-toggle="table">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>备案时间</th>
+									<th>项目名称</th>
+									<th>建设单位</th>
+									<th>项目性质<br/>（国、总、地、专）</th>
+									<th>监督机构</th>
+									<th>备注</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div class="module-line-box pl5 pr5">
+					<p class="txi2">7、行政处罚。</p>
+					<p class="txi2">本月实施行政处罚<span>0</span>次,其中,警告<span>0</span>次,罚款<span>0</span>万元,移送相关单位处罚0次</p>
+					<div>
+						<table id="xzcf" data-toggle="table">
+							<th>编号</th>
+							<th>被处罚单位或人员</th>
+							<th>行政处罚是由</th>
+							<th>问题项目</th>
+							<th>问题工点</th>
+							<th>处罚依据</th>
+							<th>处罚种类<br/>（警告、罚款）</th>
+							<th>处罚金额</th>
+							<th>移送单位</th>
+							<th>移送处罚建议</th>
+							<th>约谈次数</th>
+						</table>
+					</div>
+				</div>
+				<div class="module-line-box pl5 pr5">
+					<div class="module-line-box pl5 pr5">
+						<p class="fonW">二、本月质量安全状况分析</p>
+						<p class="txi2">通过综合应用多种分析手段,从多种角度进行分析,如可以按照参建各方分别分析,或按照安全和质量两大类分析,也可以按照专业类别进行分等</p>
+					</div>
+					<div class="module-line-box pl5 pr5">
+						<p class="fonW">三、报告时间范围</p>
+						<p class="txi2">报告所涉及的内容统计范围<span>{{Mydao.formatDate(d.supervisionmonthly.starttime, 'YYYY年MM月DD日')}}</span>——<span>{{Mydao.formatDate(d.supervisionmonthly.endtime, 'YYYY年MM月DD日')}}</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+<div id="JDYB_container">
+
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

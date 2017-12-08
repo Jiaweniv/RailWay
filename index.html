@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<title>项目监督辅助管理系统</title>
+		<meta name="keywords" content="项目监督辅助管理系统">
+		<meta name="description" content="项目监督辅助管理系统">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="shortcut icon" href="favicon.ico">
+		<!--第三方-->
+		<link rel="stylesheet" type="text/css" href="css/plugins/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/bootstrap-table/bootstrap-table.min.css" />
+		<link rel="stylesheet" type="text/css" href="js/plugins/layui/css/layui.css" />
+		<link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/plugins/zTree/zTreeStyle.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/timeline/timeline.css" />
+		<link rel="stylesheet" href="js/plugins/bootstrapselect2/dist/css/select2.min.css" />
+		<!--富文本编译器-->
+		<!-- CSS文件 -->
+		<link rel="stylesheet" type="text/css" href="css/view/module.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="css/view/page.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="css/view/common.css?rev=@@hash" />
+		<!--图标字体-->
+		<link rel="stylesheet" type="text/css" href="css/plugins/font-awesome/css/font-awesome.min.css" />
+		<!--验证自定义样式-->
+		<link rel="stylesheet" type="text/css" href="css/view/validator.css" />
+		<!--第三方js-->
+		<script src="js/plugins/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/zoom-detect/zoom-detect.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/slimscroll/jquery.slimscroll.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-table/tableExport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/view/sidebarMenu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/zTree/jquery.ztree.all.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controller/pathconfig.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrapselect2/dist/js/select2.min.js"></script>
+		<!--富文本编译器-->
+		<script src="js/plugins/ueditor/ueditor.config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/ueditor/editor_api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/ueditor/lang/zh-cn/zh-cn.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/ueditor/addCustomizeDialog.js" type="text/javascript" charset="utf-8"></script>
+		<!--layui-->
+
+		<script src="js/plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/view/layMd.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="js/view/jq-extends.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controller/util/mydao-init.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controller/util/plugin-init.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controller/util/data.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<!-- Steps -->
+		<script src="js/plugins/staps/jquery.steps.js" type="text/javascript" charset="utf-8"></script>
+		<!--echarts-->
+		<script src="js/plugins/echarts2/echarts.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+		<script src="js/plugins/nice-validate/jquery.validator.js?local=zh-CN" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//检测浏览器缩放
+			$(function() {
+				WebpageZoomDetect.start({
+					interval: 1000
+				});
+			})
+			$(function() {
+				$.sidebarMenu($('.sidebar-menu'));
+				//移除验证提示框
+				$("body").delegate("input,select,checkbox,radio,textarea", "mouseenter  keyup", function() {
+					$(this).siblings(".myClass").remove();
+				});
+			});
+
+			//如果没有登录直接跳转到登录页
+			var _MyDao_User = sessionStorage.getItem('MYDAO_USER');
+			if(!_MyDao_User) {
+				window.location.href = "login.html";
+			}
+		</script>
+	</head>
+
+	<body onhashchange="mydaoSPA.changeUrl();">
+		<div id="wrapper">
+			<!--头-->
+			<div class="lzh-warp-head clear">
+				<div class="lzh-head-left">
+					<a href="javascript:" class="lzh-homepage" title="首页">
+						<span class="lzh-sp1">工程质量监督中心</span>
+						<span class="lzh-sp2">北京地区项目监督管理系统</span>
+					</a>
+				</div>
+				<div class="lzh-head-right">
+					<ul class="lzh-right-ul clear layui-nav">
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="MydaoUser" title="当前登录用户" id="MydaoUser"></a>
+							<dl class="layui-nav-child layui-anim layui-anim-upbit">
+								<dd>
+									<a id="user_password" href="javascript:;" title="修改密码"><i class="fa fa-unlock-alt mr5"></i>修改密码</a>
+								</dd>
+								<dd>
+									<a id="user_logout" href="javascript:;" title="退出"><i class="fa fa-sign-out mr5"></i>退出</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--头 end-->
+			<!--左侧导航-->
+			<div class="main-sidebar" style="height: 100%; min-height: 100%;">
+				<div class="sidebar-collapse">
+					<div class="hlj-logonewImg">
+						<img src="img/logoNew1.png" class="logonewImg" />
+					</div>
+					<!--菜单-->
+					<ul class="sidebar-menu" id="MydaoMenu">
+
+					</ul>
+				</div>
+			</div>
+			<!--左侧导航 end-->
+			<!--右侧内容-->
+			<div id="page-wrapper">
+				<div class=" content_tabs">
+					<button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i></button>
+					<nav class="page-tabs J_menuTabs">
+						<div class="page-tabs-content">
+							<a href="#HOME" class="active J_menuTab" data-id="HOME">首页</a>
+						</div>
+					</nav>
+					<button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i></button>
+					<div class="btn-group roll-nav roll-right">
+						<button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"></span>
+                    </button>
+						<ul role="menu" class="dropdown-menu dropdown-menu-right">
+							<li class="J_tabShowActive">
+								<a>定位当前选项卡</a>
+							</li>
+							<li class="divider"></li>
+							<li class="J_tabCloseAll">
+								<a href="#closeall">关闭全部选项卡</a>
+							</li>
+							<li class="J_tabCloseOther">
+								<a>关闭其他选项卡</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!--右侧内容-->
+				<div class="wrapper-content" id="wrapper-content">
+					<div class="sidebar-collapse" style="width: 100%;">
+						<!--内容组件-->
+
+						<!--内容组件end-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/controller/mydaoSPA.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controller/app.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="js/view/module.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+
+</html>

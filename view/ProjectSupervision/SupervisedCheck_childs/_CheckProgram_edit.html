@@ -1,0 +1,132 @@
+<!--
+	作者：wuxupingvip@126.com
+	时间：2017-03-08
+	描述：检查方案编辑
+-->
+<div class="sidebar-collapse" id="checkprogram_fa_edit_panel">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="checkprogram_fa_step">
+				<h1>选择标段</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div id="checkprogram_fa_edit_one">
+							<div class="module-line-box clear p10  content">
+								<form id="checkprogram_one_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+									<div class="module-group  mt20 w100 clear">
+										<span class="group-title" style="width: 90px;"><i>*</i>监督计划:</span>
+										<select data-rule="required;" data-toggle="selector" data-url="supervisePlan/getPlanList" data-params='{}' name="superviseplanid" style="width:150px;" class="module-select group-select">
+										</select>
+									</div>
+									<div class="module-group  mt20 w100 clear">
+										<span class="group-title" style="width: 90px;"><i>*</i>方案名称:</span>
+										<input data-rule="required;" name="name" type="text" class="group-input module-input">
+									</div>
+									<div class="module-group  mt20 w100 clear">
+										<span class="group-title" style="width: 90px;"><i>*</i>项目:</span>
+										<select data-rule="required;" data-toggle="selector" data-url="project/s1006" data-params='{status:1}' name="projectid" style="width:150px;" class="module-select group-select">
+										</select>
+									</div>
+									<div class="module-line-box mt20 clear">
+										<div class="module-group fl w90">
+											<input name="sectionids" type="text" style="display: none;">
+											<span class="group-title" style="width: 90px;"><i>*</i>施工标段:</span>
+											<textarea data-rule="required" name="sectionname" style="max-height: 290px;" class="layui-textarea group-input" readonly="readonly"></textarea>
+										</div>
+										<div class="module-group fl ml20" style="width: auto;">
+											<button id="checkprogram_fa_select_section_btn" type="button" class="btn  btn-primary " style="display: block;">选择</button>
+											<button id="checkprogram_fa_extract_section_btn" type="button" class="btn  btn-primary mt10" style="display: block;">抽取</button>
+										</div>
+									</div>
+
+									<div class="module-group fl mt20 w100">
+										<span class="group-title" style="width: 90px;">方案附件:</span>
+										<input name="affix" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h1>选择工点</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="module-group fl w30">
+							<p class="tl">标段信息</p>
+							<div class="module-slimScroll" style=" overflow-x: scroll; width: auto; height: 330px;">
+								<ul id="checkprogram_sections_tree" class="ztree"></ul>
+							</div>
+						</div>
+						<div class="module-group fr w70">
+							<p class="tl">工点信息</p>
+							<table id="checkprogram_work_point_table">
+							</table>
+							<button id="checkprogram_work_point_qr" type="button" class="btn  btn-default">确认工点</button>
+						</div>
+					</div>
+				</div>
+				<h1>选择检查清单</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="module-group fl w30">
+							<p class="tl">抽查事项</p>
+							<div class="module-slimScroll" style=" overflow: scroll; width: auto; height: 100%;">
+								<ul id="checkprogram_item_tree" class="ztree"></ul>
+							</div>
+						</div>
+						<div class="module-group fr w70">
+							<p class="tl">抽查清单</p>
+							<table id="checkprogram_check_info_table">
+							</table>
+							<button id="checkprogram_checkinfo_qr" type="button" class="btn  btn-default">确认清单</button>
+						</div>
+					</div>
+				</div>
+
+				<h1>选择检查人</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="checkprogram_three_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<div class="module-line-box mt20">
+								<div class="module-group fl  ">
+									<span class="group-title" style="width: 90px;">检查时间:</span>
+									<input type="text" id="checkprogram_checkstart" data-toggle="range-start" name="checkstart" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon" data-rule="required;">
+								</div>
+								<div class="module-group fl ">
+									<span class="group-title tc" style="width: 90px;">——</span>
+									<input type="text" id="checkprogram_checkend" data-toggle="range-end" name="checkend" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon" data-rule="required;">
+								</div>
+							</div>
+							<div class="module-line-box">
+								<div class="fl w40">
+									<p class="tc">检查人员</p>
+									<div class="" style="height: 290px;">
+										<div class="sidebar-collapse">
+											<table id="checkprogram_all_checkuser">
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="fl w20 pt20">
+									<div class="p10" style="height: 280px;">
+										<button id="checkprogram_checkuser_qr" type="button" class="btn btn-default" style="margin-top: 110px;">>></button>
+									</div>
+								</div>
+								<div class="fl w40">
+									<p class="tc">已选择人员</p>
+									<div class="" style="height: 290px;">
+										<div class="sidebar-collapse">
+											<table id="checkprogram_has_checkuser">
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

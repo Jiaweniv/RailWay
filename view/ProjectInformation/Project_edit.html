@@ -1,0 +1,135 @@
+<!--
+    	作者：王启靖
+    	时间：2016-12-16
+    	描述：项目编辑页
+  -->
+<div class="layer_notice" id="project-edit">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="example-project">
+				<h1>基本信息</h1>
+				<div class="step-content" id="jbxx">
+					<div class="text-center m-t-md">
+						<form id="project-form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<div class="module-line-box clear p10 content">
+								<div class="module-group  fl" style="width: 40%;">
+									<span class="group-title tr pr10" style="width: 140px;"><i>*</i>项目编号:</span> <input type="text" name="code" class="group-input module-input" data-rule="required;length[~10];">
+								</div>
+								<div class="module-group  fr" style="width: 60%;">
+									<span class="group-title tr pr10" style="width: 90px;"><i>*</i>项目名称:</span> <input type="text" name="name" class="group-input module-input" data-rule="required;length[~50];">
+								</div>
+							</div>
+							<div class="module-line-box clear p10  content">
+								<div class="module-group  fl" style="width: 40%;">
+									<span class="group-title tr pr10" style="width: 140px;"><i>*</i>项目简称:</span> <input type="text" name="alias" class="group-input module-input" data-rule="required;length[~20];">
+								</div>
+								<div class="module-group  fr" style="width: 60%;">
+									<div class="module-group  fl" style="width: 50%;">
+										<span class="group-title tr pr10" style="width: 90px;"><i>*</i>项目类型:</span>
+										<select name="type" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PROJECTTYPE'}" data-value="" class="module-select group-select" data-rule="required;">
+										</select>
+									</div>
+									<div class="module-group  fr" style="width: 50%;">
+										<span class="group-title tr pr10" style="width: 90px;"><i>*</i>项目状态:</span>
+										<select name="status" class="module-select group-select" data-rule="required;">
+											<option value="">--请选择--</option>
+											<option value="0">在建</option>
+											<option value="1">完成</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<!--新增字段，等接口，data-url都需要修改-->
+							<div class="module-line-box clear p10 content">
+								<div class="module-group  fl" style="width: 40%;">
+									<span class="group-title tr pr10" style="width: 140px;"><i>*</i>监管类型:</span>
+									<select name="supervisetype" class="module-select group-select" data-rule="required;" id="supervisetype">
+											<option value="1">直管</option>
+											<option value="2">铁总</option>
+											<option value="3">地方政府</option>
+									</select>
+								</div>
+								<div class="module-group  fr" style="width: 60%;">
+									<span class="group-title tr pr10" style="width: 90px;"><i>*</i>监管机构:</span>
+									<select name="superviseorg"   id="hlj-superviseorg" class="module-select group-select" data-rule="required;">
+										<!--<option value="">--请选择--</option>-->
+										<!--<option value="">2132</option>-->
+									</select>
+								</div>
+							</div>
+							<div class="module-line-box clear p10 content">
+								<div class="module-group  fl" style="width: 40%;">
+									<span class="group-title tr pr10" style="width: 140px;"><i>*</i>线路长度（km):</span>
+									<input type="text" name="length" class="group-input module-input" data-rule="required;length[~10];digits">
+								</div>
+								<div class="module-group  fr" style="width: 60%;">
+									<div class="module-group  fl" style="width: 50%;">
+										<span class="group-title tr pr10" style="width: 100px;"><i>*</i>总工期(月):</span>
+										<input type="text" name="schedule" class="group-input module-input" data-rule="required;length[~3]">
+									</div>
+									<div class="module-group  fr" style="width: 50%;">
+										<span class="group-title tr pr10" style="width: 120px;"><i>*</i>总投资(万元):</span>
+										<input type="text" data-rule="required;length[~10]" name="investment" class="group-input module-input" data-rule="required;length[~10]">
+									</div>
+								</div>
+							</div>
+							<div class="module-line-box clear p10 content ">
+								<div class="module-group  fl" style="width: 40%;">
+									<span class="group-title tr pr10" style="width: 140px;">开工日期:</span>
+									<input type="text" name="planstarttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+								</div>
+								<div class="module-group  fl" style="width: 40%;">
+									<span class="group-title tr pr10" style="width: 90px;">计划竣工:</span>
+									<input type="text" name="planendtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+								</div>
+							</div>
+							<div class="module-line-box clear p10 content w100">
+								<div class="module-group  fl" style="width: auto;">
+									<span class="group-title tr pr10 fl" style="width: 140px;"><i>*</i>项目概述:</span>
+
+								</div>
+								<div class="fl tl w70">
+									<textarea cols="50" name="describe" data-rule="required;length[~500];" class="w100" style="border: 1px solid #CCCCCC;"></textarea>
+									<!--<script type="text/plain" id="myEditor" name="describe" style="width:700px;height:240px;">
+
+									</script>-->
+								</div>
+							</div>
+							<div class="module-line-box clear p10 content">
+								<div class="module-group w100 fl">
+									<span class="group-title tr pr10" style="width: 120px;">总平面图:</span>
+									<input id="images" data-toggle="uploader-image" type="file" name="images" class="layui-upload-file">
+								</div>
+							</div>
+
+						</form>
+					</div>
+
+				</div>
+
+				<h1>施工标段信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #FFFFFF;">
+							<table id="sgbd">
+								
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<h1>监理标段信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #FFFFFF;">
+							<table id="jlbd">
+								
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

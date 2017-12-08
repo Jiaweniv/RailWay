@@ -1,0 +1,22 @@
+<!--往来函件 tab-->
+<div id="correspondence_top">
+	<div class="module-line-box ">
+		<div class="module-line-box mt10 clear">
+			<div class="module-group fl">
+				<span class="group-title tr pr20" style="width: 90px;">方案:</span>
+				<select data-url="checkProgram/selectList" data-toggle="selector" data-params='{}' id="programid" name="checkprogramid" style="width:150px;" class="module-select">
+				</select>
+			</div>
+			<div class="btn-group fl ml30">
+				<button type="button" id="searchCorrespondence" class="btn  btn-primary">查询</button>
+			</div>
+			<div class="btn-group fr">
+				<permission opt="correspondence_create"><button type="button" id="addCorrespondence" class="btn  btn-default">新建</button></permission>
+			</div>
+		</div>
+	</div>
+	<table id="correspondence">
+	</table>
+	
+</div>
+<script src="/js/controller/ProjectSupervision/SupervisedCheck/wlxh/correspondence_list.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

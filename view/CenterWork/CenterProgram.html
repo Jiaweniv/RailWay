@@ -1,0 +1,106 @@
+<!--中心计划-->
+<div id="center_lzh">
+	<div class="wrapper-content-tabs" id="center">
+		<div class="panel-body" id="c1">
+			<div class="module-line-box clear pt10" id="centralPlanning" style="margin-bottom: 25px;">
+				<div class="module-group fl wauto">
+					<span class="group-title" style="width: 50px;">部门:</span>
+					<select name="organizationName" class="module-select " id="cneterselect">
+					</select>
+				</div>
+				<div class="module-group fl wauto">
+					<span class="group-title tr pr10" style="width: 60px;">状态:</span>
+					<select name="state" class="module-select  " id="state">
+						<option value="">--请选择--</option>
+						<option value="1">待执行</option>
+						<option value="2">执行中</option>
+						<option value="3">已完成</option>
+					</select>
+				</div>
+				<div class="module-group fl wauto">
+					<span class="group-title" style="width: 50px;">类型:</span>
+					<select name="dimension" id="dimension" class="module-select " checked="全部" value="全部">
+						<option value="" selected="selected">全部</option>
+						<option value="1">年度</option>
+						<option value="2">季度</option>
+						<option value="3">月度</option>
+						<option value="4">周</option>
+						<option value="5">专项</option>
+					</select>
+				</div>
+				<!--周期-->
+				<div class="module-group fl wauto ml10 clear" id="QuBu">
+					<!--1、年度-->
+					<div id="cyear1" class="fl" style="display: none">
+						<span>年份：</span>
+						<select name="year" class="module-select   mr10" id="year">
+							<option value="">--请选择--</option>
+							${years}
+						</select>
+					</div>
+
+					<!--2.季度-->
+					<div id="cquarter" class="fl" style="display: none">
+						<span>季度：</span>
+						<select name="quarter" class="module-select   " id="quarter-m">
+							<option value="">--请选择--</option>
+							<option value="1">1季度</option>
+							<option value="2">2季度</option>
+							<option value="3">3季度</option>
+							<option value="4">4季度</option>
+						</select>
+					</div>
+					<!--3.月度-->
+					<div id="cmonth1" class="fl mr10" style="display: none">
+						<span>月份：</span>
+						<select name="month" class="module-select  " id="month-m">
+							<option value="">--请选择--</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+					</div>
+
+					<!--4.周-->
+					<div id="cweek1" style="display: none;" class="mr10">
+						<span class="fl">时间段：</span>
+						<input type="text" name="planstarttime" style="width: 130px !important; padding-left: 5px; height: 34px; line-height: 34px;" data-format="YYYY-MM-DD" class="fl laydate-icon " id="weekstarttime">
+						<i class="fl wauto pl10 pr15">--</i>
+						<!--<input type="text" name="planendtime" data-format="YYYY-MM-DD" class="fl  group-input module-input  laydate-icon " id="weekendtime" >-->
+						<input type="text" name="planendtime" style="width: 130px !important; padding-left: 5px; height: 34px; line-height: 34px;" data-format="YYYY-MM-DD" class="fl laydate-icon" id="weekendtime">
+
+					</div>
+
+					<!--5.专项-->
+					<div id="cspecial1" style="display: none" class="mr10">
+						<span class="fl">时间段：</span>
+						<input type="text" name="planstarttime" style="width: 130px !important; padding-left: 5px; height: 34px; line-height: 34px;" data-format="YYYY-MM-DD" class="laydate-icon " id="specialstarttime1">
+						<i class="wauto  pl10 pr15">--</i>
+						<input type="text" name="planendtime" style="width: 130px !important; padding-left: 5px; height: 34px; line-height: 34px;" data-format="YYYY-MM-DD" class="laydate-icon " id="specialendtime1">
+					</div>
+				</div>
+				<div class="btn-group fl ml10">
+					<button type="button" id="searchc" class="btn  btn-primary">查询</button>
+				</div>
+				<div class="btn-group fr">
+					<permission opt="centerplan_create"><button type="button" id="savec" class="btn  btn-default">新建</button></permission>
+				</div>
+			</div>
+
+			<table id="EnterpriseTable-zs">
+			</table>
+		</div>
+	</div>
+
+	<!--引入路径正确-->
+	<script src="/js/controller/CenterWork/CenterProgram.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</div>

@@ -1,0 +1,135 @@
+<style type="text/css">
+	fieldset {
+		text-align: left;
+	}
+	
+	legend {
+		/*margin-left: 30px;*/
+	}
+</style>
+<div class="sidebar-collapse p10">
+	<div class="text-center m-t-md">
+		<fieldset>
+			<legend>标题</legend>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">标题:</span> ${title}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">来源:</span> ${title}
+					<!--新增内容-->
+				</div>
+			</div>
+		</fieldset>	
+		<fieldset>
+			<legend>处罚对象</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">监督局:</span> ${supervision}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">项目:</span> ${projectname}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">标段:</span> ${section}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">工点:</span> ${workname}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">单位类型:</span> ${unittype}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">被处罚单位:</span> ${unitname}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">出发日期:</span> $date{penaltytime}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">处罚文号:</span> ${penaltynumber}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">问题类型:</span> ${itemname}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 140px;">是否公开:</span> ${ispublish}
+				</div>
+			</div>
+		</fieldset>	
+		<fieldset>
+			<legend>条款依据</legend>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">违反条款:</span> ${violationterms}
+				</div>
+			</div>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">违反事实:</span> ${violationfact}
+				</div>
+			</div>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">所属类别:</span> ${violationtype}
+				</div>
+			</div>
+		</fieldset>	
+		<fieldset>
+			<legend>单位处罚</legend>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">处罚条款:</span> ${penaltyterms}
+				</div>
+			</div>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">处罚决定:</span> ${penaltydecision}
+				</div>
+			</div>
+			<div class="module-line-box clear content">
+				<div class="module-group  fl" style="width: 100%;">
+					<span class="group-title tr pr10" style="width: 120px;">处罚金额(元):</span> ${penaltymoney}
+				</div>
+			</div>
+		</fieldset>	
+		<fieldset>
+			<legend>个人处罚</legend>
+			<table id="post"></table>
+		</fieldset>	
+		<fieldset>
+			<legend>处罚相关文书</legend>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">处罚决定时间:</span> $date{penaltydecisiontime}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">处罚决定书:</span> $file{penaltydecisionfile}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">行政复议时间:</span> $date{reconsiderationtime}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">复议裁定书:</span> $file{reconsiderationfile}
+				</div>
+			</div>
+			<div class="module-line-box clear  content">
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">行政诉讼时间:</span> $date{litigationtime}
+				</div>
+				<div class="module-group  fl" style="width: 50%;">
+					<span class="group-title tr pr10" style="width: 120px;">诉讼裁定书:</span> $file{litigationfile}
+				</div>
+			</div>
+		</fieldset>
+	</div>
+</div>

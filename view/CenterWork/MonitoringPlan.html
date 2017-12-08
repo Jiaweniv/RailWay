@@ -1,0 +1,84 @@
+<!--监督计划 列表页-->
+<div id="supervise_lzh">
+	<div class="wrapper-content-tabs" id="supervise">
+		<div class="panel-body">
+			<div class="module-line-box clear pt10" id="searchorhlj" style="margin-bottom: 25px;">
+				<div class="module-group fl">
+					<span class="group-title" style="width: 50px;">部门:</span>
+					<select name="organizationName" class="module-select " id="cneterselect222">
+					</select>
+				</div>
+
+				<div class="module-group fl ml10">
+					<span class="group-title" style="width: 50px;">类型:</span>
+					<select name="dimension" id="dimension" class="module-select " checked="全部" value="全部">
+						<option value="">全部</option>
+						<option value="1">年度</option>
+						<option value="2">月度</option>
+						<option value="3">季度</option>
+						<option value="4">专项</option>
+					</select>
+				</div>
+				<!--周期-->
+				<div class="module-group fl wauto ml10 clear" id="QuBu">
+					<!--1、年度-->
+					<div id="cyear1" class="fl" style="display: none">
+						<span>年份：</span>
+						<select name="year" class="module-select   mr10" id="year" data-rule="required;">
+							<option value="">--请选择--</option>
+							${years}
+						</select>
+					</div>
+
+					<!--2.季度-->
+					<div id="cquarter" class="fl ml10" style="display: none">
+						<span>季度：</span>
+						<select name="quarter" class="module-select   " id="quarter-m" data-rule="required;">
+							<option value="">--请选择--</option>
+							<option value="1">1季度</option>
+							<option value="2">2季度</option>
+							<option value="3">3季度</option>
+							<option value="4">4季度</option>
+						</select>
+					</div>
+					<!--3.月度-->
+					<div id="cmonth1" class="fl" style="display: none">
+						<span>月份：</span>
+						<select name="month" class="module-select  " id="month-m" data-rule="required;">
+							<option value="">--请选择--</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+					</div>
+
+					<!--4.专项-->
+					<div id="cspecial1" style="display: none">
+						<span class="fl">时间段：</span>
+						<input type="text" name="planstarttime" data-format="YYYY-MM-DD" class="lh34 module-input   laydate-icon " id="specialstarttime1" data-rule="required;">
+						<i class=" wauto  pl10 pr15">--</i>
+						<input type="text" name="planendtime" data-format="YYYY-MM-DD" class="lh34 module-input   laydate-icon " id="specialendtime1" data-rule="required;">
+					</div>
+				</div>
+				<div class="btn-group fl ml20">
+					<button type="button" id="searchj" class="btn  btn-primary">查询</button>
+				</div>
+				<div class="btn-group fr">
+					<permission opt="superviseplan_create"><button type="button" id="savej" class="btn  btn-default">新建</button></permission>
+				</div>
+			</div>
+			<table id="EnterpriseTable-jd">
+			</table>
+		</div>
+	</div>
+	<script src="/js/controller/CenterWork/MonitoringPlan.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</div>

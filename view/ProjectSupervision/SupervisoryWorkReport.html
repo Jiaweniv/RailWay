@@ -1,0 +1,70 @@
+<!--监督工作报告-->
+<div class="wrapper-content-tabs" id="SupervisoryWorkReport">
+	<div class="panel-body">
+		<div class="module-line-box clear pt10 search" id="searchor">
+			<div class="module-group fl">
+				<span class="group-title" style="width: 90px;">项目名称:</span>
+				<select data-toggle="selector" data-url="project/s1006" data-params='{}' data-nodefault="true" id="projectid" class="module-select">
+				</select>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="1" checked="checked">监督中项目</label>
+			</div>
+			<div class="btn-group fl ml10">
+				<label><input type="radio" name="status" value="2">历史项目</label>
+			</div>
+			<div class="fr mr10">
+				<div class="btn-group">
+					<permission opt="supervisionreport_create"><button type="button" id="SuperNewBtn" class="btn  btn-default">新建</button></permission>
+				</div>
+			</div>
+		</div>
+		<!--tab-->
+		<div class="tabs-container">
+			<ul class="nav nav-tabs">
+				<!--把1和4换了-->
+				<li class="active">
+					<a data-toggle="tab" id="tab1" href="#tab-SupervisoryWorkReport1" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/jdjcbg.html" aria-expanded="true" >监督检查报告</a>
+				</li>
+				<!--<li class="active">
+					<a data-toggle="tab" href="#tab-1" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/xmztbg.html" aria-expanded="true">项目总体报告</a>
+				</li>-->
+				<li class="">
+					<a data-toggle="tab" href="#tab-SupervisoryWorkReport2" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/ndbg.html" aria-expanded="false">年度报告</a>
+				</li>
+				<li class="">
+					<a data-toggle="tab" href="#tab-SupervisoryWorkReport3" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/jdbg.html" aria-expanded="false">季度报告</a>
+				</li>
+				<!--<li class="">
+					<a data-toggle="tab" href="#tab-4" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/ydbg.html" aria-expanded="false">月度报告</a>
+				</li>-->
+				<!--<li class="">
+					<a data-toggle="tab" id="tab4" href="#tab-4" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/jdjcbg.html" aria-expanded="false" >监督检查报告</a>
+				</li>-->
+				<!--把1和4换了-->
+				<li>
+					<a data-toggle="tab" id="tab4" href="#tab-SupervisoryWorkReport4" data-url="view/ProjectSupervision/SupervisoryWorkReport_childs/xmztbg.html" aria-expanded="false">项目总体报告</a>
+				</li>
+			</ul>
+			<!--tab页 内容区-->
+			<div class="tab-content">
+				<div id="tab-SupervisoryWorkReport1" class="tab-pane active">
+			
+				</div>
+				<div id="tab-SupervisoryWorkReport2" class="tab-pane ">
+				
+				</div>
+				<div id="tab-SupervisoryWorkReport3" class="tab-pane">
+				
+				</div>
+				<div id="tab-SupervisoryWorkReport4" class="tab-pane">
+					
+				</div>
+				<!--tab页 内容区 end-->
+			</div>
+			<!--tabend-->
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/ProjectSupervision/SupervisoryWorkReport/SupervisoryWorkReport.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

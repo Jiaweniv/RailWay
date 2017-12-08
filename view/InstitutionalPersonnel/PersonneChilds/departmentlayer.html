@@ -1,0 +1,147 @@
+<!--新建/编辑 部门 弹层-->
+<div class="layer_notice" id="DepartmentLayer">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="example-embed">
+				<h1>基本信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="DepartmentForm" data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<input type="hidden" name="id" value="" />
+							<div class="module-line-box mb10">
+								<div class="module-group fl w50">
+									<span class="group-title tr pr15" style="width: 110px;"><i>*</i>姓名:</span>
+									<input type="text" class="group-input module-input" name="name" data-rule="required;length[~15];">
+								</div>
+								<div class="module-group fr w50">
+									<span class="group-title tr pr15" style="width: 100px;">性别:</span>
+									<select name="gender" class="module-select group-select">
+										<!--<option value="0">未知</option>-->
+										<option value="1">男</option>
+										<option value="2">女</option>
+									</select>
+								</div>
+							</div>
+							<div class="module-line-box mb10">
+								<div class="module-group fl w50">
+									<span class="group-title tr pr15" style="width: 110px;">身份证号码:</span>
+									<input type="text" class="group-input module-input" name="idcard" placeholder="请输入身份证号码" data-rule="length[~18];length[15~];"  >
+								</div>
+								<div class="module-group fr w50">
+									<span class="group-title tr pr15" style="width: 100px;">出生日期:</span>
+									<input type="text" name="birthday" data-format="YYYY-MM-DD" class="module-input group-input laydate-icon">
+								</div>
+							</div>
+							<div class="module-line-box mb10">
+								<div class="module-group fl w50">
+									<span class="group-title tr pr15" style="width: 110px;">办公电话:</span>
+									<input type="text" class="group-input module-input" name="officephone" placeholder="请输入办公电话">
+								</div>
+								<div class="module-group fr w50">
+									<span class="group-title tr pr15" style="width: 100px;">手机号码:</span>
+									<input type="text" class="group-input module-input" name="phone" placeholder="请输入手机号码" data-rule="length[~11];telphone;" data-rule-telphone="[/^1[3-9]\d{9}$/, '请检查手机号格式']">
+								</div>
+							</div>
+							<div class="module-line-box mb10">
+								<div class="module-group fl w50">
+									<span class="group-title tr pr15" style="width: 110px;"><i>*</i>职称:</span>
+									<select id="" name="jobtitle" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PJOBTITLE'}" class="module-select group-select" data-rule="required;">
+									</select>
+								</div>
+								<div class="module-group fr w50">
+									<span class="group-title tr pr15" style="width: 100px;"><i>*</i>职务:</span>
+									<select id="" name="post" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PJOB','parentid':-1}" class="module-select group-select" data-rule="required;"style="width: 413px;">
+									</select>
+								</div>
+							</div>
+
+							<div class="module-line-box mb10">
+								<div class="module-group fl w50">
+									<span class="group-title tr pr15" style="width: 110px;">学历:</span>
+									<select id="" name="education" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PEDUCATION'}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group fr w50">
+									<span class="group-title tr pr15" style="width: 100px;">所属部门:</span>
+									<select id="personorganizationid" name="organizationid" class="module-select group-select" style="width: 413px;">
+									</select>
+								</div>
+							</div>
+
+							<div class="module-line-box mb10">
+								<div class="module-group fl w50">
+									<span class="group-title tr pr15" style="width: 110px;">人员分类:</span>
+									<select id="Personnel_classification" name="type" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'PTYPE'}" class="module-select group-select" >
+									</select>
+								</div>
+								<div class="module-group w50" style="display: none;" id="lawlicenseOut">
+									<span class="group-title tl" style="width: 100px;">执法证件号:</span>
+									<input type="text" id="lawlicense"  class="group-input module-input" name="lawlicense" style="width: 413px;">
+								</div>
+							</div>
+							<div class="module-line-box mb10 clear" id="checkflagPersonW" style="display: none;">
+								<div class="module-group fl w50" id="checkflagPerson">
+									<span class="group-title tr pr15" style="width:110px;"><i>*</i>检查人员:</span>
+									<select id="checkflag" name="checkflag" class="module-select group-select" data-rule="required;">
+										<option value="0">否</option>
+										<option value="1">是</option>
+									</select>
+								</div>								
+								<!--新增字段权重-->
+								<div class="module-group fr w50" style="display: none;" id="weightOut">
+									<span class="group-title tr pr15" style="width: 100px;"><i>*</i>权重:</span>
+									<input type="number" name="weight" class="group-input module-input w90" data-rule="required;range[~100];" value="1" style="width: 413px;"step="0.1" max="99.9" min="1.0">
+								</div>
+							</div>
+
+							<div id="law" style="display: none;">
+								<div class="module-line-box mb5">
+									<div class="module-group w100">
+										<span class="group-title tr pr15" style="width: 120px;">执法证扫描:</span>
+										<div class="btn-group fl ml10">
+											<input id="" data-toggle="uploader-image" type="file" class="layui-upload-file" name="lawlicensefile">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="module-line-box mb5">
+								<div class="module-group w100">
+									<span class="group-title tr pr15" style="width: 120px;">身份证扫描:</span>
+									<div class="btn-group fl ml10">
+										<input id="" data-toggle="uploader-image" type="file" class="layui-upload-file" name="idcardfile">
+									</div>
+								</div>
+							</div>
+							<div class="module-line-box mb5">
+								<div class="module-group w100">
+									<span class="group-title tr pr15" style="width: 120px;">职称证扫描:</span>
+									<div class="btn-group fl ml10">
+										<input id="" data-toggle="uploader-image" type="file" class="layui-upload-file" name="jobtitlefile">
+									</div>
+								</div>
+							</div>
+							<div class="module-line-box mb5">
+								<div class="module-group w100">
+									<span class="group-title tr pr15" style="width: 120px;">任职文件扫描:</span>
+									<div class="btn-group fl ml10">
+										<input id="" data-toggle="uploader-image" type="file" class="layui-upload-file" name="officefile">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<h1>资格证书</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<table id="Qualificationtable">
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

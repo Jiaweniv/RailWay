@@ -1,0 +1,155 @@
+<!--
+	作者：wuxupingvip@126.com
+	时间：2017-03-08
+	描述：检查方案添加
+-->
+<div class="sidebar-collapse" id="checkprogram_faStepOut">
+	<div id="checkprogram_fa_step">
+		<h1>选择标段</h1>
+		<div class="step-content">
+			<div class="text-center m-t-md">
+				<div class="module-line-box clear p10  content">
+					<form id="checkprogram_one_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+						<div class="module-group  mt20 w100 clear">
+							<span class="group-title" style="width: 90px;"><i>*</i>监督计划:</span>
+							<select id="checkprogram_superviseplanid" data-rule="required;" data-toggle="selector" data-url="supervisePlan/getPlanList" data-params='{}' name="superviseplanid" class="module-select group-select">
+							</select>
+						</div>
+						<div class="module-group  mt20 w100 clear">
+							<span class="group-title" style="width: 90px;"><i>*</i>方案名称:</span>
+							<input id="checkprogram_name" data-rule="required;" name="name" type="text" class="group-input module-input">
+						</div>
+						<div class="module-group  mt20 w100 clear">
+							<span class="group-title" style="width: 90px;"><i>*</i>项目:</span>
+							<select data-rule="required;" id="checkprogram_one_step_projectid" data-toggle="selector" data-url="project/s1006" data-params='{status:1}' name="projectid" class="module-select group-select">
+							</select>
+						</div>
+						<div class="module-line-box mt20 clear">
+							<div class="module-group fl w90">
+								<input id="checkprogram_one_step_sectionids_select" name="select_sectionids" type="text" style="display: none;">
+								<input id="checkprogram_one_step_sectionnames_select" type="text" style="display: none;">
+								<input id="checkprogram_one_step_sectionids_extract" name="extract_sectionids" type="text" style="display: none;">
+								<input id="checkprogram_one_step_sectionnames_extract" type="text" style="display: none;">
+								<input id="checkprogram_one_step_sectionids" name="sectionids" type="text" style="display: none;">
+								<span class="group-title fl" style="width: 90px;"><i>*</i>施工标段:</span>
+								<textarea id="checkprogram_one_step_sectionnames" data-rule="required;" name="sectionnames" style="max-height: 290px;" class="layui-textarea group-textarea fl " readonly="readonly"></textarea>
+							</div>
+							<div class="module-group fl ml20" style="width: auto;">
+								<button id="checkprogram_fa_select_section_btn" type="button" class="btn  btn-primary " style="display: block;" disabled="disabled">选择</button>
+								<button id="checkprogram_fa_extract_section_btn" type="button" class="btn  btn-primary mt10" style="display: block;" disabled="disabled">抽取</button>
+							</div>
+						</div>
+
+						<div class="module-group fl mt20 w100">
+							<span class="group-title" style="width: 90px;">方案附件:</span>
+							<input id="checkprogram_one_step_affix" name="affix" data-toggle="uploader-file" data-size="1" type="file" class="layui-upload-file" value="70632137296449536">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<h1>选择工点</h1>
+		<div class="step-content">
+			<form id="checkprogram_two_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+				<div class="text-center m-t-md">
+					<div class="module-line-box clear p10  content">
+						<div class="module-group fr wauto clear">
+							<span class="group-title  fl">
+							<!--<i>*</i>-->抽取数目：
+						</span>
+							<input id="checkprogram_two_step_num" type="number" min="2" class="module-input fl" value="2">
+							<div class="btn-group fl ml10">
+								<button id="checkprogram_two_step_extract" type="button" class="btn  btn-primary">抽取</button>
+							</div>
+						</div>
+					</div>
+					<table id="checkprogram_fa_workpoint_table"></table>
+				</div>
+			</form>
+		</div>
+		<h1>选择检查事项</h1>
+		<div class="step-content">
+			<form id="checkprogram_three_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+				<div class="module-group fl w30">
+					<p class="tl">事项类别</p>
+					<div class="module-slimScroll" style=" overflow-x: scroll; width: auto; height:400px ;">
+						<ul id="checkprogram_fa_checkitems_tree" class="ztree"></ul>
+					</div>
+				</div>
+				<!--<div class="module-group fr w70 " style="height:450px ; ">-->
+				<div class="module-group fr w70 ">
+					<!--解决小屏幕滚动条不动bug-->
+					<div class="sidebar-collapse">
+						<table id="checkprogram_fa_checkitems_table"></table>
+					</div>
+				</div>
+			</form>
+		</div>
+		<h1>选择检查清单</h1>
+		<div class="step-content">
+			<form id="checkprogram_four_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+				<div class="module-line-box clear p10  content">
+					<div class="module-group fr wauto clear">
+						<span class="group-title  fl">
+							<!--<i>*</i>-->抽取数目：
+						</span>
+						<input id="checkprogram_four_step_num" type="number" min="2" class="module-input fl" value="2">
+						<div class="btn-group fl ml10">
+							<button id="checkprogram_four_step_extract" type="button" class="btn  btn-primary">抽取</button>
+						</div>
+					</div>
+				</div>
+				<div class="module-group fr w100">
+					<table id="checkprogram_fa_checkinfos_table"></table>
+				</div>
+			</form>
+		</div>
+		<h1>选择检查人</h1>
+		<div class="step-content">
+			<form id="checkprogram_five_step" data-validator-option="{msgClass: 'n-bottom myClass'}">
+				<div class="module-line-box clear   content">
+					<div class="module-group  wauto ">
+						<div class="module-group fl" style="width: 220px;">
+							<span class="group-title" style="width: 90px;"><i>*</i>检查时间:</span>
+							<input type="text" id="checkprogram_checkstart" data-rule="required;" data-toggle="range-start" name="checkstart" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon ">
+						</div>
+						<div class="module-group fl" style="width: 160px;">
+							<span class="group-title " style="width: 30px; min-width:30px">—</span>
+							<input type="text" id="checkprogram_checkend" data-rule="required;" data-toggle="range-end" name="checkend" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon ">
+						</div>
+						<div class="btn-group fl ml10">
+							<button id="checkprogram_five_step_area" type="button" class="btn  btn-primary">范围</button>
+						</div>
+						<div class="btn-group fl ml10">
+							<button id="checkprogram_five_step_select" type="button" class="btn  btn-primary">选择</button>
+						</div>
+					</div>
+				</div>
+				<div class="module-line-box clear   content">
+				
+					<div class="module-group wauto" >
+						<span class="group-title  fl" style="width: 90px;">
+							<!--<i>*</i>-->检查人员：
+						</span>
+						<input id="checkprogram_five_step_jcry_num" type="number" min="2" class="module-input fl w20" value="2">
+
+						<span class="group-title  fl" style="width: 90px;">
+							<!--<i>*</i>-->检查专家：
+						</span>
+						<input id="checkprogram_five_step_jczj_num" type="number" min="2" class="module-input fl w20 " value="2">
+
+						<div class="btn-group fl ml10">
+							<button id="checkprogram_five_step_extract" type="button" class="btn  btn-primary">抽取</button>
+						</div>
+					</div>
+				</div>
+				<div class="text-center m-t-md">
+					<table id="checkprogram_fa_person_table"></table>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/ProjectSupervision/SupervisedCheck/fa/fa_add.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

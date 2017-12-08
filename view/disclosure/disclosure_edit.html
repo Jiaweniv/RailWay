@@ -1,0 +1,36 @@
+<form id="disclosure-edit" data-validator-option="{msgClass: 'n-bottom myClass'}" class="pt15">
+	<div class="module-line-box clear mlbf15">
+		<div class="module-group w80">
+			<span class="group-title" style="width: 50px;">标题:</span>
+			<input type="text" id="title" name="title" class="group-input module-input" data-rule="required;length[~30]">
+		</div>
+	</div>
+	<div class="module-line-box clear mlbf15">
+		<div class="module-group w80">
+			<span class="group-title" style="width: 50px; text-align: center;">类型:</span>
+			<select name="type" id="type" data-toggle="selector" data-url="dictionary/s1002" data-params="{'type':'INFORMATION'}" class="module-select group-select" data-rule="required;">
+			</select>
+
+		</div>
+	</div>
+	<div class="module-line-box clear mlbf15 w70">
+		<!--<div class="module-group" style="width: auto;">-->
+		<span class="group-title fl" style="width: 50px; text-align: center;">内容:</span>
+		<!--</div>-->
+		<div class="" style="text-align: left; margin-left: 60px;">
+			<!--<textarea id="content" cols="55" rows="3"  name="content"
+					data-rule="required;length[~500];"></textarea>-->
+			<script type="text/plain" name='content' id="myEditor" style="width:90%;height:300px;">
+
+			</script>
+			<!--<textarea  data-layedit="layedit" style="display: none;" name="content"></textarea>-->
+		</div>
+	</div>
+	<div class="module-line-box clear mlbf15">
+		<div class="module-group  w100">
+			<span class="group-title" style="width: 50px;">附件:</span>
+			<input id="file" data-toggle="uploader-file" type="file" name="file" class="layui-upload-file">
+		</div>
+	</div>
+</form>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

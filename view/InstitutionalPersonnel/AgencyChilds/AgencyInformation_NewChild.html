@@ -1,0 +1,226 @@
+<!--
+	作者：李朝华
+	时间：2016-12-19
+	描述：机构信息弹出层
+-->
+<!--弹窗类-->
+<style>
+	.select2-container--default.select2-container--focus .select2-selection--multiple,.select2-container--default .select2-selection--multiple{
+		border: 1px #BFE5FD solid;
+	}
+	.wizard > .content > .body input{
+		border: none;
+	}
+	.select2-selection{
+		line-height: 18px;/*监管辖区(可多选)样式修改:*/
+		
+	}
+	.select2-container--default .select2-selection--multiple .select2-selection__choice{
+		margin-top: 0px;
+	}
+	.select2-container--default .select2-selection--multiple .select2-selection__rendered{
+		margin-top: 3px;/*监管辖区(可多选)样式修改:*/
+	}
+	.select2-container--default .select2-selection--multiple .select2-selection__rendered li{
+		margin: 2px 3px;
+	}
+</style>
+<div class="layer_notice">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="example-embed">
+				<h1>基本信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="org-form1" data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<div class="module-line-box clear p10">
+								<div class="module-group w100">
+									<span class="group-title tr pr10" style="width: 90px;">
+										<i>*</i>
+										企业名称:
+									</span>
+									<input type="text" data-rule="required;length[~30];" name="name" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">
+										<i>*</i>
+										企业简称:
+									</span>
+									<input type="text" data-rule="required;length[~20];" name="abbreviation" class="group-input module-input">
+								</div>
+
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">
+										母公司:
+									</span>
+									<input type="text" name="parentcompany" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w40 fl">
+									<span class="group-title tr pr10" style="width: 90px;">
+										<i>*</i>
+										企业类型:
+									</span>
+									<select  id="grouptype"  name="grouptype" data-rule="required;" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'ORG'}" class="module-select group-select">
+									</select>
+								</div>
+							</div>
+
+							<!--监督机构  显示-->
+							<div class="module-line-box clear p10" id="JDJG_NB"  style="display: none;overflow: visible;">
+								<div class="module-group fl mr30" >
+									<span class="group-title tr pr10" style="width: 90px;">
+										<i>*</i>
+										监督标签:
+									</span>
+									<select name="orgtype" style="min-width:160px ;width: auto;"data-rule="required;" class="module-select ">
+										<option value="">--请选择--</option>
+										<option value="1">辖区</option>
+										<option value="2">铁总</option>
+									</select>
+								</div>
+								<div class="module-group wauto  fl">
+									<span class="group-title tr pr10" style="width: 160px;">
+										<i>*</i>
+										监管辖区(可多选):
+									</span>
+									<select class="js-example-basic-multiple" style="min-width: 250px;width: auto;display: inline-block;" id="supervisedarea" multiple   data-toggle="selector"   data-rule="required;" data-url="dictionary/region" data-next-field="parentid" data-params="{'level':1,'grouptype':'58689850508972032'}">
+									</select>					
+								</div>
+							</div>
+							<!--监督机构  end-->
+
+							<!--建设单位/施工单位/监督单位  显示-->
+							<div class="module-line-box clear w100 p10" id="DW_LOW" style="display: none;">
+								<div class="module-group  fl">
+									<span class="group-title tr pr10" style="width: 90px;">
+										<i>*</i>
+										监督机构:
+									</span>
+									<select name="jdjgid" style="min-width:160px ;width: auto;" data-rule="required;"  data-toggle="selector" data-url="organization/selectList" data-params="{'node':1,'dictType':'ORG','code':'JDJG','orgtype':'1'}" class="module-select ">
+									</select>
+								</div>
+							</div>
+							<!--建设单位/施工单位/监督单位  end-->
+
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width:35%;">
+									<span class="group-title tr pr10" style="width: 90px;"><i>*</i>注册地址:</span>
+									<select name="registerprovince" data-toggle="selector" data-rule="required;" data-url="dictionary/region" data-next="#city" data-next-field="parentid" data-params="{'level':1}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group w50 fl" style="width:25%;">
+									<select name="registercity" id="city" data-url="dictionary/region" data-params="{'level':2}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group w50 fl" style="width:40%;">
+									<div class="module-group fl">
+										<input type="text" name="registeraddress" class="module-input group-input" data-rule="length[~50];">
+									</div>
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">联系人:</span>
+									<input type="text" name="contacts" class="module-input group-input fl" data-rule="length[~15];">
+								</div>
+								<div class="module-group w50 fr">
+									<span class="group-title tr pr10" style="width: 90px;">联系电话:</span>
+									<input type="text" name="tel" class="module-input group-input fl" >
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">电子邮件:</span>
+									<input type="text" name="email" class="module-input group-input fl" data-rule="length[~40]; email">
+								</div>
+								<div class="module-group w50 fr">
+									<span class="group-title tr pr10" style="width: 90px;">传真:</span>
+									<!--自定义验证传真-->
+									<input type="text" name="fax" class="module-input group-input fl" data-rule="length[~15]; fax" data-rule-fax="[/^(\d{3,4}-)?\d{7,8}$/, '请填写有效的传真号']">  
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<h1>营业执照信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="org-form2" data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<div class="module-line-box clear p10">
+								<div class="module-group w40 fl" style="width: 275px;">
+									<span class="group-title tr pr10" style="width: 94px;"><i>*</i>执照类型:</span>
+									<select name="traffictype" data-toggle="selector" data-rule="required;" data-url="dictionary/s1002" data-params="{type:'TRAFFIC'}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group w60 fr" style="width: 375px;">
+									<span class="group-title tr pr10" style="width: 150px;"><i>*</i>统一社会信用代码:</span>
+									<input type="text" name="creditcode" data-rule="required;length[~30];" class="group-input module-input" data-rule="length[~30];">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w100 fl" style="width: 650px;">
+									<span class="group-title tr pr10" style="width: 94px;">住所:</span>
+									<input type="text" name="address" class="group-input module-input" data-rule="length[~50];">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width: 284px;">
+									<span class="group-title tr pr10" style="width: 94px;">法定代表人:</span>
+									<input type="text" name="legalperson" class="group-input module-input" data-rule="length[~15];">
+								</div>
+								<div class="module-group w50 fr" style="width: 384px;">
+									<span class="group-title tr pr10" style="width: 160px;">法人代表身份证号码:</span>
+									<!--<input type="text" name="legalidentity" id="legalidentity" class="group-input module-input" data-rule="length[~18];length[15~];" >-->
+									<!--修改同时验证15位和18位的身份证-->
+									<input type="text" name="legalidentity" class="group-input module-input" data-rule="icd" data-rule-icd="[/^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/,'请输入正确的身份证']">
+									<!--<input type="text" name="legalidentity" class="group-input module-input">-->								
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width: 275px;">
+									<span class="group-title tr pr10" style="width: 94px;">注册资本:</span>
+									<input type="text" name="registeredcapital" class="group-input module-input" data-rule="range(0~);length[~15];">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w100 fl" style="width:650px;">
+									<span class="group-title tr pr10" style="width: 94px;"><i>*</i>经营范围:</span>
+									<textarea class="layui-textarea group-textarea fl" style="width: 530px;" name="trafficscope" data-rule="required;length[~500];"></textarea>
+								</div>
+							</div>
+							<div class="module-line-box clear pl30 pr30">
+								<div class="module-group w100 fl">
+									<span class="group-title tr pr10" style="width: 145px;">法人身份证扫描件:</span>
+									<input id="identityfront" data-toggle="uploader-image" type="file" name="identityfront" data-title="前" data-limit="2" class="layui-upload-file">
+									<input id="identityback" data-toggle="uploader-image" type="file" name="identityback" data-title="后" data-limit="2" class="layui-upload-file">
+								</div>
+								<div class="module-group w100 fl">
+									<span class="group-title tr pr10" style="width: 145px;">营业执照扫描件:</span>
+									<input id="licensefront" data-toggle="uploader-image" type="file" name="licensefront" data-title="前" data-limit="2" class="layui-upload-file">
+									<input id="licenseback" data-toggle="uploader-image" type="file" name="licenseback" data-title="后" data-limit="2" class="layui-upload-file">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<h1>企业资质</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #FFFFFF;">
+							<table id="QualificationTable">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

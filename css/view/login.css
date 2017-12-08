@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+/*
+   login.css
+   <登陆页>
+   
+   Created by LiZhaoHua on .
+   Copyright 2016 LiZhaoHua . All rights reserved.
+*/
+
+html,
+body {
+	min-height: 100%;
+	height: 100%;
+}
+
+body .login-box {
+	min-height: 100%;
+	height: auto;
+	width: 100%;
+	background: url(../../img/background-index.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.content-box {
+	position: absolute;
+	width: 800px;
+	height: 550px;
+	top: 50%;
+	left: 50%;
+	margin-top: -275px;
+	margin-left: -400px;
+}
+.login-headnew{
+	margin: 0 auto;
+	/*padding-top: 188px;*/	
+	text-align: center;
+}
+.login-box .login-head2{
+	width: 100%;
+	padding-top: 90px;	
+	text-align: center;	
+	font-size: 40px;
+	color: #0E6CB2;
+	font-family: "微软雅黑";
+}
+ 
+.login-center-box{
+	margin-top: 200px;
+	display: block;
+}
+
+.left-img {
+	float: left;
+	height: 366px;
+	max-width: 617px;
+}
+.left-img img{
+	width: 100%;
+}
+.right-login {
+	width: 460px;
+	margin:0px auto 0;
+	opacity: 0.95;
+	border: 2px solid rgba(255,255,255,0.5);
+	border-radius: 6px;
+	font-size: 16px;
+	color: #6d6d6d;
+	background: rgba(255,255,255,.30);
+  	box-shadow: 4px 5px 4px  rgba(28,132,198,0.23);
+    position: relative;
+    padding: 15px;
+}
+
+.right-login form{
+	/*height: 100%;*/
+}
+.right-login-box{
+	background-color: #F3F3F3;
+	border-radius: 6px;
+	padding: 20px 10px;
+}
+.right-login-box label{
+	color: #6D6D6D;
+	font-size: 16px;
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	padding-right: 12px;
+}
+.right-login-box .right-lines{
+	margin-bottom: 16px;
+}
+#logiName,#loginPass,#code{
+	line-height: 34px;
+	height: 34px;
+}
+.right-lines .form-group{
+	display: inline-block;
+}
+
+.right-lines input{
+	width: 226px;
+	line-height: 20px;
+	border-radius: 4px;
+	background-color: #F0F0F0;
+	box-shadow: 1px 1px 1px #888888 inset;
+}
+
+.togglePass{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+.togglePass.active{
+	color: #337ab7;
+}
+.forgot-password{
+	font-size: 16px;
+	line-height: 16px;
+	color: #6D6D6D;
+}
+.forgot-password:hover{
+	color: #4499FF;	
+}
+.lines-but{
+	text-align: center;
+}
+
+.lines-but button{
+	padding: 6px 18px;
+	width: 196px;
+	/*height: 26px;*/
+	background-color: #1C84C6;
+	letter-spacing: 4px;
+	text-indent: 4px;
+}
+.right-lines .code-left{
+	display: inline-block;
+	float: left;
+	margin-right: 60px;
+}
+.right-lines .code-left label{
+    font-size: 16px;
+    color: #6d6d6d;
+}
+.right-lines .code-left input{
+	width: 80px;
+	display: inline-block;
+}
+.right-lines .code-right{
+	float: left;
+	width: 85px;
+    height: 36px;
+}
+.right-lines .code-right > img{
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.right-lines.landing label,.right-lines.landing input{
+	cursor: pointer;
+}
+
+.login_con_R{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.login-but-gray{
+	background: darkgray;
+	cursor: inherit;
+}
+.login-but-gray:hover{
+	background: darkgray;
+}
+/*底部*/
+.login_bottom{
+	position: relative;
+	/*margin-top: -26px;*/
+	margin-top: -50px;
+	height: 26px;
+	text-align: center;
+}

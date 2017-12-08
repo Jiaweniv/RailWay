@@ -1,0 +1,174 @@
+<!--
+	作者：李朝华
+	时间：2016-12-19
+	描述：机构信息弹出层
+-->
+<!--弹窗类-->
+<div class="layer_notice" id="jcjg_jgxxShow">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="example-embed">
+				<h1>基本信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="org-form1">
+							<div class="module-line-box clear p10">
+								<div class="module-group w100">
+									<span class="group-title tr pr10" style="width: 90px;">
+										
+										机构名称:
+									</span>
+									<input type="text" data-rule="required;" name="name" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w100">
+									<span class="group-title tr pr10" style="width: 90px;">
+										
+										机构简称:
+									</span>
+									<input type="text" data-rule="required;" name="abbreviation" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">
+										
+										机构类型:
+									</span>
+									<select name="grouptype" data-rule="required;" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'ORG'}" class="module-select fl mr10 w70">
+									</select>
+								</div>
+								<!--<div class="module-group w50 fr">
+									<span class="group-title tr pr10" style="width: 90px;">
+										
+										行业类型:</span>
+									<select name="careertype" data-rule="required;" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'CAREER'}" class="module-select fl mr10 w70">
+									</select>
+								</div>-->
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width:35%;">
+									<span class="group-title tr pr10" style="width: 90px;">
+										
+										注册地址:</span>
+									<select name="registerprovince" data-rule="required;" data-toggle="selector" data-url="dictionary/region" data-next="#city" data-next-field="parentid" data-params="{'level':1}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group w50 fl" style="width:25%;">
+									<select name="registercity" data-rule="required;" id="city" data-url="dictionary/region" data-params="{'level':2}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group w50 fl" style="width:40%;">
+									<div class="module-group fl">
+										<input type="text" data-rule="required;" name="registeraddress" class="module-input group-input">
+									</div>
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">联系人:</span>
+									<input type="text" data-rule="required;" name="contacts" class="module-input group-input fl">
+								</div>
+								<div class="module-group w50 fr">
+									<span class="group-title tr pr10" style="width: 90px;">联系电话:</span>
+									<input type="text" data-rule="required;" name="tel" class="module-input group-input fl">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl">
+									<span class="group-title tr pr10" style="width: 90px;">电子邮件:</span>
+									<input type="text" data-rule="required;" name="email" class="module-input group-input fl">
+								</div>
+								<div class="module-group w50 fr">
+									<span class="group-title tr pr10" style="width: 90px;">传真:</span>
+									<input type="text" data-rule="required;" name="fax" class="module-input group-input fl">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<h1>营业执照信息</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="org-form2">
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width: 275px;">
+									<span class="group-title tr pr10" style="width: 110px;">执照类型:</span>
+									<select name="traffictype" data-rule="required;" data-toggle="selector" data-url="dictionary/s1002" data-params="{type:'TRAFFIC'}" class="module-select group-select">
+									</select>
+								</div>
+								<div class="module-group w50 fr" style="width: 375px;">
+									<span class="group-title tr pr10" style="width: 170px;">统一社会信用代码:</span>
+									<input type="text" name="creditcode" data-rule="required;" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w100 fl" style="width: 650px;">
+									<span class="group-title tr pr10" style="width: 110px;">住 &nbsp &nbsp &nbsp所:</span>
+									<input type="text" name="address" data-rule="required;" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width: 275px;">
+									<span class="group-title tr pr10" style="width: 110px;">法定代表人:</span>
+									<input type="text" name="legalperson" data-rule="required;" class="group-input module-input">
+								</div>
+								<div class="module-group w50 fr" style="width: 375px;">
+									<span class="group-title tr pr10" style="width: 170px;">法人代表身份证号码:</span>
+									<input type="text" name="legalidentity" data-rule="required;length[~18];length[15~];"  class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w50 fl" style="width: 275px;">
+									<span class="group-title tr pr10" style="width: 110px;">注册资本:</span>
+									<input type="text" name="registeredcapital" data-rule="required;" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w100 fl" style="width:650px;">
+									<span class="group-title tr pr10" style="width: 110px;">经营范围:</span>
+									<input type="text" name="trafficscope" data-rule="required;" class="group-input module-input">
+								</div>
+							</div>
+							<div class="module-line-box clear p10">
+								<div class="module-group w100 fl" style="text-align: left;">
+									<span class="group-title tr pr10" style="width: 150px;">法人身份证扫描件:</span>
+									<div id="identityfront" style="float: left;"><span>前：</span></div>
+									<div id="identityback" style="float: left;"><span>后：</span></div>
+								</div>
+								<div class="module-group w100 fl"style="text-align: left;">
+									<span class="group-title tr pr10" style="width: 150px;">营业执照扫描件:</span>
+									<div id="licensefront" style="float: left;"><span>前：</span></div>
+									<div id="licenseback" style="float: left;"><span>后：</span></div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<h1>企业资质</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #FFFFFF;">
+							<table id="QualificationTable">
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<h1>相关项目</h1>
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<div class="panel-body" style="background: #FFFFFF;">
+							<table id="relatedProject">
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

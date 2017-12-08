@@ -1,0 +1,68 @@
+<!--
+	作者：李朝华
+	描述：人员信息  》 辖区检测机构
+-->
+<div id="xiaqujiancejigou_lzh">
+
+	<div id="xiaqujiancejigou" style="height: 100%">
+		<!--右侧-->
+		<div class="module-left-box fl mt25" style="width: 270px;;min-height: 100%;">
+			<!--<div class="module-line-box clear  pr20 pt5 tr" style="margin: 0;padding-top: 27px;">
+				<permission opt="department_edit"><a href="javascript:;" id="xiaqujiancejigou_menu_edit" class="ml10" title="编辑部门"><i class="fa fa-pencil-square-o"></i></a></permission>
+				<permission opt="department_del"><a href="javascript:;" id="xiaqujiancejigou_menu_del" class="ml10" title="删除部门"><i class="fa fa-trash"></i></a></permission>
+			</div>-->
+			<div class="module-line-box btn-group mb15">
+				<permission opt="department_create"><button type="button" id="xiaqujiancejigou_menu_add" class="btn  btn-primary">添加部门</button></permission>
+			</div>
+			<!--修改树的样式-->
+			<div class="module-line-box clear leftTreestyle clear" style="margin: 0;">
+				<div class="fl">
+					<span class="group-title spanSize pl5">部门管理</span>
+				</div>
+				<div class="fr pr5">
+					<permission opt="department_edit">
+						<a href="javascript:;" id="xiaqujiancejigou_menu_edit" class="ml10 fontF" title="编辑部门"><i class="fa fa-pencil-square-o"></i></a>
+					</permission>
+					<permission opt="department_del">
+						<a href="javascript:;" id="xiaqujiancejigou_menu_del" class="ml10 fontF" title="删除部门"><i class="fa fa-trash"></i></a>
+					</permission>
+				</div>
+
+			</div>
+			<!--树-->
+			<ul id="xiaqujiancejigou_tree" class="ztree"></ul>
+		</div>
+		<!--左侧-->
+		<div class="module-right-box fr">
+			<div class="module-line-box  mt25 mb15">
+				<div class="fl">
+					<!--<div class="btn-group fl">
+					<permission opt="department_create"><button type="button" id="xiaqujiancejigou_menu_add" class="btn  btn-primary">添加部门</button></permission>
+				</div>-->
+					<div class="module-group fl">
+						<span class="group-title tr pr15" style="width: 90px;">姓名:</span>
+						<input type="text" name="search_name" class="group-input module-input">
+					</div>
+					<div class="btn-group fl ml15">
+						<button type="button" name="search" class="btn btn-primary ">查询</button>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="btn-group">
+						<permission opt="person_create"><button type="button" class="btn  btn-primary" id="personnel_btn_xqjcjg">新建人员</button></permission>
+					</div>
+					<div class="btn-group ml30">
+						<button type="button" class="btn  btn-default ml30" id="import_btn" style="display: none;">导入</button>
+					</div>
+				</div>
+			</div>
+			<div class="module-right-box-tbale">
+				<table id="xiaqujiancejigou_table">
+
+				</table>
+			</div>
+		</div>
+	</div>
+	<script src="/js/controller/InstitutionalPersonnel/PersonneChilds/xqjcjg.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+</div>

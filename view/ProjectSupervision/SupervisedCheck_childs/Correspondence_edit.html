@@ -1,0 +1,53 @@
+<!--编辑和新建弹层-->
+<div id="correspondenceEditOut">
+	<form data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div id="correspondence-layer" class="p10 pr20">
+			<div class="module-line-box clear">
+				<div class="module-group fl w100">
+					<span class="group-title tr pr20" style="width: 110px;"><i>*</i>检查方案:</span>
+					<select data-toggle="selector" id="programid" data-rule="required" data-url="checkProgram/selectList" data-params='{}' name="checkprogramid" style="width:150px;" class="module-select group-select" data-rule="required">
+					</select>
+				</div>
+			</div>
+			<div class="module-line-box clear">
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 110px;"><i>*</i>发文单位:</span>
+					<select data-toggle="selector" id="sendgroupid" data-url="organization/senderOrg" data-params="{}" name="sendgroupid" style="width:150px;" class="module-select group-select" data-rule="required;length[~30];">
+					</select>
+				</div>
+				<div class="module-group fl w50">
+					<span class="group-title tr pr20" style="width: 110px;"><i>*</i>收文单位:</span>
+					<select data-toggle="selector" id="receivedgroupid" data-url="organization/senderOrg" data-params="{}" name="receivedgroupid" style="width:150px;" class="module-select group-select" data-rule="required;length[~30];">
+					</select>
+				</div>
+			</div>
+			<fieldset id="">
+				<legend>函件</legend>
+				<div class="module-line-box clear">
+					<div class="module-group fl w100">
+						<span class="group-title tr pr20" style="width: 90px;"><i>*</i>标题:</span>
+						<input type="text" name="title" style="width:250px;" class="module-input group-input fl" data-rule="required;length[~30]">
+					</div>
+				</div>
+				<div class="module-line-box clear">
+					<div class="module-group fr w50">
+						<span class="group-title tr pr20" style="width: 90px;">发文时间:</span>
+						<input type="text" name="sendtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+					</div>
+					<div class="module-group fl w50">
+						<span class="group-title tr pr20" style="width: 90px;">文号:</span>
+						<input type="text" name="documentnumber" class="module-input group-input fl" data-rule="length[~30]">
+					</div>
+				</div>
+				<div class="module-line-box clear">
+					<div class="module-group fl w50 mt10">
+						<span class="group-title" style="width: 90px;"><i>*</i>函件:</span>
+						<input data-toggle="uploader-file" type="file" name="letter" class="layui-upload-file">
+					</div>
+				</div>
+			</fieldset>
+
+		</div>
+	</form>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

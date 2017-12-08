@@ -1,0 +1,42 @@
+<!--行政处罚-->
+<div id="Penalties_lzh">
+
+	<div class="wrapper-content-tabs" id="Penalties">
+		<div class="panel-body">
+			<div class="module-line-box clear pt10">
+				<div class="module-group fl wauto">
+					<span class="group-title tr pr10" style="width: 120px;">被处罚单位:</span>
+					<!--<select name="dutylevelid" data-toggle="selector" data-url="organization/findgroup" data-params="{'type':'PROJECTTYPE'}" data-value="" class="module-select group-select">
+					</select>-->
+					<select name="punishedunits" data-toggle="selector" data-url="organization/findgroup" data-params="{'type':'grouptype'}" data-value="" class="module-select wauto">
+					</select>
+				</div>
+				<div class="module-group fl ">
+					<span class="group-title tr ">处罚时间:</span>
+					<input type="text" id="starttime" name="starttime" data-format="YYYY-MM-DD" class="module-input lh34 fl laydate-icon">
+				</div>
+				<div class="module-group fl">
+					<span class="group-title tc">至:</span>
+					<input type="text" id="endtime" name="endtime" data-format="YYYY-MM-DD" class="module-input lh34 fl laydate-icon">
+				</div>
+				<div class="btn-group fl ml20">
+					<button type="button" id="JobInquireBtn" class="btn  btn-primary">查询</button>
+				</div>
+
+				<div class="fr">
+					<div class="btn-group fr">
+						<permission opt="penalties_create"><button type="button" class="btn  btn-primary" id="JobNewBtn">新建</button></permission>
+					</div>
+				</div>
+			</div>
+			<div class="module-container">
+				<div class="sidebar-collapse">
+					<table id="PenaltiesTable">
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="/js/controller/LawOperations/Penalties.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</div>

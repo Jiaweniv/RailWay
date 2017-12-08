@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<title>项目监督辅助管理系统</title>
+		<meta name="keywords" content="项目监督辅助管理系统">
+		<meta name="description" content="项目监督辅助管理系统">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/view/common.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="css/view/module.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="css/view/login.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="js/plugins/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/iCheck/custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/font-awesome/font-awesome.css" />
+		<script src="js/plugins/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/iCheck/icheck.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/controller/pathconfig.js?rev=@@hash" charset="utf-8"></script>
+		<script src="js/view/login.js?rev=@@hash" async="async" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/jquery/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/view/layMd.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+	      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	      
+	    <![endif]-->
+		<script src="js/plugins/zoom-detect/zoom-detect.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//检测浏览器缩放
+				WebpageZoomDetect.start({
+					interval: 1000
+				});
+				setInterval(function() {
+					var device = layui.device();
+					if(device.ie) {
+						if(device.ie < 9) {
+							window.location.href = MyDaoRequestPath + '/RailWay/IE.html';
+						} else if(device.ie === 9) {
+							//针对IE9 密码框 眼睛无法去掉
+							$('.togglePass').hide();
+						} else {
+							$('.togglePass').show();
+						}
+					};
+				}, 100);
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="login-box">
+			<div class="login-head2">北 京 地 区 项 目 监 督 管 理 系 统</div>
+			<div class="content-box clear">
+				<!--<div class="login-head"></div>-->
+				<!--<div class="login-headnew">
+					<img src="img/headline.png" />
+				</div>-->
+				
+				<div class="login-center-box clear">
+					<div class="right-login">
+						<div class="right-login-box">
+							<div class="right-login-middle">
+								<div class="right-lines">
+									<label for="logiName">用户名</label>
+									<div class="form-group">
+										<input type="text" class="module-input" name="logiName" id="logiName" placeholder="请输入用户名" />
+									</div>
+								</div>
+								<div class="right-lines">
+									<label for="loginPass">密码</label>
+									<div class="form-group pr">
+										<input type="password" class="module-input" name="loginPass" id="loginPass" placeholder="请输入密码" />
+										<i class="fa fa-eye togglePass" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="right-lines clear">
+									<div class="code-left">
+										<label>验证码</label>
+										<input type="text" class="module-input" id="code" placeholder="验证码" />
+									</div>
+									<div class="code-right">
+										<img id="verify" src="" alt="验证码" />
+									</div>
+								</div>
+								<div class="right-lines tr pt5 ">
+									<a href="javascipr:;" class="forgot-password">忘记密码？</a>
+								</div>
+							</div>
+							<div class="lines-but">
+								<button class="module-button " id="login-but">登录</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="login_bottom">
+			Copyright®
+			<a href="http://www.imydao.com/" target="_blank">迈道科技有限公司</a>
+		</div>
+	</body>
+
+</html>

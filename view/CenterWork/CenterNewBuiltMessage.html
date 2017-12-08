@@ -1,0 +1,47 @@
+<!--
+	作者：侯丽娇
+	时间：2016-12-19
+	描述：中心计划弹出层
+-->
+
+<!--弹窗类-->
+<div class="layer_notice" id="newBuildMessage">
+	<div class="sidebar-collapse">
+		<div class="ibox-content">
+			<div id="example-build">
+				<div class="step-content">
+					<div class="text-center m-t-md">
+						<form id="" data-validator-option="{msgClass: 'n-bottom myClass'}">
+							<!--所有的修改都要有个唯一标识，这个唯一标识问接口对接-->
+							<input type="hidden" name="id" value="" />
+							<!--第一行名称和处室-->
+							<!--名称-->
+							<div class="tc pr">
+								<!--<input type="text" name="name" data-rule="required;length[~50];" class="centerName" style="width: 100%;">-->
+								<h1 id="nametitle"></h1>
+								<div class="module-line-box wauto clear dil mt10" id="timeSlot">
+									<span id="bumen" class="fl"></span>
+									<i class="fl">-</i>
+									<span id="shijian" class="fl"></span>
+								</div>
+								<div id="zhuangtai" class="pa" style="bottom: 16px; right:10px;">
+									<span>状态:</span>
+								</div>
+							</div>
+
+							<!--第三行内容项-->
+							<div class="module-line-box clear  content" style="padding: 0px 30px;">
+									<p class="group-title tl mb10" id="leaveMessage">留言:</p>
+									<table   class="layui-table" id="liuyanTable">
+										
+									</table>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

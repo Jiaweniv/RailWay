@@ -1,0 +1,28 @@
+<!--编辑和新建弹层-->
+<div id="checkReplyEditOut">
+	<form id="checkReply_form" data-validator-option="{msgClass: 'n-bottom myClass'}">
+		<div id="checkReply-layer" class="p10 pr20">
+			<div class="module-line-box clear">
+				<div class="module-group w50 mt10">
+					<span class="group-title" style="width: 90px;"><i>*</i>整改回复:</span>
+					<input data-toggle="uploader-file" type="file" name="replyid" class="layui-upload-file">
+				</div>
+				<div class="module-group w50 mt10 mb10">
+					<span class="group-title" style="width: 90px;"><i>*</i>审核时间:</span>
+					<input type="text" name="replytime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+				</div>
+			</div>
+			<div class="module-group" style="width: 100%;">
+				<span class="group-title tr pr10" style="width: 90px;"><i>*</i>回复意见:</span>
+				<div class="fl" id="replydetail">
+					<!--<textarea cols="60" name="replydetail"
+							data-rule="required;length[~500]"></textarea>-->
+					<script type="text/plain" name='replydetail' id="myEditor" style="width:520px;height:300px;">
+
+					</script>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>

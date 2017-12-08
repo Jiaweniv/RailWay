@@ -1,0 +1,54 @@
+<!--
+	监督月报
+	JianDuYueBao
+	date:2017-3-16
+-->
+<div class="wrapper-content-tabs" id="JianDuYueBao">
+	<div class="panel-body">
+		<div class="module-line-box clear pt10 pb20" style="border-bottom: 1px solid #bfe5fd; ">
+			<div class="module-group fl ">
+				<span class="group-title" style="width: 90px;">监督机构:</span>
+				<select data-toggle="selector" id="SCBG_organization" data-url="organization/selectList" data-params="{'node':1,'dictType':'ORG','code':'JDJG'}" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group fl">
+				<span class="group-title tr pr10" style="width: 60px;">时间:</span>
+				<input type="text" id="SCBG_starttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+			</div>
+			<div class="module-group fl">
+				<span class="group-title tc pr10" style="width: 30px;">至:</span>
+				<input type="text" id="SCBG_endtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+			</div>
+			<div class="btn-group fl ml20">
+				<button type="button" id="SCBG_Btn" class="btn  btn-primary">生成报告</button>
+			</div>
+		</div>
+		<div class="module-line-box clear pt10">
+			<div class="module-group fl ">
+				<span class="group-title" style="width: 90px;">监督机构:</span>
+				<select data-toggle="selector" id="CX_organization" data-url="organization/selectList" data-params="{'node':1,'dictType':'ORG','code':'JDJG'}" class="module-select group-select">
+				</select>
+			</div>
+			<div class="module-group fl">
+				<span class="group-title tr pr10" style="width: 60px;">时间:</span>
+				<input type="text" id="CX_starttime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+			</div>
+			<div class="module-group fl">
+				<span class="group-title tc pr10" style="width: 30px;">至:</span>
+				<input type="text" id="CX_endtime" data-format="YYYY-MM-DD" class="module-input group-input fl laydate-icon">
+			</div>
+			<div class="btn-group fl ml20">
+				<button type="button" id="CX_Btn" class="btn  btn-primary">查询</button>
+			</div>
+		</div>
+		<!--tab-->
+		<div class="tabs-container">
+			<table id="jdyb_table">
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<script src="js/controller/util/uploader.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="js/controller/JianDuYueBao/JianDuYueBao.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
